@@ -39,8 +39,8 @@ curl https://api.runpod.ai/v2/<ENDPOINT_ID>/status/<id> -H "Authorization: Beare
 ```
 
 ## If the first build/run fails
-- **Build fails at `install.py`** → CUDA/onnxruntime mismatch. Try changing the base image tag or
-  `--onnxruntime cuda-12.4` in the Dockerfile.
+- **Build fails at `install.py`** → note `onnxruntime` is a POSITIONAL arg (`python install.py cuda --skip-conda`),
+  choices `default|cuda|rocm|openvino|migraphx`. If CUDA still fails, try a different base image tag.
 - **Run fails with a CLI error** → your FaceFusion version changed the flags. Adjust the single `cmd`
   block in `handler.py` (it's clearly marked). Send the `stderr` from the AdSpark Debug panel and it's a quick fix.
 - **`force-download` errors** → harmless (`|| true`); models just download on the first real request instead.

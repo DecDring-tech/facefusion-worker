@@ -21,9 +21,10 @@ ARG FF_VERSION=master
 RUN git clone https://github.com/facefusion/facefusion.git \
     && cd facefusion && git checkout ${FF_VERSION}
 
-# Install FaceFusion for CUDA. If this fails on your GPU, try --onnxruntime cuda-12.4 or a matching base image.
+# Install FaceFusion for CUDA. NOTE: `onnxruntime` is a POSITIONAL arg (choices: default|cuda|rocm|openvino|migraphx),
+# NOT a --flag. If CUDA install fails on your GPU, swap `cuda` for a matching base image.
 WORKDIR /app/facefusion
-RUN python install.py --onnxruntime cuda --skip-conda
+RUN python install.py cuda --skip-conda
 
 # Pre-download the models so the first request isn't a huge cold download (best-effort).
 RUN python facefusion.py force-download || true
