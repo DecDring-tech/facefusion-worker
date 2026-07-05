@@ -26,7 +26,10 @@ RUN git clone https://github.com/facefusion/facefusion.git \
 
 WORKDIR /app/facefusion
 RUN python install.py cuda --skip-conda
-RUN python facefusion.py force-download || true
+
+# ⚠️ Do NOT bake the models in (no `force-download`): the full model set is several GB and pushes the
+# image past RunPod's 30-minute BUILD timeout during layer export. FaceFusion downloads only the models it
+# needs (swapper + enhancer + detectors) on the FIRST request; the worker then stays warm and reuses them.
 
 RUN python -m pip install runpod
 COPY handler.py /app/handler.py
