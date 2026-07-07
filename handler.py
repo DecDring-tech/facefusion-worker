@@ -122,8 +122,15 @@ def handler(job):
         #    with the ensemble). Slower, worth it.
         #  • --face-landmarker-model many → ensemble landmarks: steadier face alignment while the
         #    face is PARTIALLY covered (the patting/applying moments).
+        #  • --face-mask-types + REGION → the parser-based region mask restricts the swap to the ACTUAL
+        #    parsed face parts (skin/brows/eyes/nose/mouth) instead of the whole bounding box — this is
+        #    what CLAMPS the swap to her face: no spill onto hair/background/held objects, no "loose
+        #    mask / tiktok filter" edge floating past the jawline.
+        #  • --face-mask-blur 0.45 (default 0.3) → softer blend right at the mask edge so the jawline
+        #    boundary reads as skin, not a cutout.
         ok, cmd, proc = _run(srcs, tgt, out, ["face_swapper", "face_enhancer"], [
-            "--face-mask-types", "box", "occlusion",
+            "--face-mask-types", "box", "occlusion", "region",
+            "--face-mask-blur", "0.45",
             "--face-occluder-model", "many",
             "--face-landmarker-model", "many",
             "--face-selector-mode", "one",
