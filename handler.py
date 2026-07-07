@@ -110,8 +110,9 @@ def handler(job):
         #    128px default IS the cheap-filter look on 1080p video).
         #  • --face-swapper-pixel-boost 512x512 → the swap region is processed at 512px and scaled,
         #    a major sharpness/fidelity boost.
-        #  • --face-enhancer-blend 60 → enhancer at 60% (the 80 default over-smooths into "AI plastic";
-        #    60 keeps real skin texture).
+        #  • --face-enhancer-blend 40 → the enhancer re-paints "perfect clean skin" every frame, which is
+        #    what ERASES cream/makeup residue she just dabbed on and adds the smoothed-mask look. 40 keeps
+        #    the identity sharpening but preserves the template's real on-face state (residue, texture).
         #  • --output-video-quality 85 → high quality but COMPRESSED (95 was near-lossless and produced
         #    a 158MB video that exceeded fal's upload cap → HTTP 413; 85 is visually identical for
         #    phone-style UGC at roughly a third of the size).
@@ -130,13 +131,18 @@ def handler(job):
         #    boundary reads as skin, not a cutout.
         ok, cmd, proc = _run(srcs, tgt, out, ["face_swapper", "face_enhancer"], [
             "--face-mask-types", "box", "occlusion", "region",
+            # FULL-face region list pinned explicitly (it's the default, but the worker builds FF from
+            # master where defaults can drift): the parser re-computes these PER FRAME, so a part covered
+            # by a hand/product simply doesn't parse in those frames → the swap skips it until it's
+            # visible again. Fully adaptive, whole face, nothing static.
+            "--face-mask-regions", "skin", "left-eyebrow", "right-eyebrow", "left-eye", "right-eye", "glasses", "nose", "mouth", "upper-lip", "lower-lip",
             "--face-mask-blur", "0.45",
             "--face-occluder-model", "many",
             "--face-landmarker-model", "many",
             "--face-selector-mode", "one",
             "--face-swapper-model", "hyperswap_1a_256",
             "--face-swapper-pixel-boost", "512x512",
-            "--face-enhancer-blend", "60",
+            "--face-enhancer-blend", "40",
             "--output-video-quality", "85",
         ])
         attempts.append(_record(cmd, proc))
