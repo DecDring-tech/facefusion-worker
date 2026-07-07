@@ -114,9 +114,16 @@ def handler(job):
         #    60 keeps real skin texture).
         #  • --output-video-quality 95 → near-lossless re-encode of the final video.
         #  • detector score stays at the DEFAULT (a lowered 0.3 made FaceFusion swap junk detections).
+        #  • --face-occluder-model many → ENSEMBLE of all xseg occluder models: strongest possible
+        #    segmentation of hands AND held OBJECTS in front of the face (single xseg models are
+        #    trained mostly on hands — products held up to the camera segment noticeably better
+        #    with the ensemble). Slower, worth it.
+        #  • --face-landmarker-model many → ensemble landmarks: steadier face alignment while the
+        #    face is PARTIALLY covered (the patting/applying moments).
         ok, cmd, proc = _run(srcs, tgt, out, ["face_swapper", "face_enhancer"], [
             "--face-mask-types", "box", "occlusion",
-            "--face-occluder-model", "xseg_2",
+            "--face-occluder-model", "many",
+            "--face-landmarker-model", "many",
             "--face-selector-mode", "one",
             "--face-swapper-model", "hyperswap_1a_256",
             "--face-swapper-pixel-boost", "512x512",
