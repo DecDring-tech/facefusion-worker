@@ -55,13 +55,15 @@ def _upload_to_fal(path: str, fal_key: str) -> str:
     return file_url
 
 
-def _run(src: str, tgt: str, out: str, processors: list, extra: list):
+def _run(srcs: list, tgt: str, out: str, processors: list, extra: list):
     """Run one FaceFusion headless pass. Returns (ok, cmd, proc)."""
     # Current FaceFusion CLI uses LONG argument names (the short -s/-t/-o aliases were dropped in the
     # CLI migration; passing them makes it exit without writing anything = "produced no output").
+    # --source-paths accepts MULTIPLE images of the same person — the identity embedding averages
+    # across them, which measurably improves likeness accuracy vs a single photo.
     cmd = [
         "python", "facefusion.py", "headless-run",
-        "--source-paths", src,
+        "--source-paths", *srcs,
         "--target-path", tgt,
         "--output-path", out,
         "--processors", *processors,
@@ -75,14 +77,15 @@ def _run(src: str, tgt: str, out: str, processors: list, extra: list):
 
 def handler(job):
     inp = job.get("input") or {}
-    src_url = inp.get("source_image_url")
+    # Multiple same-person source images (identity averaging) — falls back to the single legacy field.
+    src_urls = inp.get("source_image_urls") or ([inp.get("source_image_url")] if inp.get("source_image_url") else [])
+    src_urls = [u for u in src_urls if isinstance(u, str) and u.strip()][:4]
     tgt_url = inp.get("target_video_url")
     fal_key = inp.get("fal_key")
-    if not src_url or not tgt_url:
-        return {"error": "source_image_url and target_video_url are required"}
+    if not src_urls or not tgt_url:
+        return {"error": "source_image_url(s) and target_video_url are required"}
 
     work = tempfile.mkdtemp(prefix="ff-")
-    src = os.path.join(work, "source.jpg")
     tgt = os.path.join(work, "target.mp4")
     out = os.path.join(work, "output.mp4")
 
@@ -90,23 +93,46 @@ def handler(job):
         return {"cmd": " ".join(cmd), "returncode": proc.returncode, "stderr": (proc.stderr or "")[-1500:], "stdout": (proc.stdout or "")[-600:]}
 
     try:
-        _download(src_url, src)
+        srcs = []
+        for i, u in enumerate(src_urls):
+            p = os.path.join(work, f"source{i}.jpg")
+            _download(u, p)
+            srcs.append(p)
         _download(tgt_url, tgt)
 
         attempts = []
-        # Pass 1 — best quality: swapper + enhancer, a lower detector score so a face is found more
-        # reliably in a busy template frame.
-        ok, cmd, proc = _run(src, tgt, out, ["face_swapper", "face_enhancer"], ["--face-detector-score", "0.3"])
+        # Pass 1 — MAXIMUM quality (all flags verified against the FaceFusion CLI docs):
+        #  • --face-mask-types box occlusion + xseg_2 occluder → hands/brushes IN FRONT of the face
+        #    correctly COVER the swapped face (without this the swap paints OVER the hand — the
+        #    "floating sticker face" that ruins GRWM content, where hands touch the face constantly).
+        #  • --face-selector-mode one → exactly ONE face swapped per frame (no double/phantom faces).
+        #  • --face-swapper-model hyperswap_1a_256 → 256px swapper vs the default inswapper_128 (the
+        #    128px default IS the cheap-filter look on 1080p video).
+        #  • --face-swapper-pixel-boost 512x512 → the swap region is processed at 512px and scaled,
+        #    a major sharpness/fidelity boost.
+        #  • --face-enhancer-blend 60 → enhancer at 60% (the 80 default over-smooths into "AI plastic";
+        #    60 keeps real skin texture).
+        #  • --output-video-quality 95 → near-lossless re-encode of the final video.
+        #  • detector score stays at the DEFAULT (a lowered 0.3 made FaceFusion swap junk detections).
+        ok, cmd, proc = _run(srcs, tgt, out, ["face_swapper", "face_enhancer"], [
+            "--face-mask-types", "box", "occlusion",
+            "--face-occluder-model", "xseg_2",
+            "--face-selector-mode", "one",
+            "--face-swapper-model", "hyperswap_1a_256",
+            "--face-swapper-pixel-boost", "512x512",
+            "--face-enhancer-blend", "60",
+            "--output-video-quality", "95",
+        ])
         attempts.append(_record(cmd, proc))
 
         # Pass 2 — leanest, most-compatible fallback: swapper only, no extra flags. Catches a missing
-        # face_enhancer model or an unknown flag from pass 1.
+        # model download or an unknown flag from pass 1 (FaceFusion master can drift).
         if not ok:
             try:
                 os.remove(out)
             except OSError:
                 pass
-            ok, cmd, proc = _run(src, tgt, out, ["face_swapper"], [])
+            ok, cmd, proc = _run(srcs, tgt, out, ["face_swapper"], [])
             attempts.append(_record(cmd, proc))
 
         if not ok:
