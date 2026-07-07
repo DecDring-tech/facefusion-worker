@@ -112,7 +112,9 @@ def handler(job):
         #    a major sharpness/fidelity boost.
         #  • --face-enhancer-blend 60 → enhancer at 60% (the 80 default over-smooths into "AI plastic";
         #    60 keeps real skin texture).
-        #  • --output-video-quality 95 → near-lossless re-encode of the final video.
+        #  • --output-video-quality 85 → high quality but COMPRESSED (95 was near-lossless and produced
+        #    a 158MB video that exceeded fal's upload cap → HTTP 413; 85 is visually identical for
+        #    phone-style UGC at roughly a third of the size).
         #  • detector score stays at the DEFAULT (a lowered 0.3 made FaceFusion swap junk detections).
         #  • --face-occluder-model many → ENSEMBLE of all xseg occluder models: strongest possible
         #    segmentation of hands AND held OBJECTS in front of the face (single xseg models are
@@ -128,7 +130,7 @@ def handler(job):
             "--face-swapper-model", "hyperswap_1a_256",
             "--face-swapper-pixel-boost", "512x512",
             "--face-enhancer-blend", "60",
-            "--output-video-quality", "95",
+            "--output-video-quality", "85",
         ])
         attempts.append(_record(cmd, proc))
 
