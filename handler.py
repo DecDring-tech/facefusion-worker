@@ -73,7 +73,8 @@ def _run(srcs: list, tgt: str, out: str, processors: list, extra: list):
         "--execution-thread-count", "1",
         *extra,
     ]
-    proc = subprocess.run(cmd, cwd=FACEFUSION_DIR, capture_output=True, text=True, timeout=1800)
+    # 60 min ceiling: sequential stabilized processing of a full 30-45s video is legitimately slow.
+    proc = subprocess.run(cmd, cwd=FACEFUSION_DIR, capture_output=True, text=True, timeout=3600)
     ok = os.path.exists(out) and os.path.getsize(out) > 0
     return ok, cmd, proc
 
@@ -154,8 +155,14 @@ def handler(job):
             "--face-landmarker-model", "2dfan4",
             "--face-selector-mode", "one",
             "--face-swapper-model", "hyperswap_1a_256",
+            # 512x512 pixel boost: in 1080x1920 phone footage the face spans ~300-500px, so 512 already
+            # EXCEEDS the face's native resolution — 1024 processed beyond-native detail at 4x the compute
+            # and blew RunPod's execution timeout for zero visible gain. 512 = same on-screen quality.
             "--face-swapper-pixel-boost", "512x512",
-            "--face-enhancer-blend", "40",
+            # restoreformer_plus_plus keeps REAL skin texture (pores, fine lines) where gfpgan's default
+            # "beautify" smooths it into plastic — the single biggest texture-realism lever left.
+            "--face-enhancer-model", "restoreformer_plus_plus",
+            "--face-enhancer-blend", "45",
             "--output-video-quality", "85",
         ])
         attempts.append(_record(cmd, proc))
