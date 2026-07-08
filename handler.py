@@ -129,7 +129,16 @@ def handler(job):
         #    mask / tiktok filter" edge floating past the jawline.
         #  • --face-mask-blur 0.45 (default 0.3) → softer blend right at the mask edge so the jawline
         #    boundary reads as skin, not a cutout.
-        ok, cmd, proc = _run(srcs, tgt, out, ["face_swapper", "face_enhancer"], [
+        #  • expression_restorer (LivePortrait) → re-applies the TEMPLATE person's original
+        #    micro-expressions (blinks, brow, mouth shape) onto the swapped face EVERY frame — the
+        #    swapped face performs exactly like the real footage instead of sitting on it like a
+        #    static filter. Runs after the swap, before enhancement.
+        #  • --face-mask-padding 2 2 2 2 → insets the mask 2% on every side so the blend edge lands
+        #    ON the face (inside the jawline/hairline), never past it — the "glued at all corners" fit.
+        ok, cmd, proc = _run(srcs, tgt, out, ["face_swapper", "expression_restorer", "face_enhancer"], [
+            "--expression-restorer-model", "live_portrait",
+            "--expression-restorer-factor", "80",
+            "--face-mask-padding", "2", "2", "2", "2",
             "--face-mask-types", "box", "occlusion", "region",
             # FULL-face region list pinned explicitly (it's the default, but the worker builds FF from
             # master where defaults can drift): the parser re-computes these PER FRAME, so a part covered
