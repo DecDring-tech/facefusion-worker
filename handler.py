@@ -129,15 +129,12 @@ def handler(job):
         #    mask / tiktok filter" edge floating past the jawline.
         #  • --face-mask-blur 0.45 (default 0.3) → softer blend right at the mask edge so the jawline
         #    boundary reads as skin, not a cutout.
-        #  • expression_restorer (LivePortrait) → re-applies the TEMPLATE person's original
-        #    micro-expressions (blinks, brow, mouth shape) onto the swapped face EVERY frame — the
-        #    swapped face performs exactly like the real footage instead of sitting on it like a
-        #    static filter. Runs after the swap, before enhancement.
+        #  • ⛔ NO expression_restorer: LivePortrait warps the face mesh from a per-frame expression
+        #    estimate, and under OCCLUSION (hand/product over the face — constant in GRWM) that
+        #    estimate jumps frame-to-frame → the "wobbly like jelly" face. Solid beats jelly.
         #  • --face-mask-padding 2 2 2 2 → insets the mask 2% on every side so the blend edge lands
         #    ON the face (inside the jawline/hairline), never past it — the "glued at all corners" fit.
-        ok, cmd, proc = _run(srcs, tgt, out, ["face_swapper", "expression_restorer", "face_enhancer"], [
-            "--expression-restorer-model", "live_portrait",
-            "--expression-restorer-factor", "80",
+        ok, cmd, proc = _run(srcs, tgt, out, ["face_swapper", "face_enhancer"], [
             "--face-mask-padding", "2", "2", "2", "2",
             "--face-mask-types", "box", "occlusion", "region",
             # FULL-face region list pinned explicitly (it's the default, but the worker builds FF from
@@ -147,7 +144,11 @@ def handler(job):
             "--face-mask-regions", "skin", "left-eyebrow", "right-eyebrow", "left-eye", "right-eye", "glasses", "nose", "mouth", "upper-lip", "lower-lip",
             "--face-mask-blur", "0.45",
             "--face-occluder-model", "many",
-            "--face-landmarker-model", "many",
+            # SINGLE landmarker (not the "many" ensemble): under occlusion the ensemble's models
+            # disagree frame-to-frame and the fused landmarks jitter → face-warp wobble. One
+            # consistent model = stable per-frame placement. (Occluder stays "many" — it only
+            # MASKS pixels, it never moves geometry, so it can't wobble anything.)
+            "--face-landmarker-model", "2dfan4",
             "--face-selector-mode", "one",
             "--face-swapper-model", "hyperswap_1a_256",
             "--face-swapper-pixel-boost", "512x512",
