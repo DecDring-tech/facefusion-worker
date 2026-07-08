@@ -20,9 +20,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-ARG FF_VERSION=master
+# PINNED release (master drifts and can silently change CLI/behavior; the stabilizer patch below is
+# written against exactly this version and refuses to build against anything it doesn't recognise).
+ARG FF_VERSION=3.7.1
 RUN git clone https://github.com/facefusion/facefusion.git \
     && cd facefusion && git checkout ${FF_VERSION}
+
+# TEMPORAL LANDMARK STABILIZER — FaceFusion has NO temporal smoothing, so partial face occlusion
+# (hands/products in GRWM footage) makes the per-frame warp landmarks oscillate → "jelly" face.
+# This patches an EMA stabilizer into the swap warp (see patch_stabilizer.py; build FAILS if the
+# source doesn't match, never builds unpatched). Requires --execution-thread-count 1 (handler sets it).
+COPY patch_stabilizer.py /app/patch_stabilizer.py
+RUN python /app/patch_stabilizer.py /app/facefusion/facefusion/processors/modules/face_swapper/core.py
 
 WORKDIR /app/facefusion
 RUN python install.py cuda --skip-conda

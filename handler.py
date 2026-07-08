@@ -68,6 +68,9 @@ def _run(srcs: list, tgt: str, out: str, processors: list, extra: list):
         "--output-path", out,
         "--processors", *processors,
         "--execution-providers", "cuda",
+        # SEQUENTIAL frames — required by the temporal landmark stabilizer patched into the image
+        # (EMA state is only valid when frames process in order; threads would race it).
+        "--execution-thread-count", "1",
         *extra,
     ]
     proc = subprocess.run(cmd, cwd=FACEFUSION_DIR, capture_output=True, text=True, timeout=1800)
