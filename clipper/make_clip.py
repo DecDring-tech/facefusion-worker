@@ -399,8 +399,17 @@ def render_piece(idx: int, s: Shot, speaker: str, sp_info: dict, look: str, tmp:
     return str(out)
 
 
-def render_audio(speaker: str, keep: list[tuple[float, float]], tmp: Path, denoise: bool) -> str:
+def render_audio(speaker: str, keep: list[tuple[float, float]], tmp: Path, denoise: bool,
+                 isolate: bool = True) -> str:
     out = tmp / "voice.wav"
+    src = speaker
+    if isolate:
+        # TikTok sources carry a music bed under the speech: keep only the vocal stem
+        mix = tmp / "mix.wav"
+        run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", speaker, "-vn", "-ac", "2", "-ar", "44100", str(mix)])
+        run([sys.executable, "-m", "demucs", "--two-stems=vocals", "-n", "htdemucs", "-d", "cpu",
+             "-o", str(tmp / "sep"), str(mix)])
+        src = str(tmp / "sep" / "htdemucs" / "mix" / "vocals.wav")
     parts = []
     for i, (a, b) in enumerate(keep):
         parts.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS[a{i}]")
@@ -410,7 +419,7 @@ def render_audio(speaker: str, keep: list[tuple[float, float]], tmp: Path, denoi
         post += "afftdn=nf=-28:nr=10,"
     post += "acompressor=threshold=-18dB:ratio=2.5:attack=8:release=120,loudnorm=I=-14:TP=-1.5:LRA=9[out]"
     fc = ";".join(parts + [chain, post])
-    run(["ffmpeg", "-v", "error", "-y", "-i", speaker, "-filter_complex", fc, "-map", "[out]",
+    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", fc, "-map", "[out]",
          "-ar", "48000", "-ac", "2", str(out)])
     return str(out)
 
@@ -517,6 +526,8 @@ def main() -> None:
     ap.add_argument("--closer", type=float, default=2.5, help="final seconds that always stay on the face")
     ap.add_argument("--no-tighten", action="store_true", help="keep pauses instead of cutting dead air")
     ap.add_argument("--no-denoise", action="store_true")
+    ap.add_argument("--keep-music", action="store_true",
+                    help="skip the Demucs voice isolation (default strips any music bed under the speech)")
     ap.add_argument("--handle", default=None, help="small @handle at the bottom (off by default)")
     ap.add_argument("--model", default="small", help="faster-whisper model size")
     ap.add_argument("--seed", type=int, default=7, help="shot-pattern / b-roll order seed; change for a different cut")
@@ -587,7 +598,7 @@ def main() -> None:
     lst.write_text("".join(f"file '{Path(fp).name}'\n" for fp in files))
     video = tmp / "video.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(video)])
-    audio = render_audio(speaker, keep, tmp, not args.no_denoise)
+    audio = render_audio(speaker, keep, tmp, not args.no_denoise, not args.keep_music)
 
     print("[5/5] captions + mux …")
     ass = tmp / "captions.ass"
