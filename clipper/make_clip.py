@@ -132,6 +132,10 @@ def transcribe(path: str, start: float, end: float, model_size: str, cache: Path
             txt = w.word.strip()
             if not txt:
                 continue
+            if words and (txt.startswith("-") or txt.startswith("'")):
+                words[-1].text += txt
+                words[-1].end = start + w.end
+                continue
             words.append(Word(txt, start + w.start, start + w.end))
     wav.unlink(missing_ok=True)
     key.write_text(json.dumps([w.__dict__ for w in words]))
@@ -411,16 +415,16 @@ def render_audio(speaker: str, keep: list[tuple[float, float]], tmp: Path, denoi
 
 STYLES = {
     # bold serif, 1–3 words at a time, dead centre — stoicstoriesx
-    "serif": dict(font="Caladea", size=92, bold=-1, caps=False, chunk=3, maxchars=18, align=5, mv=0,
+    "serif": dict(font="Caladea", size=92, bold=-1, caps=False, chunk=3, maxchars=18, align=2, mv=690,
                   shadow=3, blur=2.0, pop=True, spacing=0),
     # small all-caps sans phrases, centre — lifelesson401
-    "caps": dict(font="Inter", size=44, bold=-1, caps=True, chunk=5, maxchars=28, align=5, mv=0,
+    "caps": dict(font="Inter", size=44, bold=-1, caps=True, chunk=5, maxchars=28, align=2, mv=700,
                  shadow=2, blur=1.5, pop=False, spacing=1),
     # medium sans sentence fragments, upper third — calverne_brand
     "phrase": dict(font="Inter", size=56, bold=-1, caps=False, chunk=6, maxchars=30, align=8, mv=520,
                    shadow=3, blur=2.0, pop=False, spacing=0),
     # single lowercase word, small, centre — 1make.more.money1
-    "word": dict(font="Inter", size=50, bold=0, caps=False, chunk=1, maxchars=14, align=5, mv=0,
+    "word": dict(font="Inter", size=50, bold=0, caps=False, chunk=1, maxchars=14, align=2, mv=700,
                  shadow=2, blur=1.5, pop=False, spacing=0),
 }
 
