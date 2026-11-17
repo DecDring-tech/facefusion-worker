@@ -301,10 +301,10 @@ LOOKS = {
               "curves=m='0/0 0.1/0.07 0.5/0.49 1/1',"
               "vignette=angle=PI/5,noise=c0s=4:c1s=2:allf=t+u"),
     # same but heavier: for b-roll that is shot bright and needs pulling down
-    "noir": ("eq=contrast=1.16:brightness=-0.06:saturation=0.62,"
-             "colorbalance=rs=-0.06:bs=0.09:rm=-0.04:bm=0.06:rh=-0.02:bh=0.03,"
-             "curves=m='0/0 0.14/0.08 0.5/0.45 1/0.95',"
-             "vignette=angle=PI/4.5,noise=c0s=5:c1s=2:allf=t+u"),
+    "noir": ("eq=contrast=1.22:brightness=-0.11:saturation=0.55,"
+             "colorbalance=rs=-0.07:gs=-0.02:bs=0.10:rm=-0.05:bm=0.07:rh=-0.04:bh=0.04,"
+             "curves=m='0/0 0.18/0.1 0.55/0.46 1/0.86',"
+             "vignette=angle=PI/4.2,noise=c0s=5:c1s=2:allf=t+u"),
     # editorial black and white — the "goldenlife.mindset" look
     "bw": ("hue=s=0,eq=contrast=1.18:brightness=0.0,"
            "curves=m='0/0 0.15/0.1 0.55/0.56 1/1',vignette=angle=PI/4.4,noise=c0s=7:allf=t+u"),
@@ -352,19 +352,23 @@ def push_filter(z0: float, z1: float, dur: float) -> str:
             f"interpolation=cubic:eval=frame")
 
 
-def face_filter(info: dict, punch: float, dur: float, centre: tuple[float, float] | None) -> str:
-    """Reframe any aspect to 9:16 around the face, then punch-in + slow push."""
+def face_filter(info: dict, punch: float, dur: float, centre: tuple[float, float] | None,
+                crop_top: float = 0.0, crop_bottom: float = 0.0) -> str:
+    """Reframe any aspect to 9:16 around the face, then punch-in + slow push.
+    crop_top / crop_bottom exclude a band of the source (burned-in TikTok text, UI)."""
     sw, sh = info["w"], info["h"]
     # crop window with 9:16 aspect inside the source
     if sw / sh > W / H:
         ch, cw = sh, int(sh * W / H)
     else:
         cw, ch = sw, int(sw * H / W)
+    # zoom far enough that the excluded bands fall outside the window
+    punch = max(punch, 1.0 / max(0.3, 1.0 - crop_top - crop_bottom))
     cw, ch = int(cw / punch) // 2 * 2, int(ch / punch) // 2 * 2
     cx, cy = (0.5, 0.42) if centre is None else centre
     # keep the face around 38 % down the frame (eyes in the upper third)
     x = min(max(cx * sw - cw / 2, 0), sw - cw)
-    y = min(max(cy * sh - ch * 0.38, 0), sh - ch)
+    y = min(max(cy * sh - ch * 0.38, crop_top * sh), sh * (1 - crop_bottom) - ch)
     push = 0.035  # 3.5 % slow push over the shot, keeps static interviews alive
     return (f"crop={cw}:{ch}:{int(x)}:{int(y)},scale={W}:{H},"
             + push_filter(1.0, 1.0 + push, dur))
@@ -379,11 +383,12 @@ def broll_filter(info: dict, dur: float, rng: random.Random) -> str:
 
 
 def render_piece(idx: int, s: Shot, speaker: str, sp_info: dict, look: str, tmp: Path, rng: random.Random,
-                 centre: tuple[float, float] | None, threads: int) -> str:
+                 centre: tuple[float, float] | None, threads: int, crop_top: float = 0.0,
+                 crop_bottom: float = 0.0) -> str:
     out = tmp / f"piece_{idx:03d}.mp4"
     if s.kind == "face":
         src, ss = speaker, s.src_start
-        vf = face_filter(sp_info, s.punch, s.dur, centre)
+        vf = face_filter(sp_info, s.punch, s.dur, centre, crop_top, crop_bottom)
     else:
         src, ss = s.src, s.src_start
         vf = broll_filter(probe(src), s.dur, rng)
@@ -516,6 +521,9 @@ def main() -> None:
     ap.add_argument("--model", default="small", help="faster-whisper model size")
     ap.add_argument("--seed", type=int, default=7, help="shot-pattern / b-roll order seed; change for a different cut")
     ap.add_argument("--face-only", action="store_true", help="no b-roll at all")
+    ap.add_argument("--crop-top", type=float, default=0.0,
+                    help="fraction of the speaker frame to exclude at the top (burned-in TikTok text), e.g. 0.14")
+    ap.add_argument("--crop-bottom", type=float, default=0.0, help="same for the bottom (captions, UI)")
     ap.add_argument("--keep-tmp", action="store_true")
     args = ap.parse_args()
 
@@ -571,7 +579,8 @@ def main() -> None:
     threads = max(1, (os.cpu_count() or 4) // 2)
     with ThreadPoolExecutor(max_workers=2) as ex:
         files = list(ex.map(lambda ip: render_piece(ip[0], ip[1], speaker, sp_info, args.look, tmp,
-                                                    random.Random(args.seed + ip[0]), centre, threads),
+                                                    random.Random(args.seed + ip[0]), centre, threads,
+                                                    args.crop_top, args.crop_bottom),
                             enumerate(pieces)))
     lst = tmp / "concat.txt"
     lst.write_text("".join(f"file '{Path(fp).name}'\n" for fp in files))
