@@ -530,8 +530,9 @@ def main() -> None:
     rng = random.Random(args.seed)
     speaker = str(Path(args.speaker).resolve())
     sp_info = probe(speaker)
-    if args.end > sp_info["dur"] + 0.01:
-        raise SystemExit(f"--end {args.end} beyond source duration {sp_info['dur']:.1f}")
+    args.end = min(args.end, sp_info["dur"])
+    if args.end <= args.start:
+        raise SystemExit(f"--end must be after --start (source is {sp_info['dur']:.1f}s)")
     broll = sorted(str(p) for p in Path(args.broll).iterdir() if p.suffix.lower() in VIDEO_EXT)
     if not broll and not args.face_only:
         raise SystemExit(f"no video files in {args.broll}")
