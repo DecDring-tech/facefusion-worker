@@ -37,6 +37,8 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 W, H, FPS = 1080, 1920, 30
 VIDEO_EXT = {".mp4", ".mov", ".m4v", ".mkv", ".webm"}
 
@@ -405,11 +407,10 @@ def render_audio(speaker: str, keep: list[tuple[float, float]], tmp: Path, denoi
     src = speaker
     if isolate:
         # TikTok sources carry a music bed under the speech: keep only the vocal stem
+        from strip_music import isolate_voice  # same two-pass fine-tuned separation as strip_music.py
         mix = tmp / "mix.wav"
         run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", speaker, "-vn", "-ac", "2", "-ar", "44100", str(mix)])
-        run([sys.executable, "-m", "demucs", "--two-stems=vocals", "-n", "htdemucs", "-d", "cpu",
-             "-o", str(tmp / "sep"), str(mix)])
-        src = str(tmp / "sep" / "htdemucs" / "mix" / "vocals.wav")
+        src = str(isolate_voice(mix, tmp / "sep"))
     parts = []
     for i, (a, b) in enumerate(keep):
         parts.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS[a{i}]")
