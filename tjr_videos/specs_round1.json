@@ -1,0 +1,240 @@
+[
+ {
+  "name": "01_patek",
+  "bait": "watch",
+  "sound": "S1_ballerszn",
+  "y": 0.584,
+  "cap1": "Where's your Patek\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "broll": [
+   "pose_arms_a",
+   "crowd_front_a",
+   "gas_rear_a",
+   "carpet_a",
+   "miami_wide_a"
+  ],
+  "steps": [
+   2,
+   2,
+   1,
+   1,
+   2
+  ]
+ },
+ {
+  "name": "02_bengal",
+  "bait": "cat",
+  "sound": "S4_404oskar",
+  "y": 0.628,
+  "cap1": "Where's your Bengal\nTJR? 😂",
+  "cap2": "Where's your Ferrari lil bro?",
+  "broll": [
+   "pose_chain_b",
+   "crowd_window_a",
+   "gas_front_a",
+   "street_front",
+   "headlight",
+   "wheel_a",
+   "miami_wide_c"
+  ],
+  "steps": [
+   2,
+   4,
+   2,
+   2,
+   2,
+   2,
+   4
+  ]
+ },
+ {
+  "name": "03_chateau",
+  "bait": "rolls",
+  "sound": "S2_bannu",
+  "y": 0.674,
+  "cap1": "Where's your château\nTJR? 😂",
+  "cap2": "Different tax bracket\nlil bro",
+  "broll": [
+   "pose_chain_c",
+   "crowd_front_b",
+   "crowd_window_b",
+   "gas_front_d",
+   "carpet_b",
+   "tail_night_a"
+  ],
+  "steps": [
+   3,
+   2,
+   2,
+   2,
+   2,
+   3
+  ]
+ },
+ {
+  "name": "04_bentley",
+  "bait": "bentley",
+  "sound": "S8_calebgordenn",
+  "y": 0.751,
+  "cap1": "Where's your Bentley\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "broll": [
+   "crowd_side",
+   "miami_wide_e",
+   "carpet_d",
+   "tail_night_c",
+   "gas_rear_b"
+  ],
+  "steps": [
+   2,
+   2,
+   1,
+   1,
+   2
+  ]
+ },
+ {
+  "name": "05_suv",
+  "bait": "gls",
+  "sound": "S5_gsgroup",
+  "y": 0.787,
+  "cap1": "Where's your SUV\nTJR? 😂",
+  "cap2": "Not even close\nlil bro",
+  "broll": [
+   "pose_chain_a",
+   "crowd_front_c",
+   "gas_front_b",
+   "gas_side",
+   "interior_a",
+   "gas_rear_c"
+  ],
+  "steps": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   2
+  ]
+ },
+ {
+  "name": "06_price",
+  "bait": "svj",
+  "sound": "S7_useheadset",
+  "y": 0.721,
+  "cap1": "How much is your car\nTJR? 😂",
+  "cap2": "More than your house\nlil bro",
+  "broll": [
+   "garage",
+   "crowd_front_d",
+   "tail_night_b",
+   "miami_wide_d",
+   "carpet_c",
+   "street_side"
+  ],
+  "steps": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ {
+  "name": "07_girl",
+  "bait": "r8",
+  "sound": "S1_ballerszn",
+  "y": 0.698,
+  "cap1": "Where's your girl\nTJR? 😂",
+  "cap2": "Where's your Ferrari lil bro?",
+  "broll": [
+   "pose_arms_b",
+   "crowd_window_c",
+   "crowd_front_b",
+   "gas_rear_d",
+   "coast"
+  ],
+  "steps": [
+   2,
+   2,
+   1,
+   1,
+   2
+  ]
+ },
+ {
+  "name": "08_networth",
+  "bait": "pj",
+  "sound": "S3_salman",
+  "y": 0.782,
+  "cap1": "What's your net worth\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "broll": [
+   "pose_chain_a",
+   "crowd_front_a",
+   "crowd_window_c",
+   "gas_rear_a",
+   "wheel_b",
+   "miami_wide_b",
+   "miami_wide_a"
+  ],
+  "steps": [
+   2,
+   2,
+   2,
+   2,
+   1,
+   4,
+   4
+  ]
+ },
+ {
+  "name": "09_topspeed",
+  "bait": "pool",
+  "sound": "S1_ballerszn",
+  "y": 0.689,
+  "cap1": "What's your top speed\nTJR? 😂",
+  "cap2": "Faster than your Ferrari\nlil bro",
+  "broll": [
+   "pose_arms_c",
+   "street_rear",
+   "street_plate",
+   "street_front",
+   "miami_wide_c"
+  ],
+  "steps": [
+   2,
+   2,
+   1,
+   1,
+   2
+  ]
+ },
+ {
+  "name": "10_interior",
+  "bait": "svjpov",
+  "sound": "S6_luxuryxsh",
+  "y": 0.761,
+  "cap1": "Where's your interior\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "broll": [
+   "gas_front_c",
+   "interior_a",
+   "gas_side",
+   "interior_b",
+   "gas_rear_c",
+   "carpet_c",
+   "carpet_b"
+  ],
+  "steps": [
+   1,
+   2,
+   1,
+   2,
+   1,
+   1,
+   2
+  ]
+ }
+]

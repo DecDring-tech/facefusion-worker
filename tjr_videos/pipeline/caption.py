@@ -54,3 +54,21 @@ def render(text, out, size=57, y_center=0.62, max_w=900):
     img.save(out)
 if __name__ == "__main__":
     render(sys.argv[1], sys.argv[2], y_center=float(sys.argv[3]) if len(sys.argv) > 3 else 0.62)
+
+def slate(note, out):
+    """Preview placeholder for a bait clip that still has to be dropped in."""
+    img = Image.new("RGB", (W, H), (18, 18, 22))
+    d = ImageDraw.Draw(img)
+    for yy in range(0, H, 4):
+        v = 18 + int(22 * yy / H); d.line([(0, yy), (W, yy)], fill=(v, v, v + 6), width=4)
+    f1 = ImageFont.truetype(FONT, 44); f2 = ImageFont.truetype(FONT, 38)
+    d.text((W / 2, 300), "DROP CLIP HERE", font=f1, fill=(255, 80, 80), anchor="mm")
+    lines, cur = [], ""
+    for w in note.split():
+        t = (cur + " " + w).strip()
+        if f2.getlength(t) <= 940: cur = t
+        else: lines.append(cur); cur = w
+    if cur: lines.append(cur)
+    for i, l in enumerate(lines):
+        d.text((W / 2, 400 + i * 54), l, font=f2, fill=(230, 230, 230), anchor="mm")
+    img.save(out)

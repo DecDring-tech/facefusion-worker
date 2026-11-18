@@ -1,8 +1,9 @@
 """Assemble TJR-style videos: [bait clip + 'Where's your X TJR? 😂'] -> drop -> [Regera B-roll cut on beats + 'lil bro' line]."""
 import json, os, subprocess, sys, math
-sys.path.insert(0, "scripts"); from caption import render
-U = "/root/.claude/uploads/508c9b53-ff4c-5ea1-99ff-9ea13eb52fbb"
-SND = json.load(open("sounds.json"))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from caption import render
+HERE = os.path.dirname(os.path.abspath(__file__))
+ASSETS = os.path.join(HERE, "assets")              # cleaned Regera/bait footage + the 8 sounds
+SND = json.load(open(os.path.join(HERE, "sounds.json")))
 OUT = sys.argv[1] if len(sys.argv) > 1 else "out"
 os.makedirs(OUT, exist_ok=True); os.makedirs("tmp", exist_ok=True)
 
@@ -36,6 +37,9 @@ R = {  # Regera B-roll shots
  "headlight": ("e1a6da07", 7.20, 8.20), "wheel_a": ("e1a6da07", 8.20, 8.83), "wheel_b": ("87eb16cc", 7.87, 8.20), "coast": ("fa30f079", 6.30, 7.23),
 }
 
+def clip_path(src):
+    return src if src.endswith(".mp4") else os.path.join(ASSETS, "clean", f"{src}.mp4")
+
 def grid(snd):
     """cut candidates after the drop: tracked beats, else synthesized from tempo."""
     s = SND[snd]; drop, dur = s["drop"], s["dur"]
@@ -48,23 +52,43 @@ def seg(src, start, length, speed, idx):
     """cut a segment from a clean clip, scaled to 1080x1920, optionally slowed (speed<1)."""
     out = f"tmp/seg_{idx:02d}.mp4"
     vf = f"setpts=PTS/{speed},scale=1080:1920:flags=lanczos,fps=30"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.3f}", "-i", f"clean/{src}.mp4", "-t", f"{length/speed + 0.05:.3f}",
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.3f}", "-i", clip_path(src), "-t", f"{length/speed + 0.05:.3f}",
                     "-vf", vf, "-t", f"{length:.3f}", "-c:v", "libx264", "-crf", "16", "-preset", "fast", "-pix_fmt", "yuv420p", out], check=True)
     return out
+
+def prep_external(path, name, note):
+    """Any-resolution clip -> 1080x1920 cover-cropped 30fps clean/ext_<name>.mp4. Missing file -> slate."""
+    out = f"tmp/ext_{name}.mp4"
+    if os.path.exists(path):
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", path, "-an",
+                        "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30",
+                        "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-pix_fmt", "yuv420p", out], check=True)
+    else:
+        from caption import slate
+        slate(note, "tmp/slate.png")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-i", "tmp/slate.png", "-t", "8", "-r", "30",
+                        "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p", out], check=True)
+    d = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", out], capture_output=True, text=True).stdout)
+    return [(out, 0.0, d)]
 
 def build(spec):
     name, snd = spec["name"], spec["sound"]
     beats, drop, dur = grid(snd)
     parts = []; idx = 0
     # ---- part 1: bait, must last exactly `drop` seconds
-    bait = BAIT[spec["bait"]]
+    bait = prep_external(spec["bait_file"], name, spec.get("clip_note", "")) if "bait_file" in spec else BAIT[spec["bait"]]
     avail = sum(e - s for _, s, e in bait)
-    speed = min(1.0, avail / drop)           # slow down if the bait is shorter than the intro
+    speed = max(0.6, min(1.0, avail / drop))  # slow down (max 0.6x) if the bait is shorter than the intro
     t = 0.0
     for (f, s, e) in bait:
         L = min((e - s) / speed, drop - t)
         if L <= 0: break
         parts.append(seg(f, s, L, speed, idx)); idx += 1; t += L
+    if drop - t > 0.05 and parts:             # still short: hold the last frame up to the drop
+        hold = f"tmp/seg_{idx:02d}.mp4"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-sseof", "-0.1", "-i", parts[-1], "-vf", f"tpad=stop_mode=clone:stop_duration={drop - t + 0.2:.3f}",
+                        "-t", f"{drop - t:.3f}", "-c:v", "libx264", "-crf", "16", "-pix_fmt", "yuv420p", hold], check=True)
+        parts.append(hold); idx += 1
     # ---- part 2: B-roll cut on the beat grid
     steps = spec.get("steps", [2, 2, 1, 1, 1, 1, 2, 2])
     cuts = []; i = -1
@@ -91,16 +115,16 @@ def build(spec):
     with open("tmp/list.txt", "w") as fh:
         for p in parts: fh.write(f"file '{os.path.abspath(p)}'\n")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", "tmp/list.txt", "-c", "copy", "tmp/joined.mp4"], check=True)
-    src_audio = [p for p in os.listdir(U) if p.startswith(SND[snd]["file"])][0]
+    src_audio = os.path.join(ASSETS, "sounds", SND[snd]["file"] + ".m4a")
     out = f"{OUT}/{name}.mp4"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "tmp/joined.mp4", "-i", "tmp/cap1.png", "-i", "tmp/cap2.png", "-i", f"{U}/{src_audio}",
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "tmp/joined.mp4", "-i", "tmp/cap1.png", "-i", "tmp/cap2.png", "-i", src_audio,
                     "-filter_complex", f"[0:v][1:v]overlay=0:0:enable='lt(t,{drop})'[a];[a][2:v]overlay=0:0:enable='gte(t,{drop})'[v]",
                     "-map", "[v]", "-map", "3:a", "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-pix_fmt", "yuv420p", "-r", "30",
                     "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out], check=True)
     d = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", out], capture_output=True, text=True).stdout)
     print(f"{name}: {d:.2f}s  sound={snd} drop@{drop}s  cuts={[round(x,2) for x in times]}")
 
-SPECS = json.load(open("specs.json"))
+SPECS = json.load(open(os.environ.get("SPECS", os.path.join(HERE, "..", "specs.json"))))
 only = sys.argv[2:] 
 for sp in SPECS:
     if only and sp["name"] not in only: continue

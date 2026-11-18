@@ -49,10 +49,42 @@ The BALLERSZN sound is used three times on purpose: it is the one that did 3.5M,
 | som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 | "SANYA TEKK (Ultra Slowed)" – H2HELL & dj nyx |
 | original sound – calebgordenn® | "Keep Knockin (feat. RBF Yunngmelo)" – LR Productions |
 
-## Re-running / making more
+## Round 2 — 10 new concepts (fresh bait clips, same people allowed)
 
-```
-python3 pipeline/clean.py            # strips the burned-in captions from the source clips (needs src/ + shots/catalog.json)
-python3 pipeline/build.py out        # renders every entry in specs.json
-```
-Add a new entry to `specs.json` (bait, two captions, sound, list of Regera shots, beat steps) to make another one.
+Previews are in `round2/preview/`: Part 2 is finished (Regera B-roll cut on the beat, caption, sound). Part 1 is a slate
+that says which clip to grab. Nothing from the 11 reference clips is reused as bait here.
+
+| # | File | Clip to grab (who / what) | Length needed | Part 1 caption | Part 2 caption | Sound (0% volume on TikTok) |
+|---|---|---|---|---|---|---|
+| 1 | `r2_01_mansion` | Jake Paul walking through his Puerto Rico mansion, pool and ocean view | 3 s | Where's your mansion TJR? 😂 | Wrong tax bracket lil bro | original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁 |
+| 2 | `r2_02_yacht` | Jack Doherty on a yacht deck in Miami, pointing at camera | 3.5 s | Where's your yacht TJR? 😂 | Where's your Ferrari lil bro? | original sound – Bannu |
+| 3 | `r2_03_urus` | Jack Doherty stepping out of the blue Urus, chains on | 3 s | Where's your Urus TJR? 😂 | Different tax bracket lil bro | original sound – calebgordenn® |
+| 4 | `r2_04_mclaren` | Jack Doherty with the orange McLaren 570S (pre-crash footage) | 4 s | Where's your McLaren TJR? 😂 | Wrong tax bracket lil bro | الصوت الأصلي – Salman |
+| 5 | `r2_05_gwagon` | Any big creator walking up to a G63 (Bryce Hall, Sneako, Logan Paul) | 3.5 s | Where's your G-Wagon TJR? 😂 | Not even close lil bro | original sound – 🃑𝔾𝕊♢.𝔾ℝ♢𝕌ℙ🃑 |
+| 6 | `r2_06_chain` | Jake Paul showing the diamond W chain, or Jack lifting his cubans to the lens | 3.5 s | Where's your chain TJR? 😂 | Where's your Ferrari lil bro? | som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 |
+| 7 | `r2_07_cullinan` | Logan or Jake Paul stepping out of the Cullinan, doors open | 5 s | Where's your Cullinan TJR? 😂 | Wrong tax bracket lil bro | origineel geluid – 𝐥𝐮𝐱𝐮𝐫𝐲𝐱𝐬𝐡 |
+| 8 | `r2_08_heli` | Logan Paul or MrBeast boarding a helicopter, blades spinning (two shots fine) | 6.5 s | Where's your helicopter TJR? 😂 | Different tax bracket lil bro | original sound – 404oskar |
+| 9 | `r2_09_cash` | Jake Paul or IShowSpeed fanning a stack of cash at the camera | 3 s | How much you make a day TJR? 😂 | More than your rent lil bro | original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁 |
+| 10 | `r2_10_garage` | Andrew Tate or Logan Paul walking down a garage full of supercars | 3 s | Where's your garage TJR? 😂 | Wrong tax bracket lil bro | original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁 |
+
+Grab the clips *without* captions on them if you can (save the TikTok, or screen-record it with the text cleared). Any
+resolution works, it gets cropped to 9:16. If a clip is shorter than the length needed the pipeline slows it slightly
+and then holds the last frame until the drop.
+
+### Finishing round 2
+
+1. Save each clip as `round2/new_bait/<number>_<name>.mp4` using the names in `round2/specs_round2.json`
+   (for example `round2/new_bait/01_mansion.mp4`).
+2. From the `tjr_videos` folder run:
+   ```
+   SPECS=round2/specs_round2.json python3 pipeline/build.py round2/final
+   ```
+   Needs `ffmpeg`, `python3` with `pillow`, `librosa` is not needed for building. Any concept whose clip is missing still
+   renders with the slate so you can keep previewing.
+3. Post with the sound from the table at 0% volume, exactly like round 1.
+
+## Making more
+
+`pipeline/` is self-contained: `assets/clean/` holds the caption-free Regera footage, `assets/sounds/` holds the 8 sounds,
+`sounds.json` holds the drop and beat grid for each. Add an entry to a specs file (bait file or built-in bait, two captions,
+sound, list of Regera shots, beat steps) and run `build.py`. `clean.py` is the caption stripper used on the source clips.
