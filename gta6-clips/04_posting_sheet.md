@@ -48,3 +48,45 @@ All clips: 1080x1920, 15 to 24 seconds, no logos, English on-screen text, stream
 
 ## Order to post (best first)
 1. clix/01 (drama, the format that did 276K this week) 2. lacy/03 3. clix/04 4. lacy/05 5. lauren_hamden/02 6. clix/02 7. lacy/01 8. lacy/04 9. clix/03 10. lauren_hamden/01 then the rest. Space posts 1 to 2 hours apart on the same account.
+
+---
+
+# Batch 2 — 20 more clips (files 06 to 10 in each folder), 18 Nov 2026
+
+## LACY (GTA 6 account, #LACY)
+| File | Caption to paste |
+|---|---|
+| lacy/06_lacy_countdown.mp4 | the last 30 seconds before GTA 6 😭 #LACY #gta6 #lacyclips #fyp |
+| lacy/07_lacy_alligator.mp4 | Lacy vs an alligator, who you got? 🐊 #LACY #gta6 #lacyclips #fyp |
+| lacy/08_lacy_first_mission_failed.mp4 | first mission, first fail 😭 #LACY #gta6 #lacyclips #fyp |
+| lacy/09_lacy_bike_crash.mp4 | "that was sick" 💀 #LACY #gta6 #lacyclips #fyp #gtafunny |
+| lacy/10_lacy_shoe_store.mp4 | Lacy found the shoe store and lost it 😭 #LACY #gta6 #lacyclips #fyp #sneakers |
+
+## CLIX (GTA 6 account, #Clix)
+| File | Caption to paste |
+|---|---|
+| clix/06_clix_map_is_mid.mp4 | Is the GTA 6 map too small? 👀 #Clix #gta6 #clixclips #fyp |
+| clix/07_clix_driving_is_hard.mp4 | Clix can't drive in GTA 6 😭 #Clix #gta6 #clixclips #fyp |
+| clix/08_clix_vs_police.mp4 | "don't touch me" 😭 #Clix #gta6 #clixclips #fyp #gtafunny |
+| clix/09_clix_first_to_fly.mp4 | first person to fly in GTA 6 ✈️ #Clix #gta6 #clixclips #fyp |
+| clix/10_clix_jumped_by_bodyguards.mp4 | the bodyguards were NOT having it 💀 #Clix #gta6 #clixclips #fyp |
+
+## YOURRAGE (hold until his playthrough starts, see note above)
+| File | Caption to paste |
+|---|---|
+| yourrage/06_yourrage_trunk_plan.mp4 | do NOT hide in his trunk 💀 #YourRAGE #gta6 #yourrageclips #fyp |
+| yourrage/07_yourrage_dog_sent_after_you.mp4 | GTA 6 NPCs will send a dog after you 😭 #YourRAGE #gta6 #fyp |
+| yourrage/08_yourrage_lawyer_dumpster.mp4 | a lawyer in a dumpster 😭 #YourRAGE #gta6 #yourrageclips #fyp |
+| yourrage/09_yourrage_everything_to_do.mp4 | everything you can do in GTA 6 👀 #YourRAGE #gta6 #fyp |
+| yourrage/10_yourrage_24_7_marathon.mp4 | 24/7 until he beats it 🔒 #YourRAGE #gta6 #yourrageclips #fyp |
+
+## LAUREN HAMDEN (dedicated Lauren account only, @LaurenHamden #LaurenHamden, bio link required)
+| File | Caption to paste |
+|---|---|
+| lauren_hamden/06_lauren_katie_drives.mp4 | Katie has no license btw 😭 @LaurenHamden #LaurenHamden #KatieHamden #gta6 #fyp |
+| lauren_hamden/07_lauren_broke.mp4 | can't even buy a shirt 😭 @LaurenHamden #LaurenHamden #gta6 #fyp |
+| lauren_hamden/08_lauren_cops_know_her_face.mp4 | "they know my face, I'm done" 😭 @LaurenHamden #LaurenHamden #gta6 #fyp |
+| lauren_hamden/09_lauren_radio_singalong.mp4 | GTA 6 radio got her 🎶 @LaurenHamden #LaurenHamden #gta6 #fyp |
+| lauren_hamden/10_lauren_everyones_shooting.mp4 | "everyone's shooting me" 😭 @LaurenHamden #LaurenHamden #gta6 #fyp |
+
+Sources for batch 2: Lacy and Clix Twitch clips from their 18 Nov marathon VODs; Lauren Hamden's own live GTA 6 VOD (twitch.tv/videos/2932652958, 55 min to 1 h 35 min) plus one clip; YourRAGE's 18 Nov "Prepping for GTA 6" stream clips.
