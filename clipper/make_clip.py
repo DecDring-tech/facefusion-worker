@@ -239,6 +239,69 @@ def plan_shots(words: list[Word], total: float, rng: random.Random, hook: float,
     return merged
 
 
+BEST_WORDS = {
+    "money", "rich", "broke", "poor", "lazy", "discipline", "focus", "locked", "dream", "win", "lose", "fear",
+    "excuse", "excuses", "nobody", "cares", "alone", "lonely", "future", "change", "quit", "never", "success",
+    "successful", "fail", "prove", "sacrifice", "pain", "truth", "respect", "lesson", "wake", "millionaire",
+    "million", "lamborghini", "peace", "happiness", "stop", "start", "now", "scrolling", "competition",
+    "boring", "comfortable", "weekend", "job", "boss", "phone", "victories", "dream", "sign", "years", "life",
+    "hard", "work", "believe", "god", "every", "day", "today", "tomorrow", "later", "right",
+}
+
+
+def plan_hook_best_end(words: list[Word], total: float, hook: float, closer: float) -> list[Shot]:
+    """Face for the hook, b-roll while he talks, face back for the strongest sentence, face for the end."""
+    # sentences on the output timeline
+    sents, cur = [], []
+    for w in words:
+        cur.append(w)
+        if w.text[-1] in ".?!" and len(cur) >= 3:
+            sents.append(cur)
+            cur = []
+    if cur:
+        sents.append(cur)
+    bounds = sorted({round(w.out_end, 3) for w in words} | {0.0, round(total, 3)})
+    snap = lambda t: min(bounds, key=lambda b: abs(b - t))
+    hook_end = snap(hook)
+    closer_start = snap(total - closer)
+    # best sentence: most hitting words per second, must sit between hook and closer
+    best = None
+    for sn in sents:
+        a, b = sn[0].out_start, sn[-1].out_end
+        if a < hook_end + 1.0 or b > closer_start - 0.8 or b - a < 1.5:
+            continue
+        score = sum(1 for w in sn if re.sub(r"[^a-z']", "", w.text.lower()) in BEST_WORDS) / max(b - a, 1)
+        if best is None or score > best[0]:
+            best = (score, a, b)
+    shots = [Shot("face", 0.0, hook_end, punch=1.0)]
+    if best:
+        _, a, b = best
+        a, b = snap(a), snap(b)
+        shots.append(Shot("broll", hook_end, a))
+        shots.append(Shot("face", a, b, punch=1.12))
+        shots.append(Shot("broll", b, closer_start))
+    else:
+        shots.append(Shot("broll", hook_end, closer_start))
+    shots.append(Shot("face", closer_start, total, punch=1.06))
+    # long b-roll stretches get cut into 2-3.5 s shots so the b-roll itself changes
+    out: list[Shot] = []
+    rng = random.Random(len(words))
+    for sh in shots:
+        if sh.kind == "broll" and sh.dur > 4.0:
+            t = sh.out_start
+            while sh.out_end - t > 0.05:
+                nxt = min(sh.out_end, snap(t + rng.uniform(2.0, 3.5)))
+                if nxt <= t + 0.6:
+                    nxt = sh.out_end
+                if sh.out_end - nxt < 1.2:
+                    nxt = sh.out_end
+                out.append(Shot("broll", t, nxt))
+                t = nxt
+        elif sh.dur > 0.05:
+            out.append(sh)
+    return out
+
+
 def split_by_keep(shots: list[Shot], keep: list[tuple[float, float]]) -> list[Shot]:
     """Face shots must map back to source time; a tightened edit can put a
     silence-cut inside a shot, so split into pieces that each map to one keep range."""
@@ -385,9 +448,45 @@ def face_filter(info: dict, punch: float, dur: float, centre: tuple[float, float
             + push_filter(1.0, 1.0 + push, dur, hit))
 
 
-def broll_filter(info: dict, dur: float, rng: random.Random) -> str:
-    """Cover-crop to 9:16 with a slow push in or out (alternates)."""
-    zoom = rng.choice([0.07, -0.07, 0.05, 0.09])
+_MOTION: dict[str, float] = {}
+
+
+def motion_score(path: str) -> float:
+    """Mean absolute frame-to-frame change (0-255) sampled across the clip; ~0 = static image."""
+    if path in _MOTION:
+        return _MOTION[path]
+    try:
+        import cv2
+        cap = cv2.VideoCapture(path)
+        n = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        prev, diffs = None, []
+        for k in range(0, max(n - 2, 1), max(1, n // 12)):
+            cap.set(cv2.CAP_PROP_POS_FRAMES, k)
+            ok, f = cap.read()
+            if not ok:
+                break
+            g = cv2.cvtColor(cv2.resize(f, (96, 170)), cv2.COLOR_BGR2GRAY).astype("float32")
+            if prev is not None:
+                diffs.append(float(abs(g - prev).mean()))
+            prev = g
+        cap.release()
+        score = sum(diffs) / len(diffs) if diffs else 0.0
+    except Exception:
+        score = 5.0
+    _MOTION[path] = score
+    return score
+
+
+def broll_filter(info: dict, dur: float, rng: random.Random, motion: float = 5.0) -> str:
+    """Cover-crop to 9:16 with a slow push in or out (alternates). The less the footage
+    itself moves, the stronger the push, so a near-still shot still reads as video."""
+    if motion < 1.0:
+        amp = rng.choice([0.16, 0.18, -0.16])
+    elif motion < 3.0:
+        amp = rng.choice([0.11, 0.13, -0.11])
+    else:
+        amp = rng.choice([0.07, -0.07, 0.06, 0.09])
+    zoom = amp
     z0, z1 = (1.0, 1.0 + zoom) if zoom > 0 else (1.0 - zoom, 1.0)
     return (f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
             + push_filter(z0, z1, dur))
@@ -402,7 +501,7 @@ def render_piece(idx: int, s: Shot, speaker: str, sp_info: dict, look: str, tmp:
         vf = face_filter(sp_info, s.punch, s.dur, centre, crop_top, crop_bottom, s.hit)
     else:
         src, ss = s.src, s.src_start
-        vf = broll_filter(probe(src), s.dur, rng)
+        vf = broll_filter(probe(src), s.dur, rng, motion_score(src))
         look = broll_look or look
     vf += "," + LOOKS[look] + f",fps={FPS},format=yuv420p"
     run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ss:.3f}", "-i", src, "-t", f"{s.dur:.3f}",
@@ -619,7 +718,7 @@ def main() -> None:
     ap.add_argument("--out", required=True)
     ap.add_argument("--style", choices=STYLES, default="serif", help="caption style")
     ap.add_argument("--look", choices=LOOKS, default="moody", help="colour grade")
-    ap.add_argument("--broll-look", choices=LOOKS, default=None,
+    ap.add_argument("--broll-look", choices=LOOKS, default="lift",
                     help="separate grade for b-roll (use 'clean' when the b-roll is already graded dark)")
     ap.add_argument("--hook", type=float, default=3.2, help="seconds on the face before the first b-roll")
     ap.add_argument("--face-ratio", type=float, default=0.5, help="target share of screen time on the speaker")
@@ -639,6 +738,9 @@ def main() -> None:
     ap.add_argument("--model", default="small", help="faster-whisper model size")
     ap.add_argument("--seed", type=int, default=7, help="shot-pattern / b-roll order seed; change for a different cut")
     ap.add_argument("--face-only", action="store_true", help="no b-roll at all")
+    ap.add_argument("--structure", choices=["base", "hook-best-end"], default="base",
+                    help="base: alternate face/b-roll; hook-best-end: face for the hook, b-roll while he talks, "
+                         "face back on the strongest line, face at the end")
     ap.add_argument("--crop-top", type=float, default=0.0,
                     help="fraction of the speaker frame to exclude at the top (burned-in TikTok text), e.g. 0.14")
     ap.add_argument("--crop-bottom", type=float, default=0.0, help="same for the bottom (captions, UI)")
@@ -678,6 +780,8 @@ def main() -> None:
 
     if args.face_only:
         shots = [Shot("face", 0.0, total, punch=1.0)]
+    elif args.structure == "hook-best-end":
+        shots = plan_hook_best_end(words, total, args.hook, args.closer)
     else:
         hard = []
         acc = 0.0
