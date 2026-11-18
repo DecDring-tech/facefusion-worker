@@ -181,7 +181,7 @@ def src_to_out(keep: list[tuple[float, float]]):
 
 def plan_shots(words: list[Word], total: float, rng: random.Random, hook: float, face_len: tuple[float, float],
                broll_len: tuple[float, float], face_ratio: float, closer: float,
-               hard_cuts: list[float] | None = None) -> list[Shot]:
+               hard_cuts: list[float] | None = None, hits: bool = True) -> list[Shot]:
     """Alternate face / b-roll, snapping every cut to the end of a word."""
     bounds = sorted({round(w.out_end, 3) for w in words} | {0.0, round(total, 3)})
     hard = sorted(hard_cuts or [])
@@ -234,7 +234,7 @@ def plan_shots(words: list[Word], total: float, rng: random.Random, hook: float,
     for s in merged:
         if s.kind == "face":
             s.punch = pattern[i % len(pattern)]
-            s.hit = 0.10 if i == 0 else 0.05
+            s.hit = (0.10 if i == 0 else 0.05) if hits else 0.0
             i += 1
     return merged
 
@@ -568,7 +568,7 @@ def emphasise(text: str, size: int) -> str:
     return " ".join(out)
 
 
-def write_ass(words: list[Word], style: str, path: Path, handle: str | None) -> None:
+def write_ass(words: list[Word], style: str, path: Path, handle: str | None, emphasis: bool = False) -> None:
     st = STYLES[style]
     # ASS colours are &HAABBGGRR
     header = f"""[Script Info]
@@ -595,7 +595,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         if st["pop"]:
             fx += "\\fscx90\\fscy90\\t(0,70,\\fscx100\\fscy100)"
         fx += "}"
-        text = emphasise(text, st["size"])
+        if emphasis:
+            text = emphasise(text, st["size"])
         lines.append(f"Dialogue: 0,{fmt_ass(a)},{fmt_ass(b)},Cap,,0,0,0,,{fx}{text}\n")
     if handle and words:
         end = words[-1].out_end + 1
@@ -615,12 +616,15 @@ def main() -> None:
     ap.add_argument("--out", required=True)
     ap.add_argument("--style", choices=STYLES, default="serif", help="caption style")
     ap.add_argument("--look", choices=LOOKS, default="moody", help="colour grade")
-    ap.add_argument("--hook", type=float, default=2.8, help="seconds on the face before the first b-roll")
+    ap.add_argument("--hook", type=float, default=3.2, help="seconds on the face before the first b-roll")
     ap.add_argument("--face-ratio", type=float, default=0.5, help="target share of screen time on the speaker")
     ap.add_argument("--closer", type=float, default=2.5, help="final seconds that always stay on the face")
     ap.add_argument("--no-tighten", action="store_true", help="keep pauses instead of cutting dead air")
     ap.add_argument("--no-denoise", action="store_true")
-    ap.add_argument("--echo", type=float, default=1.0,
+    ap.add_argument("--energy", choices=["classic", "punchy"], default="classic",
+                    help="classic: no echo, no zoom hits, slower cuts, plain captions (the posted look); "
+                         "punchy: reverb, cut hits, faster b-roll, key-word emphasis")
+    ap.add_argument("--echo", type=float, default=None,
                     help="voice echo amount: 0 = dry, 1 = default room echo with swells on punchlines, 1.5 = heavy")
     ap.add_argument("--keep-music", action="store_true",
                     help="skip the Demucs voice isolation (default strips any music bed under the speech)")
@@ -634,6 +638,9 @@ def main() -> None:
     ap.add_argument("--keep-tmp", action="store_true")
     args = ap.parse_args()
 
+    punchy = args.energy == "punchy"
+    if args.echo is None:
+        args.echo = 1.0 if punchy else 0.0
     rng = random.Random(args.seed)
     speaker = str(Path(args.speaker).resolve())
     sp_info = probe(speaker)
@@ -670,7 +677,9 @@ def main() -> None:
         for a, b in keep[:-1]:
             acc += b - a
             hard.append(round(acc, 3))
-        shots = plan_shots(words, total, rng, args.hook, (2.0, 3.8), (1.3, 2.4), args.face_ratio, args.closer, hard)
+        face_len, broll_len = ((2.0, 3.8), (1.3, 2.4)) if punchy else ((2.4, 4.6), (1.8, 3.4))
+        shots = plan_shots(words, total, rng, args.hook, face_len, broll_len, args.face_ratio, args.closer, hard,
+                           hits=punchy)
     pieces = split_by_keep(shots, keep)
     if not args.face_only:
         assign_broll(pieces, broll, rng)
@@ -703,7 +712,7 @@ def main() -> None:
 
     print("[5/5] captions + mux …")
     ass = tmp / "captions.ass"
-    write_ass(words, args.style, ass, args.handle)
+    write_ass(words, args.style, ass, args.handle, emphasis=punchy)
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-i", audio,
