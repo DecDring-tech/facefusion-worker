@@ -4,7 +4,8 @@ import cv2, subprocess, sys, numpy as np
 out, src, s, e = sys.argv[1], sys.argv[2], float(sys.argv[3]), float(sys.argv[4])
 bt, bb = (float(sys.argv[5]), float(sys.argv[6])) if len(sys.argv) > 6 else (0.40, 0.86)
 OPEN = int(sys.argv[7]) if len(sys.argv) > 7 else 2   # min stroke width kept (px); 5 ignores thin chain links
-K_TOP = cv2.getStructuringElement(cv2.MORPH_RECT, (25, 25)); K_DIL = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))
+KS = int(sys.argv[8]) if len(sys.argv) > 8 else 25
+K_TOP = cv2.getStructuringElement(cv2.MORPH_RECT, (KS, KS)); K_DIL = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))
 def cand(frame, y0, y1):
     band = frame[y0:y1]; gray = cv2.cvtColor(band, cv2.COLOR_BGR2GRAY)
     mx = band.max(axis=2).astype(int); mn = band.min(axis=2).astype(int)
@@ -31,7 +32,8 @@ while True:
 p.wait()
 y0, y1 = int(H * bt), int(H * bb)
 # word-by-word captions change every few frames: use a short temporal window instead of the whole segment
-n = len(frames); win = 8
+n = len(frames); win = int(sys.argv[9]) if len(sys.argv) > 9 else 8
+DIL = int(sys.argv[10]) if len(sys.argv) > 10 else 2
 masks = [cand(f, y0, y1) for f in frames]
 o = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", "30", "-i", "-",
                       "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-pix_fmt", "yuv420p", out], stdin=subprocess.PIPE)
@@ -39,7 +41,7 @@ for i, f in enumerate(frames):
     a, b = max(0, i - win), min(n, i + win + 1)
     acc = sum(masks[a:b]) / (b - a)
     m = (acc >= 0.5).astype(np.uint8) * 255
-    m = cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((OPEN, OPEN), np.uint8)); m = cv2.dilate(m, K_DIL, iterations=2)
+    m = cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((OPEN, OPEN), np.uint8)); m = cv2.dilate(m, K_DIL, iterations=DIL)
     full = np.zeros((H, W), np.uint8); full[y0:y1] = m
     g = cv2.inpaint(f, full, 7, cv2.INPAINT_TELEA) if full.any() else f
     o.stdin.write(g.tobytes())
