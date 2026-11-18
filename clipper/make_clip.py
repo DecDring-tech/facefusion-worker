@@ -91,6 +91,7 @@ class Shot:
     src_start: float = 0.0  # face: speaker source time; broll: offset in broll file
     src: str = ""           # broll file
     punch: float = 1.0      # face zoom factor
+    hit: float = 0.0        # extra zoom punch on the first frames of the shot
     word_text: str = ""     # debugging only
 
     @property
@@ -233,6 +234,7 @@ def plan_shots(words: list[Word], total: float, rng: random.Random, hook: float,
     for s in merged:
         if s.kind == "face":
             s.punch = pattern[i % len(pattern)]
+            s.hit = 0.10 if i == 0 else 0.05
             i += 1
     return merged
 
@@ -253,7 +255,8 @@ def split_by_keep(shots: list[Shot], keep: list[tuple[float, float]]) -> list[Sh
         for o0, o1, a in spans:
             lo, hi = max(s.out_start, o0), min(s.out_end, o1)
             if hi - lo > 0.04:
-                pieces.append(Shot("face", lo, hi, src_start=a + (lo - o0), punch=s.punch))
+                pieces.append(Shot("face", lo, hi, src_start=a + (lo - o0), punch=s.punch,
+                                   hit=s.hit if abs(lo - s.out_start) < 0.02 else 0.0))
     pieces.sort(key=lambda p: p.out_start)
     # a face sliver under 0.35 s next to a b-roll shot reads as a flash frame: give that time to the b-roll
     out: list[Shot] = []
@@ -344,18 +347,22 @@ def detect_face_center(path: str, t0: float, t1: float) -> tuple[float, float] |
     return float(xs[len(xs) // 2]), float(ys[len(ys) // 2])
 
 
-def push_filter(z0: float, z1: float, dur: float) -> str:
+def push_filter(z0: float, z1: float, dur: float, punch: float = 0.0, punch_frames: int = 7) -> str:
     """Smooth zoom from factor z0 to z1 over the shot without changing frame size:
-    a perspective warp whose source quad shrinks (push in) or grows (push out)."""
+    a perspective warp whose source quad shrinks (push in) or grows (push out).
+    punch > 0 adds a quick extra zoom on the first frames that settles back (a cut 'hit')."""
     n = max(1, int(round(dur * FPS)))
-    k = f"0.5*(1-1/({z0}+({z1}-{z0})*min(on,{n})/{n}))"
+    z = f"({z0}+({z1}-{z0})*min(on,{n})/{n})"
+    if punch > 0:
+        z = f"({z}*(1+{punch}*max(0,1-on/{punch_frames})))"
+    k = f"0.5*(1-1/{z})"
     return (f"perspective=x0='W*({k})':y0='H*({k})':x1='W*(1-({k}))':y1='H*({k})':"
             f"x2='W*({k})':y2='H*(1-({k}))':x3='W*(1-({k}))':y3='H*(1-({k}))':"
             f"interpolation=cubic:eval=frame")
 
 
 def face_filter(info: dict, punch: float, dur: float, centre: tuple[float, float] | None,
-                crop_top: float = 0.0, crop_bottom: float = 0.0) -> str:
+                crop_top: float = 0.0, crop_bottom: float = 0.0, hit: float = 0.0) -> str:
     """Reframe any aspect to 9:16 around the face, then punch-in + slow push.
     crop_top / crop_bottom exclude a band of the source (burned-in TikTok text, UI)."""
     sw, sh = info["w"], info["h"]
@@ -373,7 +380,7 @@ def face_filter(info: dict, punch: float, dur: float, centre: tuple[float, float
     y = min(max(cy * sh - ch * 0.38, crop_top * sh), sh * (1 - crop_bottom) - ch)
     push = 0.035  # 3.5 % slow push over the shot, keeps static interviews alive
     return (f"crop={cw}:{ch}:{int(x)}:{int(y)},scale={W}:{H},"
-            + push_filter(1.0, 1.0 + push, dur))
+            + push_filter(1.0, 1.0 + push, dur, hit))
 
 
 def broll_filter(info: dict, dur: float, rng: random.Random) -> str:
@@ -390,7 +397,7 @@ def render_piece(idx: int, s: Shot, speaker: str, sp_info: dict, look: str, tmp:
     out = tmp / f"piece_{idx:03d}.mp4"
     if s.kind == "face":
         src, ss = speaker, s.src_start
-        vf = face_filter(sp_info, s.punch, s.dur, centre, crop_top, crop_bottom)
+        vf = face_filter(sp_info, s.punch, s.dur, centre, crop_top, crop_bottom, s.hit)
     else:
         src, ss = s.src, s.src_start
         vf = broll_filter(probe(src), s.dur, rng)
@@ -401,8 +408,42 @@ def render_piece(idx: int, s: Shot, speaker: str, sp_info: dict, look: str, tmp:
     return str(out)
 
 
+def echo_chain(words: list["Word"], total: float, amount: float) -> str:
+    """Dry voice + a room echo. The wet level sits low under the speech and swells for ~1 s
+    after every sentence-final word, so punchlines ring out the way the Tate edits do."""
+    if amount <= 0:
+        return "[g]acopy[mix]"
+    wet = f"aecho=0.7:0.55:60|120|190|270:{0.42*amount:.2f}|{0.30*amount:.2f}|{0.20*amount:.2f}|{0.12*amount:.2f}"
+    tails = [w for w in words if w.text[-1] in ".?!"]
+    if words and words[-1] not in tails:
+        tails.append(words[-1])
+    swell = "".join(f",volume=enable='between(t,{w.out_end - 0.05:.3f},{min(total + 1.5, w.out_end + 1.1):.3f})':volume=3.2"
+                    for w in tails)
+    return (f"[g]asplit[dry][w];[w]{wet},volume={0.16 * amount:.3f}{swell}[wet];"
+            f"[dry][wet]amix=inputs=2:duration=longest:normalize=0[mix]")
+
+
+def gate_chain(words: list["Word"], total: float, pad: float = 0.12, min_gap: float = 0.35) -> str:
+    """Mute the gaps between words (where separation bleed lives)."""
+    spans: list[list[float]] = []
+    for w in words:
+        a, b = w.out_start - pad, w.out_end + pad
+        if spans and a <= spans[-1][1]:
+            spans[-1][1] = max(spans[-1][1], b)
+        else:
+            spans.append([a, b])
+    gaps, t = [], 0.0
+    for a, b in spans:
+        if a - t >= min_gap:
+            gaps.append((t, a))
+        t = max(t, b)
+    if total - t >= min_gap:
+        gaps.append((t, total))
+    return "".join(f",volume=enable='between(t,{a:.3f},{b:.3f})':volume=0" for a, b in gaps)
+
+
 def render_audio(speaker: str, keep: list[tuple[float, float]], tmp: Path, denoise: bool,
-                 isolate: bool = True) -> str:
+                 isolate: bool = True, words: list["Word"] | None = None, echo: float = 1.0) -> str:
     out = tmp / "voice.wav"
     src = speaker
     if isolate:
@@ -415,11 +456,16 @@ def render_audio(speaker: str, keep: list[tuple[float, float]], tmp: Path, denoi
     for i, (a, b) in enumerate(keep):
         parts.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS[a{i}]")
     chain = "".join(f"[a{i}]" for i in range(len(keep))) + f"concat=n={len(keep)}:v=0:a=1[cat]"
-    post = "[cat]highpass=f=70,lowpass=f=12000,"
+    total = sum(b - a for a, b in keep)
+    # silence after the last word so the echo has room to ring out
+    post = "[cat]apad=pad_dur=1.3,highpass=f=70,lowpass=f=12000,"
     if denoise:
         post += "afftdn=nf=-28:nr=10,"
-    post += "acompressor=threshold=-18dB:ratio=2.5:attack=8:release=120,loudnorm=I=-14:TP=-1.5:LRA=9[out]"
-    fc = ";".join(parts + [chain, post])
+    post += "acompressor=threshold=-18dB:ratio=2.5:attack=8:release=120"
+    post += (gate_chain(words, total) if words else "") + "[g]"
+    mix = echo_chain(words or [], total, echo)
+    fin = f"[mix]atrim=0:{total + 1.2:.3f},loudnorm=I=-14:TP=-1.5:LRA=9[out]"
+    fc = ";".join(parts + [chain, post, mix, fin])
     run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", fc, "-map", "[out]",
          "-ar", "48000", "-ac", "2", str(out)])
     return str(out)
@@ -476,6 +522,28 @@ def chunk_words(words: list[Word], chunk: int, maxchars: int) -> list[tuple[floa
     return held
 
 
+EMPHASIS = {
+    "money", "rich", "broke", "poor", "lazy", "laziness", "discipline", "focus", "locked", "dream", "dreams",
+    "win", "lose", "fight", "fear", "scared", "excuse", "excuses", "nobody", "cares", "alone", "lonely", "god",
+    "future", "change", "quit", "never", "success", "successful", "fail", "failure", "prove", "sacrifice", "pain",
+    "truth", "respect", "family", "lesson", "wake", "hustle", "millionaire", "million", "billionaire", "lamborghini",
+    "peace", "happiness", "happy", "stop", "start", "now", "right", "scrolling", "competition", "bot", "lobby",
+    "boring", "comfortable", "uncomfortable", "weekend", "job", "boss", "phone", "filming", "victories",
+}
+
+
+def emphasise(text: str, size: int) -> str:
+    """Scale the hitting words up a notch inside the caption."""
+    out = []
+    for tok in text.split(" "):
+        core = re.sub(r"[^a-z0-9']", "", tok.lower())
+        if core in EMPHASIS or core.endswith("k") and core[:-1].isdigit() or core.startswith("£") or core.startswith("$"):
+            out.append(f"{{\\fs{int(size * 1.16)}}}{tok}{{\\fs{size}}}")
+        else:
+            out.append(tok)
+    return " ".join(out)
+
+
 def write_ass(words: list[Word], style: str, path: Path, handle: str | None) -> None:
     st = STYLES[style]
     # ASS colours are &HAABBGGRR
@@ -503,6 +571,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         if st["pop"]:
             fx += "\\fscx90\\fscy90\\t(0,70,\\fscx100\\fscy100)"
         fx += "}"
+        text = emphasise(text, st["size"])
         lines.append(f"Dialogue: 0,{fmt_ass(a)},{fmt_ass(b)},Cap,,0,0,0,,{fx}{text}\n")
     if handle and words:
         end = words[-1].out_end + 1
@@ -522,11 +591,13 @@ def main() -> None:
     ap.add_argument("--out", required=True)
     ap.add_argument("--style", choices=STYLES, default="serif", help="caption style")
     ap.add_argument("--look", choices=LOOKS, default="moody", help="colour grade")
-    ap.add_argument("--hook", type=float, default=3.2, help="seconds on the face before the first b-roll")
+    ap.add_argument("--hook", type=float, default=2.8, help="seconds on the face before the first b-roll")
     ap.add_argument("--face-ratio", type=float, default=0.5, help="target share of screen time on the speaker")
     ap.add_argument("--closer", type=float, default=2.5, help="final seconds that always stay on the face")
     ap.add_argument("--no-tighten", action="store_true", help="keep pauses instead of cutting dead air")
     ap.add_argument("--no-denoise", action="store_true")
+    ap.add_argument("--echo", type=float, default=1.0,
+                    help="voice echo amount: 0 = dry, 1 = default room echo with swells on punchlines, 1.5 = heavy")
     ap.add_argument("--keep-music", action="store_true",
                     help="skip the Demucs voice isolation (default strips any music bed under the speech)")
     ap.add_argument("--handle", default=None, help="small @handle at the bottom (off by default)")
@@ -575,7 +646,7 @@ def main() -> None:
         for a, b in keep[:-1]:
             acc += b - a
             hard.append(round(acc, 3))
-        shots = plan_shots(words, total, rng, args.hook, (2.4, 4.6), (1.8, 3.4), args.face_ratio, args.closer, hard)
+        shots = plan_shots(words, total, rng, args.hook, (2.0, 3.8), (1.3, 2.4), args.face_ratio, args.closer, hard)
     pieces = split_by_keep(shots, keep)
     if not args.face_only:
         assign_broll(pieces, broll, rng)
@@ -599,7 +670,12 @@ def main() -> None:
     lst.write_text("".join(f"file '{Path(fp).name}'\n" for fp in files))
     video = tmp / "video.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(video)])
-    audio = render_audio(speaker, keep, tmp, not args.no_denoise, not args.keep_music)
+    # hold the last frame under the echo tail
+    held = tmp / "video_held.mp4"
+    run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-vf", "tpad=stop_mode=clone:stop_duration=1",
+         "-c:v", "libx264", "-preset", "fast", "-crf", "14", "-an", str(held)])
+    video = held
+    audio = render_audio(speaker, keep, tmp, not args.no_denoise, not args.keep_music, words, args.echo)
 
     print("[5/5] captions + mux …")
     ass = tmp / "captions.ass"
@@ -609,7 +685,7 @@ def main() -> None:
     run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-i", audio,
          "-vf", f"ass={ass}", "-c:v", "libx264", "-preset", "slow", "-crf", "19",
          "-maxrate", "12M", "-bufsize", "24M", "-pix_fmt", "yuv420p",
-         "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", str(out)])
+         "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-t", f"{total + 0.8:.3f}", str(out)])
     (out.with_suffix(".plan.json")).write_text(json.dumps({
         "speaker": speaker, "start": args.start, "end": args.end, "style": args.style, "look": args.look,
         "seed": args.seed, "keep": keep, "duration": total,
