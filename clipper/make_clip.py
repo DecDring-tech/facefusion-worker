@@ -393,7 +393,7 @@ def broll_filter(info: dict, dur: float, rng: random.Random) -> str:
 
 def render_piece(idx: int, s: Shot, speaker: str, sp_info: dict, look: str, tmp: Path, rng: random.Random,
                  centre: tuple[float, float] | None, threads: int, crop_top: float = 0.0,
-                 crop_bottom: float = 0.0) -> str:
+                 crop_bottom: float = 0.0, broll_look: str | None = None) -> str:
     out = tmp / f"piece_{idx:03d}.mp4"
     if s.kind == "face":
         src, ss = speaker, s.src_start
@@ -401,6 +401,7 @@ def render_piece(idx: int, s: Shot, speaker: str, sp_info: dict, look: str, tmp:
     else:
         src, ss = s.src, s.src_start
         vf = broll_filter(probe(src), s.dur, rng)
+        look = broll_look or look
     vf += "," + LOOKS[look] + f",fps={FPS},format=yuv420p"
     run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ss:.3f}", "-i", src, "-t", f"{s.dur:.3f}",
          "-vf", vf, "-an", "-c:v", "libx264", "-preset", "fast", "-crf", "14",
@@ -616,6 +617,8 @@ def main() -> None:
     ap.add_argument("--out", required=True)
     ap.add_argument("--style", choices=STYLES, default="serif", help="caption style")
     ap.add_argument("--look", choices=LOOKS, default="moody", help="colour grade")
+    ap.add_argument("--broll-look", choices=LOOKS, default=None,
+                    help="separate grade for b-roll (use 'clean' when the b-roll is already graded dark)")
     ap.add_argument("--hook", type=float, default=3.2, help="seconds on the face before the first b-roll")
     ap.add_argument("--face-ratio", type=float, default=0.5, help="target share of screen time on the speaker")
     ap.add_argument("--closer", type=float, default=2.5, help="final seconds that always stay on the face")
@@ -697,7 +700,7 @@ def main() -> None:
     with ThreadPoolExecutor(max_workers=2) as ex:
         files = list(ex.map(lambda ip: render_piece(ip[0], ip[1], speaker, sp_info, args.look, tmp,
                                                     random.Random(args.seed + ip[0]), centre, threads,
-                                                    args.crop_top, args.crop_bottom),
+                                                    args.crop_top, args.crop_bottom, args.broll_look),
                             enumerate(pieces)))
     lst = tmp / "concat.txt"
     lst.write_text("".join(f"file '{Path(fp).name}'\n" for fp in files))

@@ -37,7 +37,7 @@ def duration(path: Path) -> float:
         return 0.0
 
 
-def scene_cuts(path: Path, thresh: float = 0.28) -> list[float]:
+def scene_cuts(path: Path, thresh: float = 0.12) -> list[float]:
     p = run(["ffmpeg", "-nostdin", "-i", str(path), "-vf", f"select='gt(scene,{thresh})',showinfo", "-an", "-f", "null", "-"])
     return [float(x) for x in re.findall(r"pts_time:\s*([0-9.]+)", p.stderr)]
 
