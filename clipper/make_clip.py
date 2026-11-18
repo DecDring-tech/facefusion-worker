@@ -408,18 +408,40 @@ def render_piece(idx: int, s: Shot, speaker: str, sp_info: dict, look: str, tmp:
     return str(out)
 
 
+def write_impulse(path: Path, seconds: float = 1.4, decay: float = 6.0, pre_delay: float = 0.03) -> None:
+    """Synthesise a plate-style reverb impulse: exponentially decaying noise that darkens along the tail."""
+    import numpy as np
+    import wave
+    sr = 48000
+    n = int(sr * seconds)
+    t = np.arange(n) / sr
+    noise = np.random.default_rng(3).standard_normal(n) * np.exp(-t * decay)
+    y = np.empty(n)
+    acc = 0.0
+    for i in range(n):  # one-pole low-pass whose cut-off closes as the tail dies
+        coef = 0.15 + 0.6 * (t[i] / seconds)
+        acc += (noise[i] - acc) * (1 - coef)
+        y[i] = acc
+    y = np.concatenate([np.zeros(int(pre_delay * sr)), y])[:n]
+    y /= (np.abs(y).max() + 1e-9) * 4
+    with wave.open(str(path), "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(sr)
+        w.writeframes((y * 32767).astype(np.int16).tobytes())
+
+
 def echo_chain(words: list["Word"], total: float, amount: float) -> str:
-    """Dry voice + a room echo. The wet level sits low under the speech and swells for ~1 s
-    after every sentence-final word, so punchlines ring out the way the Tate edits do."""
+    """Dry voice + convolution reverb (input 1 is the impulse). The wet level sits low under the
+    speech and swells for ~1 s after every sentence-final word, so punchlines ring out."""
     if amount <= 0:
         return "[g]acopy[mix]"
-    wet = f"aecho=0.7:0.55:60|120|190|270:{0.42*amount:.2f}|{0.30*amount:.2f}|{0.20*amount:.2f}|{0.12*amount:.2f}"
     tails = [w for w in words if w.text[-1] in ".?!"]
     if words and words[-1] not in tails:
         tails.append(words[-1])
-    swell = "".join(f",volume=enable='between(t,{w.out_end - 0.05:.3f},{min(total + 1.5, w.out_end + 1.1):.3f})':volume=3.2"
+    swell = "".join(f",volume=enable='between(t,{w.out_end - 0.05:.3f},{min(total + 1.5, w.out_end + 1.2):.3f})':volume=2.6"
                     for w in tails)
-    return (f"[g]asplit[dry][w];[w]{wet},volume={0.16 * amount:.3f}{swell}[wet];"
+    return (f"[g]asplit[dry][w];[w][1:a]afir=dry=1:wet=1:gtype=-1,volume={0.22 * amount:.3f}{swell}[wet];"
             f"[dry][wet]amix=inputs=2:duration=longest:normalize=0[mix]")
 
 
@@ -466,7 +488,9 @@ def render_audio(speaker: str, keep: list[tuple[float, float]], tmp: Path, denoi
     mix = echo_chain(words or [], total, echo)
     fin = f"[mix]atrim=0:{total + 1.2:.3f},loudnorm=I=-14:TP=-1.5:LRA=9[out]"
     fc = ";".join(parts + [chain, post, mix, fin])
-    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", fc, "-map", "[out]",
+    ir = tmp / "ir.wav"
+    write_impulse(ir)
+    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-i", str(ir), "-filter_complex", fc, "-map", "[out]",
          "-ar", "48000", "-ac", "2", str(out)])
     return str(out)
 
