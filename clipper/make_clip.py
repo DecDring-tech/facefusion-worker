@@ -631,6 +631,8 @@ def main() -> None:
                          "punchy: reverb, cut hits, faster b-roll, key-word emphasis")
     ap.add_argument("--echo", type=float, default=None,
                     help="voice echo amount: 0 = dry, 1 = default room echo with swells on punchlines, 1.5 = heavy")
+    ap.add_argument("--audio-from", default=None,
+                    help="reuse the finished audio track of an earlier render of the same range (skips separation)")
     ap.add_argument("--keep-music", action="store_true",
                     help="skip the Demucs voice isolation (default strips any music bed under the speech)")
     ap.add_argument("--handle", default=None, help="small @handle at the bottom (off by default)")
@@ -713,7 +715,11 @@ def main() -> None:
     run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-vf", "tpad=stop_mode=clone:stop_duration=1",
          "-c:v", "libx264", "-preset", "fast", "-crf", "14", "-an", str(held)])
     video = held
-    audio = render_audio(speaker, keep, tmp, not args.no_denoise, not args.keep_music, words, args.echo)
+    if args.audio_from:
+        audio = str(tmp / "voice.wav")
+        run(["ffmpeg", "-v", "error", "-y", "-i", args.audio_from, "-vn", "-ar", "48000", "-ac", "2", audio])
+    else:
+        audio = render_audio(speaker, keep, tmp, not args.no_denoise, not args.keep_music, words, args.echo)
 
     print("[5/5] captions + mux …")
     ass = tmp / "captions.ass"
