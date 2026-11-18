@@ -315,6 +315,8 @@ LOOKS = {
            "curves=m='0/0 0.15/0.1 0.55/0.56 1/1',vignette=angle=PI/4.4,noise=c0s=7:allf=t+u"),
     # mostly natural, slight punch
     "clean": "eq=contrast=1.06:saturation=0.9,vignette=angle=PI/5.5",
+    # for b-roll that is already graded very dark: open the shadows a touch so the subject reads on a phone
+    "lift": "eq=gamma=1.45:brightness=0.04:contrast=1.04:saturation=0.9,vignette=angle=PI/5.5",
 }
 
 
