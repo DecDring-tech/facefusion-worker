@@ -1,8 +1,7 @@
 # Round 11 — 10 more, all-new opening clips plus new Regera footage
 
-Same style as rounds 9 and 10. Every opening clip is new (none used before), and the TJR part of every video now opens
-on a new Regera shot: TJR's reveal, the car rolling head-on toward the camera through the trees. The rest of the TJR
-part walks through the night and day recordings on the beat, at different points from earlier rounds.
+Same style as rounds 9 and 10. Every opening clip is new (none used before). The TJR part walks through the night,
+day and gas-station recordings on the beat. The head-on reveal shot was removed at your request and is no longer a source.
 
 | # | File | Opening clip | Part 1 caption | Part 2 caption | Sound to add (0% volume) |
 |---|---|---|---|---|---|
@@ -19,11 +18,6 @@ part walks through the night and day recordings on the beat, at different points
 
 Sound trim points are the same as earlier rounds. `sync.txt`: every cut within a frame of its hit, no stray cuts
 (the one flag on the Lambo video is a quick camera move inside the same shot), every shot at least 1.0 s.
-
-New Regera footage: `@tjr_trimm` repost 7540186675238997270 of TJR's reveal, 13.46–14.52 s, cropped off its black bars.
-On the slower-beat sounds it plays at 89–98% speed. Searched about 160 posts from Car Week 2025 on brezscales and the
-TJR clip pages; the other new Regera footage found had captions or banners over the car, black bars needing 2–3x
-upscaling, or shots under half a second, so it wasn't used.
 
 Opening-clip sources: `@jackdoherty` 7536642975976279327, 7541484575441128735, 7547079750057987358; `@brezscales`
 7543405756452785463, 7609394516327533838; `@ishowspeed` 7414531895909731626, 7259764735678221611; `@mrbeast`

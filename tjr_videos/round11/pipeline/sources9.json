@@ -78,17 +78,5 @@
    ]
   ],
   "desc": "@stardrivendaily Car Week spot (banner cropped)"
- },
- "reveal": {
-  "file": "cw/7540186675238997270.mp4",
-  "segs": [
-   [
-    13.46,
-    14.52
-   ]
-  ],
-  "crop": "crop=720:1280:0:116",
-  "desc": "TJR reveal head-on approach (repost @tjr_trimm 7540186675238997270)",
-  "minspeed": 0.88
  }
 }

@@ -8,10 +8,6 @@
   "cap2": "Where's your Koenigsegg\nlil bro?",
   "sources": [
    [
-    "reveal",
-    1
-   ],
-   [
     "night",
     3,
     15.75
@@ -20,6 +16,11 @@
     "day",
     3,
     12.85
+   ],
+   [
+    "gas",
+    1,
+    7.68
    ]
   ]
  },
@@ -32,10 +33,6 @@
   "cap2": "Wrong tax bracket\nlil bro",
   "sources": [
    [
-    "reveal",
-    1
-   ],
-   [
     "night",
     3,
     18.6
@@ -46,8 +43,8 @@
    ],
    [
     "day",
-    1,
-    24.95
+    2,
+    16.0
    ]
   ]
  },
@@ -60,12 +57,8 @@
   "cap2": "Different tax bracket\nlil bro",
   "sources": [
    [
-    "reveal",
-    1
-   ],
-   [
     "night",
-    2
+    3
    ],
    [
     "day",
@@ -83,10 +76,6 @@
   "cap2": "Wrong tax bracket\nlil bro",
   "sources": [
    [
-    "reveal",
-    1
-   ],
-   [
     "day",
     3,
     16.0
@@ -95,6 +84,11 @@
     "night",
     3,
     15.75
+   ],
+   [
+    "gas",
+    1,
+    7.68
    ]
   ]
  },
@@ -107,12 +101,8 @@
   "cap2": "Not even close\nlil bro",
   "sources": [
    [
-    "reveal",
-    1
-   ],
-   [
     "day",
-    2
+    3
    ],
    [
     "night",
@@ -130,10 +120,6 @@
   "cap2": "Different tax bracket\nlil bro",
   "sources": [
    [
-    "reveal",
-    1
-   ],
-   [
     "night",
     3
    ],
@@ -141,6 +127,11 @@
     "day",
     3,
     12.85
+   ],
+   [
+    "gas",
+    1,
+    7.68
    ]
   ]
  },
@@ -153,10 +144,6 @@
   "cap2": "Wrong tax bracket\nlil bro",
   "sources": [
    [
-    "reveal",
-    1
-   ],
-   [
     "day",
     3
    ],
@@ -164,6 +151,11 @@
     "night",
     3,
     15.75
+   ],
+   [
+    "gas",
+    1,
+    7.68
    ]
   ]
  },
@@ -176,17 +168,13 @@
   "cap2": "Wrong tax bracket\nlil bro",
   "sources": [
    [
-    "reveal",
-    1
-   ],
-   [
     "night",
     3,
     15.75
    ],
    [
     "day",
-    2,
+    3,
     16.0
    ]
   ]
@@ -200,17 +188,18 @@
   "cap2": "Wrong tax bracket\nlil bro",
   "sources": [
    [
-    "reveal",
-    1
-   ],
-   [
     "day",
     3
    ],
    [
     "night",
     3,
-    18.6
+    15.75
+   ],
+   [
+    "gas",
+    1,
+    7.68
    ]
   ]
  },
@@ -223,12 +212,8 @@
   "cap2": "Where's your Koenigsegg\nlil bro?",
   "sources": [
    [
-    "reveal",
-    1
-   ],
-   [
     "day",
-    2,
+    3,
     16.0
    ],
    [
