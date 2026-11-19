@@ -49,10 +49,10 @@ The BALLERSZN sound is used three times on purpose: it is the one that did 3.5M,
 | som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 | "SANYA TEKK (Ultra Slowed)" – H2HELL & dj nyx |
 | original sound – calebgordenn® | "Keep Knockin (feat. RBF Yunngmelo)" – LR Productions |
 
-## Round 7 — the final set
+## Round 8 — the current set
 
-See `round7/README.md`: 12 videos, native-res Regera footage with no inpainting, 3 s+ bait, switch on the drop,
-7 s of TJR cut on a strict beat grid with every cut verified on the rendered file.
+See `round8/README.md`: 10 videos, single-take shots only, no flash frames (verified by scene scan), cuts on the beat grid.
+Round 7 is the previous set.
 
 ## Round 2 — 10 new concepts (fresh bait clips, same people allowed)
 

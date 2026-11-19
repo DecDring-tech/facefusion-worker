@@ -1,0 +1,157 @@
+[
+ {
+  "name": "r8_01_watches",
+  "bait": "b_watches",
+  "sound": "S3_salman",
+  "y": 0.66,
+  "cap1": "Where's your watch collection\nTJR? 😂",
+  "cap2": "Where's your Ferrari lil bro?",
+  "broll": [
+   "r_rear",
+   "r_gas_pan",
+   "r_pov",
+   "r_street",
+   "r_wheel",
+   "r_doors"
+  ]
+ },
+ {
+  "name": "r8_02_jet",
+  "bait": "b_jet",
+  "sound": "S8_calebgordenn",
+  "y": 0.66,
+  "cap1": "Where's your jet\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "broll": [
+   "r_street",
+   "r_rear",
+   "r_gas_pan",
+   "r_pov"
+  ]
+ },
+ {
+  "name": "r8_03_mancave",
+  "bait": "b_mancave",
+  "sound": "S4_404oskar",
+  "y": 0.68,
+  "cap1": "Where's your man cave\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "broll": [
+   "r_gas_pan",
+   "r_rear",
+   "r_street",
+   "r_pov",
+   "r_wheel",
+   "r_doors"
+  ]
+ },
+ {
+  "name": "r8_04_lilbaby",
+  "bait": "b_lilbaby",
+  "sound": "S2_bannu",
+  "y": 0.72,
+  "cap1": "Where's your Lil Baby\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "broll": [
+   "r_rear",
+   "r_street",
+   "r_gas_pan",
+   "r_pov",
+   "r_wheel"
+  ]
+ },
+ {
+  "name": "r8_05_richard",
+  "bait": "b_richard",
+  "sound": "S9_northpole",
+  "y": 0.63,
+  "cap1": "Where's your Richard Mille\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "broll": [
+   "r_pov",
+   "r_rear",
+   "r_wheel",
+   "r_gas_pan",
+   "r_street",
+   "r_dashred",
+   "r_doors"
+  ]
+ },
+ {
+  "name": "r8_06_mansion",
+  "bait": "b_mansion",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your mansion\nTJR? 😂",
+  "cap2": "Different tax bracket\nlil bro",
+  "broll": [
+   "r_rear",
+   "r_street",
+   "r_gas_pan",
+   "r_pov"
+  ]
+ },
+ {
+  "name": "r8_07_grillz",
+  "bait": "b_grillz",
+  "sound": "S1_ballerszn",
+  "y": 0.64,
+  "cap1": "Where's your grillz\nTJR? 😂",
+  "cap2": "Not even close\nlil bro",
+  "broll": [
+   "r_street",
+   "r_gas_pan",
+   "r_rear",
+   "r_pov",
+   "r_wheel",
+   "r_doors"
+  ]
+ },
+ {
+  "name": "r8_08_chain",
+  "bait": "b_chain",
+  "sound": "S6_luxuryxsh",
+  "y": 0.7,
+  "cap1": "Where's your chain\nTJR? 😂",
+  "cap2": "Where's your Ferrari lil bro?",
+  "broll": [
+   "r_rear",
+   "r_street",
+   "r_pov",
+   "r_gas_pan",
+   "r_wheel"
+  ]
+ },
+ {
+  "name": "r8_09_panda",
+  "bait": "b_panda",
+  "sound": "S5_gsgroup",
+  "y": 0.74,
+  "cap1": "Where's your panda\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "broll": [
+   "r_gas_pan",
+   "r_rear",
+   "r_street",
+   "r_pov",
+   "r_wheel"
+  ]
+ },
+ {
+  "name": "r8_10_garage",
+  "bait": "b_garage",
+  "sound": "S8_calebgordenn",
+  "y": 0.66,
+  "cap1": "Where's your garage\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "broll": [
+   "r_pov",
+   "r_rear",
+   "r_gas_pan",
+   "r_street",
+   "r_wheel",
+   "r_doors",
+   "r_dashred"
+  ]
+ }
+]
