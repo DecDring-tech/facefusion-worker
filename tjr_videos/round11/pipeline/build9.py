@@ -2,7 +2,7 @@
 All shots play at 1x from a native-res pool; a slot is filled by the first listed shot with enough unused length."""
 import json, os, subprocess, sys, numpy as np, librosa
 sys.path.insert(0, "scripts"); from caption import render
-B7 = json.load(open("beat7.json")); P = json.load(open("plan8.json")); H = json.load(open("hits5.json"))
+B7 = json.load(open("beat7.json")); P = json.load(open(os.environ.get("PLAN","plan8.json"))); H = json.load(open("hits5.json"))
 OUT = sys.argv[1]; os.makedirs(OUT, exist_ok=True); os.makedirs("tmp", exist_ok=True)
 C = "r8clean"; FPS = 30
 def nframes(p): return int(subprocess.run(["ffprobe","-v","error","-count_packets","-select_streams","v:0","-show_entries","stream=nb_read_packets","-of","csv=p=0",p],capture_output=True,text=True).stdout.strip() or 0)

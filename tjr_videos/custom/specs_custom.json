@@ -1,0 +1,37 @@
+[
+ {
+  "name": "cullinan_yourclips",
+  "bait": "b11_cullinan",
+  "sound": "S8_calebgordenn",
+  "y": 0.66,
+  "cap1": "Where's your Cullinan\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "gas",
+    1,
+    6.25
+   ],
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "night",
+    1,
+    15.75
+   ],
+   [
+    "gas",
+    1,
+    7.8
+   ],
+   [
+    "night",
+    1,
+    18.6
+   ]
+  ]
+ }
+]

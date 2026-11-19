@@ -1,0 +1,111 @@
+{
+ "S1_ballerszn": {
+  "offset": 0.0,
+  "period": 1.017,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.1
+ },
+ "S2_bannu": {
+  "offset": 5.663,
+  "period": 0.7145,
+  "pattern": [
+   2,
+   2,
+   2,
+   1.5
+  ],
+  "fade": 0.6
+ },
+ "S3_salman": {
+  "offset": 0.0,
+  "period": 1.126,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "fade": 1.2
+ },
+ "S4_404oskar": {
+  "offset": 3.0,
+  "period": 0.789,
+  "pattern": [
+   2,
+   2,
+   2,
+   2
+  ]
+ },
+ "S5_gsgroup": {
+  "offset": 0.0,
+  "period": 1.148,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "S6_luxuryxsh": {
+  "offset": 1.5,
+  "period": 0.8375,
+  "pattern": [
+   2,
+   2,
+   2,
+   2
+  ],
+  "fade": 2.0
+ },
+ "S7_useheadset": {
+  "offset": 2.804,
+  "period": 0.723,
+  "pattern": [
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "fade": 0.4
+ },
+ "S8_calebgordenn": {
+  "offset": 0.0,
+  "period": 1.049,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.3
+ },
+ "S9_northpole": {
+  "offset": 1.8,
+  "period": 1.0035,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "fade": 1.0
+ }
+}
