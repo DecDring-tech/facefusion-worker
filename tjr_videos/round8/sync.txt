@@ -1,10 +1,20 @@
-r8_01_watches.mp4  hits=[3.1, 2.0, 1.4, 1.8, 2.3, 2.5] offs(ms)=[44, -12, 33, -49, 11, 5]  stray_visual_cuts=[]  shortest_shot=1.10s
+r8_01_watches: 10.43s  bait 3.66s | drop | 6.77s  S3_salman 53bpm shot
+r8_02_jet: 10.37s  bait 3.05s | drop | 7.32s  S8_calebgordenn 57bpm sh
+r8_03_mancave: 9.73s  bait 3.43s | drop | 6.30s  S4_404oskar 76bpm sho
+r8_04_lilbaby: 8.67s  bait 3.32s | drop | 5.35s  S2_bannu 84bpm shots=
+r8_05_richard: 10.23s  bait 3.23s | drop | 7.00s  S9_northpole 60bpm s
+r8_06_mansion: 10.80s  bait 3.58s | drop | 7.22s  S7_useheadset 83bpm 
+r8_07_grillz: 10.20s  bait 3.08s | drop | 7.12s  S1_ballerszn 59bpm sh
+r8_08_chain: 10.07s  bait 3.42s | drop | 6.65s  S6_luxuryxsh 72bpm sho
+r8_09_panda: 10.90s  bait 4.02s | drop | 6.88s  S5_gsgroup 52bpm shots
+r8_10_garage: 10.37s  bait 3.05s | drop | 7.32s  S8_calebgordenn 57bpm
+r8_01_watches.mp4  hits=[3.2, 1.4, 2.9, 3.6, 2.7, 2.7] offs(ms)=[47, 22, 9, -11, 14, 5]  stray_visual_cuts=[]  shortest_shot=1.10s
 r8_02_jet.mp4      hits=[11.4, 14.3, 14.3, 3.7, 3.0, 0.8, 1.9] offs(ms)=[6, -16, -5, -15, 0, -35, -22]  stray_visual_cuts=[]  shortest_shot=1.03s
 r8_03_mancave.mp4  hits=[6.2, 2.6, 7.0, 2.3] offs(ms)=[13, 10, 5, -8]  stray_visual_cuts=[77]  shortest_shot=0.83s
-r8_04_lilbaby.mp4  hits=[5.9, 3.9, 5.3, 1.9, 6.0] offs(ms)=[38, -12, 5, -19, 12]  stray_visual_cuts=[]  shortest_shot=1.37s
-r8_05_richard.mp4  hits=[8.0, 4.9, 2.7, 5.3, 9.6, 4.7, 2.3] offs(ms)=[30, 7, 11, 13, 0, 4, 4]  stray_visual_cuts=[]  shortest_shot=1.00s
-r8_06_mansion.mp4  hits=[25.2, 5.2, 5.1, 6.2, 4.7] offs(ms)=[18, 5, 12, -15, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+r8_04_lilbaby.mp4  hits=[5.2, 1.9, 6.6, 2.2] offs(ms)=[-3, 5, -2, 5]  stray_visual_cuts=[]  shortest_shot=1.40s
+r8_05_richard.mp4  hits=[8.0, 4.9, 2.4, 5.1, 9.5, 3.9, 2.2] offs(ms)=[28, 7, -44, 13, 0, 10, 4]  stray_visual_cuts=[]  shortest_shot=1.00s
+r8_06_mansion.mp4  hits=[25.1, 5.2, 5.3, 5.5, 4.7] offs(ms)=[18, 5, 9, -12, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
 r8_07_grillz.mp4   hits=[7.6, 4.0, 2.0, 3.8, 4.5, 1.9, 1.7] offs(ms)=[-28, -6, -42, 3, -6, -29, -25]  stray_visual_cuts=[]  shortest_shot=1.00s
-r8_08_chain.mp4    hits=[13.9, 3.0, 2.0, 1.8] offs(ms)=[13, 13, 48, 29]  stray_visual_cuts=[]  shortest_shot=1.63s
-r8_09_panda.mp4    hits=[5.4, 5.6, 1.8, 3.6, 3.8, 3.3] offs(ms)=[22, 2, -18, -15, 4, 10]  stray_visual_cuts=[]  shortest_shot=1.10s
+r8_08_chain.mp4    hits=[14.8, 2.9, 2.9, 2.0] offs(ms)=[10, 13, 19, 32]  stray_visual_cuts=[]  shortest_shot=1.63s
+r8_09_panda.mp4    hits=[5.3, 6.5, 1.9, 3.8, 3.8, 3.8] offs(ms)=[23, -3, -18, -14, 4, 10]  stray_visual_cuts=[]  shortest_shot=1.10s
 r8_10_garage.mp4   hits=[11.4, 14.3, 14.3, 3.7, 3.0, 0.8, 1.9] offs(ms)=[6, -16, -5, -15, 0, -35, -22]  stray_visual_cuts=[]  shortest_shot=1.03s

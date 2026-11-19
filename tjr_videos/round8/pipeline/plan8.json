@@ -14,15 +14,15 @@
   "pad": 0.1
  },
  "S2_bannu": {
-  "offset": 2.82,
+  "offset": 5.663,
   "period": 0.7145,
   "pattern": [
    2,
    2,
    2,
-   2,
-   2
-  ]
+   1.5
+  ],
+  "fade": 0.6
  },
  "S3_salman": {
   "offset": 0.0,
@@ -34,7 +34,8 @@
    1,
    1,
    1
-  ]
+  ],
+  "fade": 1.2
  },
  "S4_404oskar": {
   "offset": 3.0,
@@ -47,7 +48,7 @@
   ]
  },
  "S5_gsgroup": {
-  "offset": 0.6,
+  "offset": 0.0,
   "period": 1.148,
   "pattern": [
    1,
@@ -66,7 +67,8 @@
    2,
    2,
    2
-  ]
+  ],
+  "fade": 2.0
  },
  "S7_useheadset": {
   "offset": 2.804,
@@ -77,7 +79,8 @@
    2,
    2,
    2
-  ]
+  ],
+  "fade": 0.4
  },
  "S8_calebgordenn": {
   "offset": 0.0,
@@ -104,6 +107,7 @@
    1,
    1,
    1
-  ]
+  ],
+  "fade": 1.0
  }
 }

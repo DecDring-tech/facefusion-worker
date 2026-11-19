@@ -1,1 +1,1 @@
-{"offset": 0.6, "pad": 0.0, "period": 1.148, "drop_frame": 102, "cut_frames": [137, 172, 207, 241, 274], "end_frame": 309, "sound": "S5_gsgroup", "pattern": [1, 1, 1, 1, 1, 1]}
+{"offset": 0.0, "pad": 0.0, "fade": 0, "period": 1.148, "drop_frame": 120, "cut_frames": [155, 190, 225, 259, 292], "end_frame": 327, "sound": "S5_gsgroup", "pattern": [1, 1, 1, 1, 1, 1]}

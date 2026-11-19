@@ -46,10 +46,12 @@ def build(sp):
     open("tmp/list.txt","w").write("".join(f"file '{os.path.abspath(p)}'\n" for p in parts))
     subprocess.run(["ffmpeg","-v","error","-y","-f","concat","-safe","0","-i","tmp/list.txt","-c","copy","tmp/joined.mp4"],check=True)
     out = f"{OUT}/{name}.mp4"; T = f_end/FPS
+    sdur = float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",H[snd]["file"]],capture_output=True,text=True).stdout)
+    assert off + T - pad <= sdur + 0.02, f"{name}: sound runs out ({off+T-pad:.2f}s needed, {sdur:.2f}s available)"
     subprocess.run(["ffmpeg","-v","error","-y","-i","tmp/joined.mp4","-i","tmp/cap1.png","-i","tmp/cap2.png","-i",H[snd]["file"],
-        "-filter_complex",f"[0:v][1:v]overlay=0:0:enable='lt(n,{f_drop})'[a];[a][2:v]overlay=0:0:enable='gte(n,{f_drop})'[v];[3:a]atrim={off:.4f}:{off+T:.4f},asetpts=PTS-STARTPTS{(",adelay=%d|%d" % (int(pad*1000), int(pad*1000))) if pad > 0 else ""},atrim=0:{T:.4f}[au]",
+        "-filter_complex",f"[0:v][1:v]overlay=0:0:enable='lt(n,{f_drop})'[a];[a][2:v]overlay=0:0:enable='gte(n,{f_drop})'[v];[3:a]atrim={off:.4f}:{off+T:.4f},asetpts=PTS-STARTPTS{(",adelay=%d|%d" % (int(pad*1000), int(pad*1000))) if pad > 0 else ""},atrim=0:{T:.4f}{(",afade=t=in:st=0:d=%.2f" % pl["fade"]) if pl.get("fade") else ""}[au]",
         "-map","[v]","-map","[au]","-frames:v",str(f_end),"-c:v","libx264","-crf","17","-preset","slow","-pix_fmt","yuv420p","-r",str(FPS),"-c:a","aac","-b:a","192k","-movflags","+faststart",out],check=True)
-    json.dump({"offset":off,"pad":pad,"period":per,"drop_frame":f_drop,"cut_frames":bounds[1:-1],"end_frame":f_end,"sound":snd,"pattern":pl["pattern"]},open(f"{OUT}/{name}.cuts.json","w"))
+    json.dump({"offset":off,"pad":pad,"fade":pl.get("fade",0),"period":per,"drop_frame":f_drop,"cut_frames":bounds[1:-1],"end_frame":f_end,"sound":snd,"pattern":pl["pattern"]},open(f"{OUT}/{name}.cuts.json","w"))
     print(f"{name}: {T:.2f}s  bait {drop:.2f}s | drop | {T-drop:.2f}s  {snd} {60/per:.0f}bpm shots={[round(b*per,2) for b in pl['pattern']]}")
 specs = json.load(open(os.environ.get("SPECS","specs_round8.json"))); only = sys.argv[2:]
 for sp in specs:

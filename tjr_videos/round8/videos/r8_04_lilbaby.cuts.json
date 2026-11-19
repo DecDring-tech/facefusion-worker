@@ -1,1 +1,1 @@
-{"offset": 2.82, "pad": 0.0, "period": 0.7145, "drop_frame": 99, "cut_frames": [143, 184, 226, 270], "end_frame": 313, "sound": "S2_bannu", "pattern": [2, 2, 2, 2, 2]}
+{"offset": 5.663, "pad": 0.0, "fade": 0.6, "period": 0.7145, "drop_frame": 99, "cut_frames": [141, 185, 228], "end_frame": 260, "sound": "S2_bannu", "pattern": [2, 2, 2, 1.5]}

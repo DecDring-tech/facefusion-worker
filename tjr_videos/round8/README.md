@@ -19,19 +19,23 @@ Files are in `videos/`. 1080x1920, 30 fps, sound baked in. Round 7 stays as the 
 | # | File | Bait | Part 1 caption | Part 2 caption | Sound to add (0% volume) | Switch |
 |---|---|---|---|---|---|---|
 | 1 | `r8_01_watches` | Jack Doherty, LV watch case | Where's your watch collection TJR? 😂 | Where's your Ferrari lil bro? | الصوت الأصلي – Salman | 3.66 s |
-| 2 | `r8_02_jet` | Jake Paul outside the jet | Where's your jet TJR? 😂 | Wrong tax bracket lil bro | original sound – calebgordenn® | 3.05 s |
-| 3 | `r8_03_mancave` | Logan Paul, $1M man cave | Where's your man cave TJR? 😂 | Wrong tax bracket lil bro | original sound – 404oskar | 3.43 s |
-| 4 | `r8_04_lilbaby` | Jack Doherty with Lil Baby | Where's your Lil Baby TJR? 😂 | Wrong tax bracket lil bro | original sound – Bannu | 3.30 s |
+| 2 | `r8_02_jet` | Jake Paul outside the jet | Where's your private jet TJR? 😂 | Wrong tax bracket lil bro | original sound – calebgordenn® | 3.05 s |
+| 3 | `r8_03_mancave` | Logan Paul, $1M man cave | Where's your $1M man cave TJR? 😂 | Wrong tax bracket lil bro | original sound – 404oskar | 3.43 s |
+| 4 | `r8_04_lilbaby` | Jack Doherty with Lil Baby | Where's your celebrity friends TJR? 😂 | Wrong tax bracket lil bro | original sound – Bannu | 3.32 s |
 | 5 | `r8_05_richard` | Jake Paul, Richard Mille in the car | Where's your Richard Mille TJR? 😂 | Wrong tax bracket lil bro | North Pole (Cynnmixx) – prodbyCyn | 3.23 s |
-| 6 | `r8_06_mansion` | Jack Doherty's driveway, Lambos + Cybertruck | Where's your mansion TJR? 😂 | Different tax bracket lil bro | som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 | 3.58 s |
-| 7 | `r8_07_grillz` | Jack Doherty getting grillz | Where's your grillz TJR? 😂 | Not even close lil bro | original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁 | 3.08 s |
-| 8 | `r8_08_chain` | Logan Paul, $200K chain | Where's your chain TJR? 😂 | Where's your Ferrari lil bro? | origineel geluid – 𝐥𝐮𝐱𝐮𝐫𝐲𝐱𝐬𝐡 | 3.42 s |
-| 9 | `r8_09_panda` | Jake Paul with his panda | Where's your panda TJR? 😂 | Wrong tax bracket lil bro | original sound – 🃑𝔾𝕊♢.𝔾ℝ♢𝕌ℙ🃑 | 3.42 s |
-| 10 | `r8_10_garage` | Jack Doherty's carport walk | Where's your garage TJR? 😂 | Wrong tax bracket lil bro | original sound – calebgordenn® | 3.05 s |
+| 6 | `r8_06_mansion` | Jack Doherty's driveway, Lambos + Cybertruck | Where's your car collection TJR? 😂 | Different tax bracket lil bro | som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 | 3.58 s |
+| 7 | `r8_07_grillz` | Jack Doherty getting grillz | Where's your diamond grillz TJR? 😂 | Not even close lil bro | original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁 | 3.08 s |
+| 8 | `r8_08_chain` | Logan Paul, $200K chain | Where's your $200K chain TJR? 😂 | Where's your Ferrari lil bro? | origineel geluid – 𝐥𝐮𝐱𝐮𝐫𝐲𝐱𝐬𝐡 | 3.42 s |
+| 9 | `r8_09_panda` | Jake Paul with his panda | Where's your pet panda TJR? 😂 | Wrong tax bracket lil bro | original sound – 🃑𝔾𝕊♢.𝔾ℝ♢𝕌ℙ🃑 | 4.02 s |
+| 10 | `r8_10_garage` | Jack Doherty's carport walk | Where's your $5M house TJR? 😂 | Wrong tax bracket lil bro | original sound – calebgordenn® | 3.05 s |
 
 Trim points for each sound (only needed if you turn the added sound up): BALLERSZN 0.00 (video has 0.1 s lead-in),
-Bannu 2.82, Salman 0.00, 404oskar 3.00, GS Group 0.60, luxuryxsh 1.50, USE HEADSET 2.80, calebgordenn 0.00 (0.3 s lead-in),
-North Pole 1.80.
+Bannu 5.66 (same as your own Bannu posts), Salman 0.00, 404oskar 3.00, GS Group 0.00, luxuryxsh 1.50, USE HEADSET 2.80,
+calebgordenn 0.00 (0.3 s lead-in), North Pole 1.80.
+
+**Loud-intro sounds.** Bannu, Salman, luxuryxsh and North Pole have no quiet intro, so the baked audio fades in over
+0.6–2 s on those four and the Bannu start matches the point your own posts used. The Bannu sound is only 14.4 s long, so
+that video is 8.7 s with 5.35 s after the drop.
 
 ## Sync and cut checks on the rendered files
 
