@@ -1,0 +1,56 @@
+{
+ "S1_ballerszn": {
+  "offset": 0.0,
+  "pad": 0.1,
+  "min": 0.5,
+  "max": 1.7
+ },
+ "S2_bannu": {
+  "offset": 2.82,
+  "pad": 0.0,
+  "min": 0.7,
+  "max": 1.7
+ },
+ "S3_salman": {
+  "offset": 0.0,
+  "pad": 0.0,
+  "min": 0.9,
+  "max": 1.7
+ },
+ "S4_404oskar": {
+  "offset": 3.0,
+  "pad": 0.0,
+  "min": 0.78,
+  "max": 1.7
+ },
+ "S5_gsgroup": {
+  "offset": 0.6,
+  "pad": 0.0,
+  "min": 0.57,
+  "max": 1.7
+ },
+ "S6_luxuryxsh": {
+  "offset": 1.5,
+  "pad": 0.0,
+  "min": 0.6,
+  "max": 1.7
+ },
+ "S7_useheadset": {
+  "offset": 2.804,
+  "pad": 0.0,
+  "min": 0.72,
+  "max": 1.7
+ },
+ "S8_calebgordenn": {
+  "offset": 0.0,
+  "pad": 0.3,
+  "min": 0.52,
+  "max": 1.7
+ },
+ "S9_northpole": {
+  "offset": 1.8,
+  "pad": 0.0,
+  "min": 1.0,
+  "max": 1.7
+ }
+}
