@@ -135,3 +135,47 @@ Still no GTA 6 playthrough stream from him as of 00:00 UTC 19 Nov. These five ar
 | lauren_hamden/15_lauren_someone_behind_me.mp4 | "is there someone behind me chat?" 😭 @LaurenHamden #LaurenHamden #gta6 #fyp |
 
 Sources for batch 3: Lacy's IRL Miami meet-and-greet segment of his marathon stream (Twitch clips, 19 Nov), Clix marathon Twitch clips, Lauren Hamden's GTA 6 stream clips, YourRAGE prep-stream clips.
+
+---
+
+# Batch 4 — 20 more clips (files 16 to 20 in each folder), 19 Nov 2026
+
+**Two big things tonight:** (1) **YourRAGE finally started his GTA 6 playthrough** (VOD 2933174196, "PLAYING GTA 6 FOR THE FIRST TIME"), so his five below are REAL playthrough clips and safe to submit. (2) **Lacy hit a half-court shot at the Miami Heat game** with Clix cheering. Lacy, Clix AND YourRAGE all have a clip of it, so you can post the moment to three campaigns.
+
+## YOURRAGE (GTA 6 account, #YourRAGE) — SUBMIT THESE
+| File | Caption to paste |
+|---|---|
+| yourrage/16_yourrage_dies_first_mission.mp4 | died on the FIRST mission 💀 #YourRAGE #gta6 #yourrageclips #fyp |
+| yourrage/17_yourrage_headlock.mp4 | "I didn't mean to" 😭 #YourRAGE #gta6 #yourrageclips #fyp |
+| yourrage/18_yourrage_iguana.mp4 | YourRAGE vs an iguana 🦎 #YourRAGE #gta6 #yourrageclips #fyp |
+| yourrage/19_yourrage_reacts_lacy_half_court.mp4 | "that's literally some Lacy sh*t" 😭 #YourRAGE #lacy #gta6 #fyp |
+| yourrage/20_yourrage_cycle_fight.mp4 | he just wanted to ride his bike 😭 #YourRAGE #gta6 #yourrageclips #fyp |
+
+## LACY (GTA 6 account, #LACY)
+| File | Caption to paste |
+|---|---|
+| lacy/16_lacy_half_court.mp4 | Lacy hit a half court shot at the Heat game 😳🏀 #LACY #gta6 #lacyclips #miamiheat #fyp |
+| lacy/17_lacy_thought_bedroom.mp4 | "I thought that was a bedroom" 😭 #LACY #gta6 #lacyclips #fyp |
+| lacy/18_lacy_shark.mp4 | "is that a shark?" 🦈 #LACY #gta6 #lacyclips #fyp |
+| lacy/19_lacy_kills_bird_plane.mp4 | "did I just kill a bird?" 💀 #LACY #gta6 #lacyclips #fyp |
+| lacy/20_lacy_time_played.mp4 | "what's your time played?" 😭 #LACY #gta6 #lacyclips #fyp |
+
+## CLIX (GTA 6 account, #Clix)
+| File | Caption to paste |
+|---|---|
+| clix/16_clix_cheers_half_court.mp4 | Clix was the hype man 😭🏀 #Clix #lacy #gta6 #clixclips #fyp |
+| clix/17_clix_shoe_store.mp4 | "chat this is actually a shoe store" 👟 #Clix #gta6 #clixclips #fyp |
+| clix/18_clix_looks_real.mp4 | "this looks very real btw" 😭 #Clix #gta6 #clixclips #fyp |
+| clix/19_clix_ps5_reset.mp4 | someone kicked the PS5 and reset the save 💀 #Clix #gta6 #clixclips #fyp |
+| clix/20_clix_free_headset.mp4 | Clix giving out free headsets 🫡 #Clix #gta6 #clixclips #fyp |
+
+## LAUREN HAMDEN (dedicated Lauren account only, @LaurenHamden #LaurenHamden, bio link required)
+| File | Caption to paste |
+|---|---|
+| lauren_hamden/16_lauren_bus_crash.mp4 | 90mph into a bus 😭 @LaurenHamden #LaurenHamden #gta6 #fyp |
+| lauren_hamden/17_lauren_wrong_car.mp4 | "I don't know what I'm doing" 😭 @LaurenHamden #LaurenHamden #gta6 #fyp |
+| lauren_hamden/18_lauren_meant_to_kill.mp4 | "am I meant to kill someone?" 😭 @LaurenHamden #LaurenHamden #gta6 #fyp |
+| lauren_hamden/19_lauren_670_animals.mp4 | 670 animals in GTA 6?? 🦜 @LaurenHamden #LaurenHamden #gta6 #fyp |
+| lauren_hamden/20_lauren_hydra_weapon.mp4 | the controls are not controlling 😭 @LaurenHamden #LaurenHamden #gta6 #fyp |
+
+Sources for batch 4: YourRAGE's first GTA 6 playthrough stream (19 Nov) Twitch clips; Lacy and Clix IRL Miami Heat game + marathon Twitch clips; Lauren Hamden GTA 6 stream clips.
