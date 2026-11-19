@@ -221,3 +221,46 @@ Sources for batch 4: YourRAGE's first GTA 6 playthrough stream (19 Nov) Twitch c
 | lauren_hamden/25_lauren_lucia_prison.mp4 | Lauren as Lucia in prison 🔒 @LaurenHamden #LaurenHamden #gta6 #lucia #fyp |
 
 Sources for batch 5: Twitch clips from each creator's own 19 Nov GTA 6 streams (Lacy marathon + Miami IRL, Clix marathon + meet up, YourRAGE playthrough, Lauren Hamden stream).
+
+---
+
+# Batch 6 — 20 more clips (files 26 to 30 in each folder), 19 Nov 2026
+
+## LACY (GTA 6 account, #LACY)
+Lacy is asleep on stream right now (sleep stream), so lacy/26 and 27 are from his end-of-day chat about the pepper spray and the half-court shot, cut from the marathon VOD. Post 26 first.
+| File | Caption to paste |
+|---|---|
+| lacy/26_lacy_pepper_spray_scared.mp4 | Lacy on getting pepper sprayed: "it really scares me" 😔 #LACY #gta6 #lacyclips #fyp |
+| lacy/27_lacy_half_court_went_viral.mp4 | "that shot went crazy viral" 🏀 #LACY #gta6 #lacyclips #miamiheat #fyp |
+| lacy/28_lacy_spoke_too_soon.mp4 | he spoke too soon 💀 #LACY #gta6 #lacyclips #fyp |
+| lacy/29_lacy_airboat_gators.mp4 | Lacy vs the gators 🐊 #LACY #gta6 #lacyclips #everglades #fyp |
+| lacy/30_lacy_uber_timing.mp4 | "not the best timing" 😭 #LACY #gta6 #lacyclips #fyp |
+
+## CLIX (GTA 6 account, #Clix)
+| File | Caption to paste |
+|---|---|
+| clix/26_clix_my_wife.mp4 | "it's my wife" 😭 #Clix #gta6 #clixclips #fyp |
+| clix/27_clix_whale_boat.mp4 | a whale?? 🐋 #Clix #gta6 #clixclips #fyp |
+| clix/28_clix_marlon_no_shirt.mp4 | Marlon pulled up 😭 #Clix #marlon #gta6 #clixclips #fyp |
+| clix/29_clix_buys_fan_gta.mp4 | Clix bought a fan GTA 6 🫡 #Clix #gta6 #clixclips #fyp |
+| clix/30_clix_situations.mp4 | "how do I end up in situations like this" 😭 #Clix #gta6 #clixclips #fyp |
+
+## YOURRAGE (GTA 6 account, #YourRAGE) — real playthrough, submit
+| File | Caption to paste |
+|---|---|
+| yourrage/26_yourrage_take_his_swag.mp4 | "can I take his swag?" 😭 #YourRAGE #gta6 #yourrageclips #fyp |
+| yourrage/27_yourrage_we_gon_die.mp4 | "we gon' die" 💀 #YourRAGE #gta6 #yourrageclips #fyp |
+| yourrage/28_yourrage_real_man.mp4 | "this is a real man" 😭 #YourRAGE #gta6 #yourrageclips #fyp |
+| yourrage/29_yourrage_what_did_i_do.mp4 | "what did I do?" 😭 #YourRAGE #gta6 #yourrageclips #fyp |
+| yourrage/30_yourrage_wake_up.mp4 | "yo wake up" 😭 #YourRAGE #gta6 #yourrageclips #fyp |
+
+## LAUREN HAMDEN (dedicated Lauren account only, @LaurenHamden #LaurenHamden, bio link required)
+| File | Caption to paste |
+|---|---|
+| lauren_hamden/26_lauren_so_stressed.mp4 | "I'm so stressed" 😭 @LaurenHamden #LaurenHamden #gta6 #fyp |
+| lauren_hamden/27_lauren_most_unrealistic.mp4 | the most unrealistic part of GTA 6 😭 @LaurenHamden #LaurenHamden #gta6 #fyp |
+| lauren_hamden/28_lauren_truck_bridge.mp4 | "Jesus, oh my god" 🚗💨 @LaurenHamden #LaurenHamden #gta6 #fyp |
+| lauren_hamden/29_lauren_water_looks_real.mp4 | "the water looks so real" 🌊 @LaurenHamden #LaurenHamden #gta6 #fyp |
+| lauren_hamden/30_lauren_30fps.mp4 | "is this thing that bad?" 😭 @LaurenHamden #LaurenHamden #gta6 #fyp |
+
+Sources for batch 6: Lacy marathon VOD (end of day 2) + marathon Twitch clips; Clix marathon Twitch clips incl. Marlon's arrival; YourRAGE playthrough Twitch clips; Lauren Hamden stream clips.
