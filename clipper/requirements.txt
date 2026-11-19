@@ -4,3 +4,5 @@ numpy
 demucs
 torch
 torchaudio
+torchvision
+easyocr
