@@ -30,7 +30,7 @@ import make_clip as m  # noqa: E402
 from make_cutaway import SR, read_audio, write_wav, rms, onset  # noqa: E402
 
 W, H, FPS = m.W, m.H, m.FPS
-MW, MH = 256, 448  # segmentation resolution
+MW, MH = 288, 512  # segmentation resolution
 
 
 def cut_times(words: list[m.Word], total: float, first: float, d: float, gap_lo: float, gap_hi: float,
@@ -87,6 +87,7 @@ def person_masks(video: Path, n: int, face: np.ndarray, step: int, threads: int)
                           "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
     masks = np.zeros((n, MH, MW), np.uint8)
     key = {}
+    sharp_top = np.full(n, np.nan)
     mean, std = np.array([0.485, 0.456, 0.406]), np.array([0.229, 0.224, 0.225])
     for i in range(n):
         buf = p.stdout.read(MW * MH * 3)
@@ -102,7 +103,10 @@ def person_masks(video: Path, n: int, face: np.ndarray, step: int, threads: int)
         x = (np.frombuffer(buf, np.uint8).reshape(MH, MW, 3) / 255.0 - mean) / std
         with torch.inference_mode():
             o = model(torch.from_numpy(x.transpose(2, 0, 1)).float()[None])["out"]
-        key[i] = (o.softmax(1)[0, 15].numpy() * 255).astype(np.uint8)
+        pr = o.softmax(1)[0, 15].numpy()
+        key[i] = (pr * 255).astype(np.uint8)
+        hard = refine(np.frombuffer(buf, np.uint8).reshape(MH, MW, 3), pr)
+        sharp_top[i] = sharp_head_top(hard)
     p.stdout.close()
     p.wait()
     ks = sorted(key)
@@ -114,29 +118,72 @@ def person_masks(video: Path, n: int, face: np.ndarray, step: int, threads: int)
                 masks[i] = (key[a] * (1 - t) + key[b] * t).astype(np.uint8)
     if ks:
         masks[ks[-1]] = key[ks[-1]]
-    return masks
+    # fill head tops between keyframes
+    idx = np.flatnonzero(np.isfinite(sharp_top))
+    if len(idx):
+        fr = np.flatnonzero(face)
+        sharp_top[fr] = np.interp(fr, idx, sharp_top[idx])
+    return masks, sharp_top
 
 
-def head_tops(masks: np.ndarray, face: np.ndarray) -> np.ndarray:
-    """Per-frame y (output px) of the top of the speaker's head; NaN on b-roll / no person."""
-    tops = np.full(len(masks), np.nan)
+def sharp_head_top(hard: np.ndarray) -> float:
     x0, x1 = int(MW * 0.2), int(MW * 0.8)
-    for i in np.flatnonzero(face):
-        rows = (masks[i][:, x0:x1] > 128).mean(1)
-        r = np.flatnonzero(rows > 0.08)
-        if len(r):
-            tops[i] = r[0] / MH * H
-    return tops
+    r = np.flatnonzero((hard[:, x0:x1] > 0.5).mean(1) > 0.06)
+    return r[0] / MH * H if len(r) else np.nan
+
+
+def box(x: np.ndarray, r: int) -> np.ndarray:
+    import cv2
+    return cv2.boxFilter(x, -1, (2 * r + 1, 2 * r + 1), normalize=True, borderType=cv2.BORDER_REFLECT)
+
+
+def refine(guide_rgb: np.ndarray, prob: np.ndarray) -> np.ndarray:
+    """Turn the soft person probability into a sharp cut-out that hugs the real outline:
+    GrabCut (colour models seeded by the probability) at half res decides the uncertain band,
+    then a small guided filter gives a clean ~1 px edge at full res."""
+    import cv2
+    h, w = prob.shape
+    hs, ws = h // 2, w // 2
+    img = cv2.resize(guide_rgb, (ws, hs), interpolation=cv2.INTER_AREA)
+    # dark scenes: stretch contrast so hood-vs-background colour differences count
+    f = img.astype(np.float32)
+    lo, hi = np.percentile(f, 1), np.percentile(f, 99.5)
+    img = np.clip((f - lo) * 255 / max(1.0, hi - lo), 0, 255).astype(np.uint8)
+    pr = cv2.resize(prob, (ws, hs), interpolation=cv2.INTER_AREA)
+    gc = np.full((hs, ws), cv2.GC_PR_BGD, np.uint8)
+    gc[pr >= 0.5] = cv2.GC_PR_FGD
+    gc[cv2.erode((pr > 0.97).astype(np.uint8), np.ones((15, 15), np.uint8)) > 0] = cv2.GC_FGD
+    gc[cv2.erode((pr < 0.03).astype(np.uint8), np.ones((5, 5), np.uint8)) > 0] = cv2.GC_BGD
+    if (gc == cv2.GC_FGD).any() and (gc == cv2.GC_BGD).any():
+        try:
+            cv2.grabCut(img, gc, None, np.zeros((1, 65), np.float64), np.zeros((1, 65), np.float64), 2,
+                        cv2.GC_INIT_WITH_MASK)
+        except cv2.error:
+            pass
+    hard = ((gc == cv2.GC_FGD) | (gc == cv2.GC_PR_FGD)).astype(np.float32)
+    hard = cv2.morphologyEx(hard, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
+    n, lab, st, _ = cv2.connectedComponentsWithStats(hard.astype(np.uint8))
+    if n > 2:  # drop specks: keep only real parts of the person
+        big = st[1:, cv2.CC_STAT_AREA].max()
+        hard = np.isin(lab, [i for i in range(1, n) if st[i, cv2.CC_STAT_AREA] >= 0.05 * big]).astype(np.float32)
+    hard = cv2.resize(hard, (w, h), interpolation=cv2.INTER_LINEAR)
+    I = cv2.cvtColor(guide_rgb, cv2.COLOR_RGB2GRAY).astype(np.float32) / 255
+    r, eps = 4, 1e-3
+    mI, mp = box(I, r), box(hard, r)
+    a = (box(I * hard, r) - mI * mp) / (box(I * I, r) - mI * mI + eps)
+    q = box(a, r) * I + box(mp - a * mI, r)
+    return np.clip((q - 0.5) * 6 + 0.5, 0, 1)
 
 
 def grunge(seed: int) -> np.ndarray:
     """Static rough-print texture for the caption layer: mostly 1, with worn specks and streaks."""
     import cv2
     r = np.random.default_rng(seed)
-    a = cv2.resize(r.random((H // 6, W // 6)).astype(np.float32), (W, H), interpolation=cv2.INTER_CUBIC)
+    # fine print wear only — no big blotches (those read as the words being cut out)
+    a = cv2.resize(r.random((H // 2, W // 2)).astype(np.float32), (W, H), interpolation=cv2.INTER_NEAREST)
     b = r.random((H, W)).astype(np.float32)
-    worn = (a > 0.80).astype(np.float32) * 0.55 + (b > 0.93).astype(np.float32) * 0.5
-    return np.clip(1 - cv2.GaussianBlur(worn, (3, 3), 0), 0.2, 1)[:, :, None]
+    worn = (a > 0.90).astype(np.float32) * 0.45 + (b > 0.95).astype(np.float32) * 0.4
+    return np.clip(1 - cv2.GaussianBlur(worn, (3, 3), 0), 0.35, 1)[:, :, None]
 
 
 def main() -> None:
@@ -166,8 +213,8 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--font", default="Anton")
     ap.add_argument("--font-size", type=int, default=250)
-    ap.add_argument("--overlap", type=float, default=0.35, help="share of the caption height behind the head")
-    ap.add_argument("--seg-step", type=int, default=3)
+    ap.add_argument("--overlap", type=float, default=0.25, help="share of the caption height behind the head")
+    ap.add_argument("--seg-step", type=int, default=2)
     ap.add_argument("--threads", type=int, default=4)
     args = ap.parse_args()
 
@@ -312,8 +359,7 @@ def main() -> None:
             face[int(round(o0 * FPS)):int(round(o1 * FPS))] = False
 
     # --- speaker masks -> where his head is
-    masks = person_masks(video, n, face, args.seg_step, args.threads)
-    tops = head_tops(masks, face)
+    masks, tops = person_masks(video, n, face, args.seg_step, args.threads)
     top = float(np.nanmedian(tops)) if np.isfinite(tops).any() else H * 0.3
     print(f"head top at y={top:.0f}")
 
@@ -340,7 +386,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         if b - ch[-1].out_end > 0.6:
             b = ch[-1].out_end + 0.35
         span = tops[int(a * FPS):max(int(a * FPS) + 1, int(b * FPS))]
-        t_here = float(np.nanmedian(span)) if np.isfinite(span).any() else top
+        t_here = float(np.nanpercentile(span, 15)) if np.isfinite(span).any() else top  # head at its highest
         # close-up with the head near the top: shrink so the words still fit above it
         room = (t_here - 70) / (0.74 * (1 - args.overlap))
         size = int(min(args.font_size, (W - 80) / (0.40 * max(1, len(txt))), max(170, room)))
@@ -374,9 +420,12 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         c = np.frombuffer(c, np.uint8).reshape(H, W, 3).astype(np.float32)
         delta = (c - p) * tex
         if face[i]:
-            a = cv2.resize(masks[i], (W, H), interpolation=cv2.INTER_LINEAR).astype(np.float32) / 255
-            a = cv2.GaussianBlur(np.clip((a - 0.35) / 0.3, 0, 1), (0, 0), 3)[:, :, None]
-            delta *= 1 - a
+            rows = np.flatnonzero(np.abs(c - p).max(2).max(1) > 2)
+            if len(rows):
+                y0, y1 = max(0, rows[0] - 40), min(H, rows[-1] + 41)
+                prob = cv2.resize(masks[i], (W, H), interpolation=cv2.INTER_CUBIC)[y0:y1].astype(np.float32) / 255
+                a = refine(p[y0:y1].astype(np.uint8), np.clip(prob, 0, 1))
+                delta[y0:y1] *= (1 - a)[:, :, None]
         enc.stdin.write(np.clip(p + delta, 0, 255).astype(np.uint8).tobytes())
     enc.stdin.close()
     enc.wait()
