@@ -1,0 +1,111 @@
+{
+ "_how": "Fill in each account's TikTok handle (no @) and the Upload-Post profile name it is connected under. Video 1 of a batch goes to slot 1, video 2 to slot 2, and so on. Leave a slot empty to skip it.",
+ "tjr": [
+  {
+   "slot": 1,
+   "handle": "",
+   "uploadpost_user": "tjr01"
+  },
+  {
+   "slot": 2,
+   "handle": "",
+   "uploadpost_user": "tjr02"
+  },
+  {
+   "slot": 3,
+   "handle": "",
+   "uploadpost_user": "tjr03"
+  },
+  {
+   "slot": 4,
+   "handle": "",
+   "uploadpost_user": "tjr04"
+  },
+  {
+   "slot": 5,
+   "handle": "",
+   "uploadpost_user": "tjr05"
+  },
+  {
+   "slot": 6,
+   "handle": "",
+   "uploadpost_user": "tjr06"
+  },
+  {
+   "slot": 7,
+   "handle": "",
+   "uploadpost_user": "tjr07"
+  },
+  {
+   "slot": 8,
+   "handle": "",
+   "uploadpost_user": "tjr08"
+  },
+  {
+   "slot": 9,
+   "handle": "",
+   "uploadpost_user": "tjr09"
+  },
+  {
+   "slot": 10,
+   "handle": "",
+   "uploadpost_user": "tjr10"
+  }
+ ],
+ "marko": [
+  {
+   "slot": 1,
+   "handle": "",
+   "uploadpost_user": "marko01"
+  },
+  {
+   "slot": 2,
+   "handle": "",
+   "uploadpost_user": "marko02"
+  },
+  {
+   "slot": 3,
+   "handle": "",
+   "uploadpost_user": "marko03"
+  },
+  {
+   "slot": 4,
+   "handle": "",
+   "uploadpost_user": "marko04"
+  },
+  {
+   "slot": 5,
+   "handle": "",
+   "uploadpost_user": "marko05"
+  },
+  {
+   "slot": 6,
+   "handle": "",
+   "uploadpost_user": "marko06"
+  },
+  {
+   "slot": 7,
+   "handle": "",
+   "uploadpost_user": "marko07"
+  },
+  {
+   "slot": 8,
+   "handle": "",
+   "uploadpost_user": "marko08"
+  },
+  {
+   "slot": 9,
+   "handle": "",
+   "uploadpost_user": "marko09"
+  },
+  {
+   "slot": 10,
+   "handle": "",
+   "uploadpost_user": "marko10"
+  }
+ ],
+ "watch_also": [
+  "tjrv001",
+  "markovituk"
+ ]
+}

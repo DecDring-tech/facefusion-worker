@@ -1,0 +1,115 @@
+{
+ "ring": {
+  "file": "mk_src/ring.mp4",
+  "desc": "@markovituk 7656853193879457046 11-0-0 ringside",
+  "segs": [
+   [
+    2.08,
+    3.15
+   ],
+   [
+    4.6,
+    6.87
+   ],
+   [
+    6.97,
+    8.25
+   ],
+   [
+    8.35,
+    10.0
+   ],
+   [
+    15.0,
+    17.93
+   ],
+   [
+    18.07,
+    20.55
+   ],
+   [
+    20.65,
+    22.13
+   ],
+   [
+    23.05,
+    24.22
+   ],
+   [
+    24.32,
+    26.72
+   ],
+   [
+    26.82,
+    28.2
+   ]
+  ]
+ },
+ "red": {
+  "file": "mk_src/red.mp4",
+  "desc": "@liaminsidetheballer 7475052144190639382 ringside long take",
+  "segs": [
+   [
+    12.3,
+    24.6
+   ],
+   [
+    45.5,
+    57.5
+   ],
+   [
+    63.0,
+    71.0
+   ]
+  ]
+ },
+ "corner": {
+  "file": "mk_src/vlog.mp4",
+  "desc": "@markovituk fight day vlog, in the corner",
+  "segs": [
+   [
+    49.42,
+    52.32
+   ],
+   [
+    53.37,
+    54.73
+   ],
+   [
+    54.83,
+    56.8
+   ]
+  ]
+ },
+ "warmup": {
+  "file": "mk_src/vlog.mp4",
+  "desc": "@markovituk fight day vlog, backstage warm-up",
+  "segs": [
+   [
+    26.6,
+    32.02
+   ]
+  ]
+ },
+ "ko": {
+  "file": "mk_src/ko.mp4",
+  "desc": "@hekinationtimz 7685129377872350486 KO",
+  "segs": [
+   [
+    0.1,
+    5.0
+   ]
+  ],
+  "crop": "crop=1016:1920:32:0"
+ },
+ "belt": {
+  "file": "mk_src/belt.mp4",
+  "desc": "@markovituk 7474385745709534487 with the belt",
+  "segs": [
+   [
+    4.5,
+    17.9
+   ]
+  ]
+ }
+}

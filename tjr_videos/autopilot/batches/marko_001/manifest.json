@@ -1,0 +1,241 @@
+{
+ "series": "marko",
+ "batch": "marko_001",
+ "items": [
+  {
+   "slot": 1,
+   "video": "mk01_belt.mp4",
+   "caption": "Logan Paul's belt vs Marko 💀 #marko #markovituk #boxing #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b_65m",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your championship belt Marko? 😂",
+    "cap2": "Middlewieght champ lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 10.2,
+    "shots": 7,
+    "sources": [
+     "belt",
+     "ring",
+     "red"
+    ]
+   }
+  },
+  {
+   "slot": 2,
+   "video": "mk02_supercar.mp4",
+   "caption": "Logan Paul gets brutally Mogged by Marko #marko #markovituk #boxing #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b12_bluecar",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your supercar Marko? 😂",
+    "cap2": "11-0 lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 10.2,
+    "shots": 7,
+    "sources": [
+     "ring",
+     "corner",
+     "red"
+    ]
+   }
+  },
+  {
+   "slot": 3,
+   "video": "mk03_jet.mp4",
+   "caption": "Logan Paul gets Mogged at 40,000 ft 😭 #marko #markovituk #boxing #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_001",
+    "sound": "S8_calebgordenn",
+    "sound_name": "original sound – calebgordenn® (Keep Knockin)",
+    "bait": "b12_jetint",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your private jet Marko? 😂",
+    "cap2": "Wrong weight class lil bro",
+    "rage_bait": false,
+    "switch_s": 3.03,
+    "length_s": 10.37,
+    "shots": 7,
+    "sources": [
+     "red",
+     "ring",
+     "corner"
+    ]
+   }
+  },
+  {
+   "slot": 4,
+   "video": "mk04_richard.mp4",
+   "caption": "Logan Paul's watch vs Marko's record 🥱 #marko #markovituk #boxing #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b_richard",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your Richard Mille Marko? 😂",
+    "cap2": "Undefeted lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 10.2,
+    "shots": 7,
+    "sources": [
+     "ko",
+     "ring",
+     "red"
+    ]
+   }
+  },
+  {
+   "slot": 5,
+   "video": "mk05_mansion.mp4",
+   "caption": "Logan Paul thought a mansion was a flex 💀 #marko #markovituk #boxing #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_001",
+    "sound": "S9_northpole",
+    "sound_name": "North Pole (Cynnmixx) – prodbyCyn",
+    "bait": "b12_mansion",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your mansion Marko? 😂",
+    "cap2": "Different weight class lil bro",
+    "rage_bait": false,
+    "switch_s": 3.2,
+    "length_s": 10.23,
+    "shots": 7,
+    "sources": [
+     "warmup",
+     "corner",
+     "ring"
+    ]
+   }
+  },
+  {
+   "slot": 6,
+   "video": "mk06_lambos.mp4",
+   "caption": "Logan Paul gets brutally Mogged by Marko #marko #markovituk #boxing #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_001",
+    "sound": "S3_salman",
+    "sound_name": "الصوت الأصلي – Salman (Don't Like.1 sped up)",
+    "bait": "b_hottub",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your Lambo collection Marko? 😂",
+    "cap2": "Heavyweight champ lil bro",
+    "rage_bait": true,
+    "switch_s": 3.63,
+    "length_s": 10.43,
+    "shots": 6,
+    "sources": [
+     "red",
+     "ring"
+    ]
+   }
+  },
+  {
+   "slot": 7,
+   "video": "mk07_gym.mp4",
+   "caption": "Jake Paul's gym vs a real boxer 😭 #marko #markovituk #boxing #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_001",
+    "sound": "S5_gsgroup",
+    "sound_name": "original sound – 🃑𝔾𝕊♢.𝔾ℝ♢𝕌ℙ🃑 (Walk – DJ Collo)",
+    "bait": "b11_gym",
+    "bait_person": "Logan Paul",
+    "cap1": "Where's your home gym Marko? 😂",
+    "cap2": "Wrong weight class lil bro",
+    "rage_bait": false,
+    "switch_s": 4.0,
+    "length_s": 10.9,
+    "shots": 6,
+    "sources": [
+     "warmup",
+     "ring"
+    ]
+   }
+  },
+  {
+   "slot": 8,
+   "video": "mk08_chain.mp4",
+   "caption": "Jake Paul's chain vs Marko's record 🥱 #marko #markovituk #boxing #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_001",
+    "sound": "N_partyfunk",
+    "sound_name": "Party Funk – Young Madz & MC Zudo Boladão",
+    "bait": "b_chain",
+    "bait_person": "Logan Paul",
+    "cap1": "Where's your $200K chain Marko? 😂",
+    "cap2": "12-0 lil bro",
+    "rage_bait": false,
+    "switch_s": 3.07,
+    "length_s": 8.63,
+    "shots": 6,
+    "sources": [
+     "ko",
+     "corner"
+    ]
+   }
+  },
+  {
+   "slot": 9,
+   "video": "mk09_billion.mp4",
+   "caption": "MrBeast vs Marko 😭 #marko #markovituk #boxing #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_001",
+    "sound": "M_lexa",
+    "sound_name": "original sound - 404oskar — 404oskar (Lexa — DIZO & Manuellsen) https://www.tiktok.com/@404oskar/video/7678418939537296673",
+    "bait": "b11_money",
+    "bait_person": "MrBeast",
+    "cap1": "Where's your billion dollars Marko? 😂",
+    "cap2": "Undefeated lil bro",
+    "rage_bait": false,
+    "switch_s": 3.07,
+    "length_s": 8.33,
+    "shots": 5,
+    "sources": [
+     "ring",
+     "red"
+    ]
+   }
+  },
+  {
+   "slot": 10,
+   "video": "mk10_lambo.mp4",
+   "caption": "Jack Doherty gets Mogged by Marko 💀 #marko #markovituk #boxing #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_001",
+    "sound": "S7_useheadset",
+    "sound_name": "som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 (SANYA TEKK Ultra Slowed)",
+    "bait": "b11_lambo",
+    "bait_person": "Jack Doherty",
+    "cap1": "Where's your Lamborghini Marko? 😂",
+    "cap2": "Wrong weight class lil bro",
+    "rage_bait": false,
+    "switch_s": 3.57,
+    "length_s": 10.8,
+    "shots": 5,
+    "sources": [
+     "red",
+     "corner"
+    ]
+   }
+  }
+ ]
+}

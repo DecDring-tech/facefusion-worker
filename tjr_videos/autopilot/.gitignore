@@ -1,0 +1,5 @@
+engine/tmp/
+engine/out*/
+engine/r8clean/*.mp4
+engine/bait_dl/
+__pycache__/

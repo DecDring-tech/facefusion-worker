@@ -1,0 +1,217 @@
+[
+ {
+  "name": "r9_01_watches",
+  "bait": "b_watches",
+  "sound": "S3_salman",
+  "y": 0.66,
+  "cap1": "Where's your watch collection\nTJR? 😂",
+  "cap2": "Where's your Ferrari lil bro?",
+  "sources": [
+   [
+    "night",
+    3
+   ],
+   [
+    "day",
+    3
+   ]
+  ]
+ },
+ {
+  "name": "r9_02_jet",
+  "bait": "b_jet",
+  "sound": "S8_calebgordenn",
+  "y": 0.66,
+  "cap1": "Where's your private jet\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "day",
+    3
+   ],
+   [
+    "night",
+    3,
+    15.75
+   ],
+   [
+    "gas",
+    1,
+    7.68
+   ]
+  ]
+ },
+ {
+  "name": "r9_03_mancave",
+  "bait": "b_mancave",
+  "sound": "S4_404oskar",
+  "y": 0.68,
+  "cap1": "Where's your $1M man cave\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "night",
+    2
+   ],
+   [
+    "day",
+    2,
+    12.85
+   ]
+  ]
+ },
+ {
+  "name": "r9_04_lilbaby",
+  "bait": "b_lilbaby",
+  "sound": "S2_bannu",
+  "y": 0.72,
+  "cap1": "Where's your celebrity friends\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "night",
+    2
+   ],
+   [
+    "gas",
+    1,
+    7.68
+   ],
+   [
+    "day",
+    1,
+    24.95
+   ]
+  ]
+ },
+ {
+  "name": "r9_05_richard",
+  "bait": "b_richard",
+  "sound": "S9_northpole",
+  "y": 0.63,
+  "cap1": "Where's your Richard Mille\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "night",
+    3,
+    18.6
+   ],
+   [
+    "spot",
+    2
+   ],
+   [
+    "day",
+    2
+   ]
+  ]
+ },
+ {
+  "name": "r9_06_mansion",
+  "bait": "b_mansion",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your car collection\nTJR? 😂",
+  "cap2": "Different tax bracket\nlil bro",
+  "sources": [
+   [
+    "day",
+    3
+   ],
+   [
+    "night",
+    2
+   ]
+  ]
+ },
+ {
+  "name": "r9_07_grillz",
+  "bait": "b_grillz",
+  "sound": "S1_ballerszn",
+  "y": 0.64,
+  "cap1": "Where's your diamond grillz\nTJR? 😂",
+  "cap2": "Not even close\nlil bro",
+  "sources": [
+   [
+    "night",
+    3
+   ],
+   [
+    "day",
+    3,
+    12.85
+   ],
+   [
+    "gas",
+    1,
+    7.68
+   ]
+  ]
+ },
+ {
+  "name": "r9_08_chain",
+  "bait": "b_chain",
+  "sound": "S6_luxuryxsh",
+  "y": 0.7,
+  "cap1": "Where's your $200K chain\nTJR? 😂",
+  "cap2": "Where's your Ferrari lil bro?",
+  "sources": [
+   [
+    "day",
+    2
+   ],
+   [
+    "night",
+    2
+   ]
+  ]
+ },
+ {
+  "name": "r9_09_panda",
+  "bait": "b_panda",
+  "sound": "S5_gsgroup",
+  "y": 0.74,
+  "cap1": "Where's your pet panda\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "gas",
+    2
+   ],
+   [
+    "night",
+    3
+   ],
+   [
+    "day",
+    1,
+    24.95
+   ]
+  ]
+ },
+ {
+  "name": "r9_10_garage",
+  "bait": "b_garage",
+  "sound": "S8_calebgordenn",
+  "y": 0.66,
+  "cap1": "Where's your $5M house\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "night",
+    3,
+    15.75
+   ],
+   [
+    "spot",
+    2
+   ],
+   [
+    "day",
+    2,
+    16.0
+   ]
+  ]
+ }
+]

@@ -1,0 +1,354 @@
+{
+ "S1_ballerszn": {
+  "offset": 0.0,
+  "period": 1.017,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.1
+ },
+ "S2_bannu": {
+  "offset": 5.663,
+  "period": 0.7145,
+  "pattern": [
+   2,
+   2,
+   2,
+   1.5
+  ],
+  "fade": 0.6
+ },
+ "S3_salman": {
+  "offset": 0.0,
+  "period": 1.126,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "fade": 1.2
+ },
+ "S4_404oskar": {
+  "offset": 3.0,
+  "period": 0.789,
+  "pattern": [
+   2,
+   2,
+   2,
+   2
+  ]
+ },
+ "S5_gsgroup": {
+  "offset": 0.0,
+  "period": 1.148,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "S6_luxuryxsh": {
+  "offset": 1.5,
+  "period": 0.8375,
+  "pattern": [
+   2,
+   2,
+   2,
+   2
+  ],
+  "fade": 2.0
+ },
+ "S7_useheadset": {
+  "offset": 2.804,
+  "period": 0.723,
+  "pattern": [
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "fade": 0.4
+ },
+ "S8_calebgordenn": {
+  "offset": 0.0,
+  "period": 1.049,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.3
+ },
+ "S9_northpole": {
+  "offset": 1.8,
+  "period": 1.0035,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "fade": 1.0
+ },
+ "N_sybau": {
+  "offset": 0.214,
+  "period": 0.978,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0
+ },
+ "N_temporary": {
+  "offset": 3.886,
+  "period": 1.2575,
+  "pattern": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0
+ },
+ "N_vaivai": {
+  "offset": 13.754,
+  "period": 0.924,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0
+ },
+ "N_itizwotitiz": {
+  "offset": 11.071,
+  "period": 0.8885,
+  "pattern": [
+   2,
+   2,
+   2
+  ],
+  "pad": 0.0
+ },
+ "N_partyfunk": {
+  "offset": 2.811,
+  "period": 0.922,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0
+ },
+ "N_zetsu": {
+  "offset": 1.204,
+  "period": 1.1475,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0,
+  "fade": 0.8
+ },
+ "N_g80kam": {
+  "offset": 0.67,
+  "period": 0.911,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0,
+  "fade": 0.8
+ },
+ "M_lexa": {
+  "offset": 1.441,
+  "period": 1.0495,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0
+ },
+ "M_addicted": {
+  "offset": 0.624,
+  "period": 0.9035,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0
+ },
+ "M_gso2": {
+  "offset": 0.888,
+  "period": 1.0295,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0
+ },
+ "M_ohrwurm": {
+  "offset": 19.377,
+  "period": 0.8025,
+  "pattern": [
+   2,
+   2,
+   2,
+   2
+  ],
+  "pad": 0.0
+ },
+ "M_fastlife": {
+  "offset": 26.589,
+  "period": 0.6655,
+  "pattern": [
+   2,
+   2,
+   2,
+   2
+  ],
+  "pad": 0.0
+ },
+ "M_zahide": {
+  "offset": 22.077,
+  "period": 0.923,
+  "pattern": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0
+ },
+ "M_arcadia": {
+  "offset": 1.345,
+  "period": 1.2265,
+  "pattern": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0,
+  "fade": 0.8
+ },
+ "M_listeria": {
+  "offset": 1.085,
+  "period": 1.2185,
+  "pattern": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0,
+  "fade": 0.8
+ },
+ "M_bandz": {
+  "offset": 4.404,
+  "period": 0.459,
+  "pattern": [
+   2,
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "pad": 0.0
+ },
+ "M_gso3": {
+  "offset": 0.0,
+  "period": 0.684,
+  "pattern": [
+   2,
+   2,
+   2,
+   2
+  ],
+  "pad": 0.73
+ },
+ "M_embrace": {
+  "offset": 1.374,
+  "period": 1.251,
+  "pattern": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "pad": 0.0,
+  "fade": 0.8
+ },
+ "M_reperse": {
+  "offset": 8.082,
+  "period": 0.813,
+  "pattern": [
+   2,
+   2,
+   2,
+   2
+  ],
+  "pad": 0.0
+ },
+ "M_scooby": {
+  "offset": 2.352,
+  "period": 0.4975,
+  "pattern": [
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "pad": 0.0
+ }
+}

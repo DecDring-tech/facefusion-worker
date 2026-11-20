@@ -1,0 +1,4 @@
+tmp/
+out*/
+r8clean/*.mp4
+__pycache__/

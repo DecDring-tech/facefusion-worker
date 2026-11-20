@@ -1,0 +1,237 @@
+{
+ "series": "tjr",
+ "batch": "tjr_001",
+ "items": [
+  {
+   "slot": 1,
+   "video": "r12_01_supercar.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR #TJR #koenigsegg #carsoftiktok #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b12_bluecar",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your supercar TJR? 😂",
+    "cap2": "Where's your Ferari lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "night",
+     "day"
+    ]
+   }
+  },
+  {
+   "slot": 2,
+   "video": "r12_02_cybertruck.mp4",
+   "caption": "Logan Paul thought a Cybertruck was a flex 💀 #TJR #koenigsegg #carsoftiktok #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b12_cybertruck",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your Cybertruck TJR? 😂",
+    "cap2": "Where's your LaFerarri lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "day",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 3,
+   "video": "r12_03_jet.mp4",
+   "caption": "Logan Paul gets car Mogged at 40,000 ft #TJR #koenigsegg #carsoftiktok #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b12_jetint",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your private jet TJR? 😂",
+    "cap2": "Where's your Bugatti Chrion lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "night",
+     "gas",
+     "day"
+    ]
+   }
+  },
+  {
+   "slot": 4,
+   "video": "r12_04_brother.mp4",
+   "caption": "Logan Paul brought his brother and still got Mogged #TJR #koenigsegg #carsoftiktok #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b12_brother",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your brother TJR? 😂",
+    "cap2": "Where's your Pagani Huyara lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "night",
+     "day"
+    ]
+   }
+  },
+  {
+   "slot": 5,
+   "video": "r12_05_mansion.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR 🥱 #TJR #koenigsegg #carsoftiktok #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b12_mansion",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your mansion TJR? 😂",
+    "cap2": "Where's your Mclaren P1 lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 6,
+   "video": "r12_06_boat.mp4",
+   "caption": "Logan Paul's boat vs TJR's car 😭 #TJR #koenigsegg #carsoftiktok #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b12_boat",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your boat TJR? 😂",
+    "cap2": "Where's your Koenigsegg Jesco lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "day",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 7,
+   "video": "r12_07_girlfriend.mp4",
+   "caption": "Logan Paul gets Mogged in front of his girl 💀 #TJR #koenigsegg #carsoftiktok #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b12_whiteparty",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your girlfriend TJR? 😂",
+    "cap2": "Where's your Agerra lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "night",
+     "day"
+    ]
+   }
+  },
+  {
+   "slot": 8,
+   "video": "r12_08_belt.mp4",
+   "caption": "Logan Paul's belt vs TJR's car 🥱 #TJR #koenigsegg #carsoftiktok #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b_65m",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your championship belt TJR? 😂",
+    "cap2": "Where's your Lamborgini Sian lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "day",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 9,
+   "video": "r12_09_lambos.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR #TJR #koenigsegg #carsoftiktok #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b_hottub",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your Lambo collection TJR? 😂",
+    "cap2": "Where's your SF90 Stradle lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 10,
+   "video": "r12_10_richard.mp4",
+   "caption": "Logan Paul's watch vs TJR's car 😭 #TJR #koenigsegg #carsoftiktok #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_001",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b_richard",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your Richard Mille TJR? 😂",
+    "cap2": "Where's your Bugati Divo lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "day",
+     "night"
+    ]
+   }
+  }
+ ]
+}
