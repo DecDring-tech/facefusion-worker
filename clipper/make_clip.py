@@ -302,6 +302,65 @@ def plan_hook_best_end(words: list[Word], total: float, hook: float, closer: flo
     return out
 
 
+def plan_intro_broll(words: list[Word], total: float, lo: float, hi: float, rng: random.Random) -> list[Shot]:
+    """Speaker on camera for the opening line (ends on a sentence end between lo and hi seconds), then
+    nothing but b-roll, cut every 1.4-2.6 s on word boundaries."""
+    ends = [w.out_end for w in words if w.text[-1] in ".?!," and lo <= w.out_end <= hi]
+    if ends:
+        intro = ends[0] if any(w.text[-1] in ".?!" for w in words if w.out_end == ends[0]) else ends[-1]
+        full = [e for e in ends if any(w.out_end == e and w.text[-1] in ".?!" for w in words)]
+        intro = full[0] if full else ends[-1]
+    else:
+        cand = [w.out_end for w in words if lo <= w.out_end <= hi]
+        intro = cand[-1] if cand else min(hi, total)
+    bounds = sorted({round(w.out_end, 3) for w in words} | {round(total, 3)})
+    snap = lambda t: min(bounds, key=lambda b: abs(b - t))
+    shots = [Shot("face", 0.0, intro, punch=1.0)]
+    t = intro
+    while total - t > 0.05:
+        nxt = snap(t + rng.uniform(1.4, 2.6))
+        if nxt <= t + 0.5:
+            nxt = min(total, t + 2.0)
+        if total - nxt < 1.0:
+            nxt = total
+        shots.append(Shot("broll", t, nxt))
+        t = nxt
+    return shots
+
+
+def mix_score(voice: str, tmp: Path, total: float, start: float, music: str | None, music_db: float,
+              sfx: str | None, sfx_times: list[float], sfx_db: float) -> str:
+    """Lay a looped music bed in from `start` (ducked under the voice) and one-shot effects at sfx_times."""
+    if not music and not (sfx and sfx_times):
+        return voice
+    out = tmp / "mix.wav"
+    ins = ["-i", voice]
+    parts = ["[0:a]aformat=sample_rates=48000:channel_layouts=stereo,asplit=2[v][vk]"]
+    mixes = ["[v]"]
+    k = 1
+    if music:
+        ins += ["-stream_loop", "-1", "-i", music]
+        ms = int(start * 1000)
+        parts.append(f"[{k}:a]aformat=sample_rates=48000:channel_layouts=stereo,atrim=0:{total + 1.5 - start:.3f},"
+                     f"afade=t=in:d=0.25,volume={music_db}dB,adelay={ms}|{ms}[m]")
+        parts.append("[m][vk]sidechaincompress=threshold=0.12:ratio=2.5:attack=20:release=250[md]")
+        mixes.append("[md]")
+        k += 1
+    else:
+        parts[0] = "[0:a]aformat=sample_rates=48000:channel_layouts=stereo[v]"
+    for t in sfx_times if sfx else []:
+        ins += ["-i", sfx]
+        ms = int(max(0.0, t) * 1000)
+        parts.append(f"[{k}:a]aformat=sample_rates=48000:channel_layouts=stereo,volume={sfx_db}dB,adelay={ms}|{ms}[s{k}]")
+        mixes.append(f"[s{k}]")
+        k += 1
+    parts.append("".join(mixes) + f"amix=inputs={len(mixes)}:duration=first:normalize=0,"
+                 "alimiter=limit=0.95,loudnorm=I=-14:TP=-1.5:LRA=11[out]")
+    run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", ";".join(parts), "-map", "[out]",
+         "-ar", "48000", "-ac", "2", str(out)])
+    return str(out)
+
+
 def split_by_keep(shots: list[Shot], keep: list[tuple[float, float]]) -> list[Shot]:
     """Face shots must map back to source time; a tightened edit can put a
     silence-cut inside a shot, so split into pieces that each map to one keep range."""
@@ -613,6 +672,9 @@ STYLES = {
     # single lowercase word, small, centre — 1make.more.money1
     "word": dict(font="Inter", size=50, bold=0, caps=False, chunk=1, maxchars=14, align=2, mv=700,
                  shadow=2, blur=1.5, pop=False, spacing=0),
+    # big heavy white caps, one word at a time, upper third, black outline — clip-channel title style
+    "bold": dict(font="Inter Black", size=104, bold=0, caps=True, chunk=1, maxchars=14, align=8, mv=420,
+                 shadow=0, blur=0.6, pop=True, spacing=1, outline=5),
 }
 
 
@@ -682,7 +744,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,{st['font']},{st['size']},&H00FFFFFF,&H00FFFFFF,&H00000000,&H90000000,{st['bold']},0,0,0,100,100,{st['spacing']},0,1,0,{st['shadow']},{st['align']},90,90,{st['mv']},1
+Style: Cap,{st['font']},{st['size']},&H00FFFFFF,&H00FFFFFF,&H00000000,&H90000000,{st['bold']},0,0,0,100,100,{st['spacing']},0,1,{st.get('outline', 0)},{st['shadow']},{st['align']},90,90,{st['mv']},1
 Style: Handle,Inter,30,&H66FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,1,0,1,0,1,2,0,0,140,1
 
 [Events]
@@ -738,7 +800,16 @@ def main() -> None:
     ap.add_argument("--model", default="small", help="faster-whisper model size")
     ap.add_argument("--seed", type=int, default=7, help="shot-pattern / b-roll order seed; change for a different cut")
     ap.add_argument("--face-only", action="store_true", help="no b-roll at all")
-    ap.add_argument("--structure", choices=["base", "hook-best-end"], default="base",
+    ap.add_argument("--intro-min", type=float, default=3.0, help="intro-broll: shortest face opening")
+    ap.add_argument("--intro-max", type=float, default=7.0, help="intro-broll: longest face opening")
+    ap.add_argument("--music", default=None, help="music bed (looped), laid under the voice")
+    ap.add_argument("--music-db", type=float, default=-9.0, help="music gain before ducking")
+    ap.add_argument("--music-after-intro", action="store_true", help="start the music when the opening face shot ends")
+    ap.add_argument("--sfx", default=None, help="one-shot sound effect (e.g. exhaust pops)")
+    ap.add_argument("--sfx-match", default="", help="comma list of b-roll filename fragments that trigger the sfx")
+    ap.add_argument("--sfx-max", type=int, default=2, help="max sfx hits per video")
+    ap.add_argument("--sfx-db", type=float, default=-4.0)
+    ap.add_argument("--structure", choices=["base", "hook-best-end", "intro-broll"], default="base",
                     help="base: alternate face/b-roll; hook-best-end: face for the hook, b-roll while he talks, "
                          "face back on the strongest line, face at the end")
     ap.add_argument("--crop-top", type=float, default=0.0,
@@ -782,6 +853,8 @@ def main() -> None:
         shots = [Shot("face", 0.0, total, punch=1.0)]
     elif args.structure == "hook-best-end":
         shots = plan_hook_best_end(words, total, args.hook, args.closer)
+    elif args.structure == "intro-broll":
+        shots = plan_intro_broll(words, total, args.intro_min, args.intro_max, rng)
     else:
         hard = []
         acc = 0.0
@@ -794,6 +867,22 @@ def main() -> None:
     pieces = split_by_keep(shots, keep)
     if not args.face_only:
         assign_broll(pieces, broll, rng)
+        # guarantee the sfx-tagged shots (e.g. highway runs) actually appear, at least twice
+        keys = [k.strip() for k in args.sfx_match.split(",") if k.strip()] if args.sfx_match else []
+        tagged = [f for f in broll if any(k in Path(f).name for k in keys)]
+        if tagged:
+            br = [p for p in pieces if p.kind == "broll"]
+            have = sum(1 for p in br if any(k in Path(p.src).name for k in keys))
+            slots = [p for i, p in enumerate(br) if i in (1, len(br) // 2 + 1) and p.dur >= 1.2]
+            for p, f in zip(slots, rng.sample(tagged, len(tagged))):
+                if have >= 2:
+                    break
+                if any(k in Path(p.src).name for k in keys):
+                    continue
+                dur = probe(f)["dur"]
+                if dur >= p.dur + 0.2:
+                    p.src, p.src_start = f, rng.uniform(0, max(0.0, dur - p.dur - 0.1))
+                    have += 1
     face_t = sum(p.dur for p in pieces if p.kind == "face")
     print(f"[3/5] {len(shots)} shots ({face_t / total:.0%} on the face), {len(pieces)} render pieces")
     for p in pieces:
@@ -824,6 +913,22 @@ def main() -> None:
         run(["ffmpeg", "-v", "error", "-y", "-i", args.audio_from, "-vn", "-ar", "48000", "-ac", "2", audio])
     else:
         audio = render_audio(speaker, keep, tmp, not args.no_denoise, not args.keep_music, words, args.echo)
+
+    voice_keep = Path(args.out).with_suffix(".voice.wav")
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy(audio, voice_keep)
+    if args.music or args.sfx:
+        intro_end = next((p.out_end for p in pieces if p.kind == "face"), 0.0) if args.music_after_intro else 0.0
+        hits = []
+        if args.sfx and args.sfx_match:
+            keys = [k.strip() for k in args.sfx_match.split(",") if k.strip()]
+            for p in pieces:
+                if p.kind == "broll" and any(k in Path(p.src).name for k in keys):
+                    if not hits or p.out_start - hits[-1] > 4.0:
+                        hits.append(p.out_start)
+            hits = hits[:args.sfx_max]
+        print(f"      music from {intro_end:.2f}s, sfx at {[round(h, 2) for h in hits]}")
+        audio = mix_score(audio, tmp, total, intro_end, args.music, args.music_db, args.sfx, hits, args.sfx_db)
 
     print("[5/5] captions + mux …")
     ass = tmp / "captions.ass"
