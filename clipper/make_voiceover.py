@@ -73,6 +73,9 @@ def clean(t: str) -> str:
 RVM_URL = "https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3_fp32.onnx"
 
 
+LIFT = (np.power(np.arange(256) / 255.0, 0.55) * 255).astype(np.uint8)
+
+
 class Matter:
     """Robust Video Matting (ONNX): a temporally steady alpha matte of the speaker, frame by frame.
     Call reset() at the start of each speaker run so b-roll never leaks into the recurrent state."""
@@ -93,8 +96,9 @@ class Matter:
         self.fresh = True
 
     def __call__(self, rgb: np.ndarray) -> np.ndarray:
-        x = (rgb.astype(np.float32) / 255).transpose(2, 0, 1)[None]
-        for _ in range(3 if self.fresh else 1):  # warm the recurrent state on a run's first frame
+        # see dark caps / hair against dark rooms: matte a lifted copy (the picture itself is untouched)
+        x = (LIFT[rgb].astype(np.float32) / 255).transpose(2, 0, 1)[None]
+        for _ in range(8 if self.fresh else 1):  # lock the recurrent state on a run's first frame
             _, pha, *self.rec = self.sess.run(None, {"src": x, "r1i": self.rec[0], "r2i": self.rec[1],
                                                      "r3i": self.rec[2], "r4i": self.rec[3],
                                                      "downsample_ratio": np.array([0.25], np.float32)})
@@ -180,7 +184,7 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--font", default="Anton")
     ap.add_argument("--font-size", type=int, default=250)
-    ap.add_argument("--overlap", type=float, default=0.25, help="share of the caption height behind the head")
+    ap.add_argument("--overlap", type=float, default=0.18, help="share of the caption height behind the head")
     ap.add_argument("--threads", type=int, default=4)
     args = ap.parse_args()
 
