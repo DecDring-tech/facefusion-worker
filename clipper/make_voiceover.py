@@ -30,7 +30,6 @@ import make_clip as m  # noqa: E402
 from make_cutaway import SR, read_audio, write_wav, rms, onset  # noqa: E402
 
 W, H, FPS = m.W, m.H, m.FPS
-MW, MH = 288, 512  # segmentation resolution
 
 
 def cut_times(words: list[m.Word], total: float, first: float, d: float, gap_lo: float, gap_hi: float,
@@ -71,135 +70,76 @@ def clean(t: str) -> str:
     return re.sub(r"[^\w$£%'’-]", "", t).upper()
 
 
-def seg_model(threads: int):
-    import torch
-    from torchvision.models.segmentation import deeplabv3_resnet50, DeepLabV3_ResNet50_Weights
-    torch.set_num_threads(threads)
-    return deeplabv3_resnet50(weights=DeepLabV3_ResNet50_Weights.DEFAULT).eval()
+RVM_URL = "https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3_fp32.onnx"
 
 
-def person_masks(video: Path, n: int, face: np.ndarray, step: int, threads: int) -> np.ndarray:
-    """Person probability (MH x MW, uint8) for every frame; computed every `step` speaker frames
-    and interpolated between; zero on b-roll frames."""
-    import torch
-    model = seg_model(threads)
-    p = subprocess.Popen(["ffmpeg", "-nostdin", "-v", "error", "-i", str(video), "-vf", f"scale={MW}:{MH}",
-                          "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
-    masks = np.zeros((n, MH, MW), np.uint8)
-    key = {}
-    sharp_top = np.full(n, np.nan)
-    mean, std = np.array([0.485, 0.456, 0.406]), np.array([0.229, 0.224, 0.225])
+class Matter:
+    """Robust Video Matting (ONNX): a temporally steady alpha matte of the speaker, frame by frame.
+    Call reset() at the start of each speaker run so b-roll never leaks into the recurrent state."""
+
+    def __init__(self, threads: int):
+        import onnxruntime as ort
+        path = Path.home() / ".cache" / "rvm" / "rvm_mobilenetv3_fp32.onnx"
+        if not path.exists():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            m.run(["curl", "-sSL", "-o", str(path), RVM_URL])
+        so = ort.SessionOptions()
+        so.intra_op_num_threads = threads
+        self.sess = ort.InferenceSession(str(path), so, providers=["CPUExecutionProvider"])
+        self.reset()
+
+    def reset(self) -> None:
+        self.rec = [np.zeros((1, 1, 1, 1), np.float32)] * 4
+        self.fresh = True
+
+    def __call__(self, rgb: np.ndarray) -> np.ndarray:
+        x = (rgb.astype(np.float32) / 255).transpose(2, 0, 1)[None]
+        for _ in range(3 if self.fresh else 1):  # warm the recurrent state on a run's first frame
+            _, pha, *self.rec = self.sess.run(None, {"src": x, "r1i": self.rec[0], "r2i": self.rec[1],
+                                                     "r3i": self.rec[2], "r4i": self.rec[3],
+                                                     "downsample_ratio": np.array([0.25], np.float32)})
+        self.fresh = False
+        return pha[0, 0]
+
+
+def solid(alpha: np.ndarray) -> np.ndarray:
+    """Crisp, hole-free occluder from a matte: harden the edge to ~2 px and fill everything below the
+    silhouette's top in each column (captions only ever meet the top of the head)."""
+    import cv2
+    a = np.clip((alpha - 0.5) * 5 + 0.5, 0, 1)
+    hard = (alpha > 0.5).astype(np.uint8)
+    n, lab, st, _ = cv2.connectedComponentsWithStats(hard)
+    if n > 2:  # ignore specks
+        big = st[1:, cv2.CC_STAT_AREA].max()
+        hard = np.isin(lab, [i for i in range(1, n) if st[i, cv2.CC_STAT_AREA] >= 0.03 * big]).astype(np.uint8)
+    h = hard.shape[0]
+    top = np.where(hard.any(0), hard.argmax(0), h).astype(np.float32)
+    fill = (np.arange(h, dtype=np.float32)[:, None] >= top[None, :] + 3).astype(np.float32)
+    return np.maximum(a * (np.arange(h)[:, None] >= top[None, :] - 4), fill)
+
+
+def head_tops(video: Path, n: int, face: np.ndarray, threads: int) -> np.ndarray:
+    """Per-frame y of the top of the speaker's head (NaN on b-roll)."""
+    matter = Matter(threads)
+    p = subprocess.Popen(["ffmpeg", "-nostdin", "-v", "error", "-i", str(video), "-f", "rawvideo",
+                          "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
+    tops = np.full(n, np.nan)
+    x0, x1 = int(W * 0.2), int(W * 0.8)
+    fb = W * H * 3
     for i in range(n):
-        buf = p.stdout.read(MW * MH * 3)
-        if len(buf) < MW * MH * 3:
+        buf = p.stdout.read(fb)
+        if len(buf) < fb:
             break
         if not face[i]:
+            matter.reset()
             continue
-        # always segment the first and last frame of each speaker run so nothing extrapolates
-        first = i == 0 or not face[i - 1]
-        last = i == n - 1 or not face[i + 1]
-        if i % step and not first and not last:
-            continue
-        x = (np.frombuffer(buf, np.uint8).reshape(MH, MW, 3) / 255.0 - mean) / std
-        with torch.inference_mode():
-            o = model(torch.from_numpy(x.transpose(2, 0, 1)).float()[None])["out"]
-        pr = o.softmax(1)[0, 15].numpy()
-        key[i] = (pr * 255).astype(np.uint8)
-        hard = refine(np.frombuffer(buf, np.uint8).reshape(MH, MW, 3), pr)
-        sharp_top[i] = sharp_head_top(hard)
+        a = matter(np.frombuffer(buf, np.uint8).reshape(H, W, 3))
+        r = np.flatnonzero((a[:, x0:x1] > 0.5).mean(1) > 0.06)
+        if len(r):
+            tops[i] = r[0]
     p.stdout.close()
     p.wait()
-    ks = sorted(key)
-    for a, b in zip(ks, ks[1:]):
-        masks[a] = key[a]
-        if b - a > 1 and all(face[a:b + 1]):
-            for i in range(a + 1, b):
-                t = (i - a) / (b - a)
-                masks[i] = (key[a] * (1 - t) + key[b] * t).astype(np.uint8)
-    if ks:
-        masks[ks[-1]] = key[ks[-1]]
-    # fill head tops between keyframes
-    idx = np.flatnonzero(np.isfinite(sharp_top))
-    if len(idx):
-        fr = np.flatnonzero(face)
-        sharp_top[fr] = np.interp(fr, idx, sharp_top[idx])
-    return masks, sharp_top
-
-
-def sharp_head_top(hard: np.ndarray) -> float:
-    x0, x1 = int(MW * 0.2), int(MW * 0.8)
-    r = np.flatnonzero((hard[:, x0:x1] > 0.5).mean(1) > 0.06)
-    return r[0] / MH * H if len(r) else np.nan
-
-
-def box(x: np.ndarray, r: int) -> np.ndarray:
-    import cv2
-    return cv2.boxFilter(x, -1, (2 * r + 1, 2 * r + 1), normalize=True, borderType=cv2.BORDER_REFLECT)
-
-
-def refine(guide_rgb: np.ndarray, prob: np.ndarray) -> np.ndarray:
-    """Turn the soft person probability into a sharp cut-out that hugs the real outline:
-    GrabCut (colour models seeded by the probability) at half res decides the uncertain band,
-    then a small guided filter gives a clean ~1 px edge at full res."""
-    import cv2
-    h, w = prob.shape
-    hs, ws = h // 2, w // 2
-    img = cv2.resize(guide_rgb, (ws, hs), interpolation=cv2.INTER_AREA)
-    # dark scenes: stretch contrast so hood-vs-background colour differences count
-    f = img.astype(np.float32)
-    lo, hi = np.percentile(f, 1), np.percentile(f, 99.5)
-    img = np.clip((f - lo) * 255 / max(1.0, hi - lo), 0, 255).astype(np.uint8)
-    pr = cv2.resize(prob, (ws, hs), interpolation=cv2.INTER_AREA)
-    gc = np.full((hs, ws), cv2.GC_PR_BGD, np.uint8)
-    gc[pr >= 0.5] = cv2.GC_PR_FGD
-    gc[cv2.erode((pr > 0.97).astype(np.uint8), np.ones((15, 15), np.uint8)) > 0] = cv2.GC_FGD
-    gc[cv2.erode((pr < 0.03).astype(np.uint8), np.ones((5, 5), np.uint8)) > 0] = cv2.GC_BGD
-    if (gc == cv2.GC_FGD).any() and (gc == cv2.GC_BGD).any():
-        try:
-            cv2.grabCut(img, gc, None, np.zeros((1, 65), np.float64), np.zeros((1, 65), np.float64), 2,
-                        cv2.GC_INIT_WITH_MASK)
-        except cv2.error:
-            pass
-    hard = ((gc == cv2.GC_FGD) | (gc == cv2.GC_PR_FGD)).astype(np.float32)
-    hard = cv2.morphologyEx(hard, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
-    n, lab, st, _ = cv2.connectedComponentsWithStats(hard.astype(np.uint8))
-    if n > 2:  # drop specks: keep only real parts of the person
-        big = st[1:, cv2.CC_STAT_AREA].max()
-        hard = np.isin(lab, [i for i in range(1, n) if st[i, cv2.CC_STAT_AREA] >= 0.05 * big]).astype(np.float32)
-    hard = cv2.resize(hard, (w, h), interpolation=cv2.INTER_LINEAR)
-    I = cv2.cvtColor(guide_rgb, cv2.COLOR_RGB2GRAY).astype(np.float32) / 255
-    r, eps = 4, 1e-3
-    mI, mp = box(I, r), box(hard, r)
-    a = (box(I * hard, r) - mI * mp) / (box(I * I, r) - mI * mI + eps)
-    q = box(a, r) * I + box(mp - a * mI, r)
-    return np.clip((q - 0.5) * 6 + 0.5, 0, 1)
-
-
-def occluder(guide_rgb: np.ndarray, prob: np.ndarray) -> np.ndarray:
-    """Alpha of what visibly sits in front of the captions: the sharp person cut-out, limited to
-    pixels that actually stand out from the background (so a dark hood fading into a black room
-    doesn't swallow letters), then filled downward per column from the top of the silhouette."""
-    import cv2
-    a = refine(guide_rgb, prob)
-    f = guide_rgb.astype(np.float32)
-    bgpx = f[prob < 0.05]
-    if len(bgpx) > 500:
-        bg = np.median(bgpx, 0)
-        dist = np.sqrt(((f - bg) ** 2).sum(2))
-        vis = np.clip((dist - 10) / 14, 0, 1)
-        a = a * vis
-    m = (a > 0.5).astype(np.uint8)
-    m = cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
-    n, lab, st, _ = cv2.connectedComponentsWithStats(m)
-    if n > 2:
-        big = st[1:, cv2.CC_STAT_AREA].max()
-        m = np.isin(lab, [i for i in range(1, n) if st[i, cv2.CC_STAT_AREA] >= 0.05 * big]).astype(np.uint8)
-    h, w = m.shape
-    has = m.any(0)
-    top = np.where(has, m.argmax(0), h)
-    top = cv2.medianBlur(top.astype(np.float32).reshape(1, -1), 5).ravel()  # de-jag the silhouette
-    rows = np.arange(h, dtype=np.float32)[:, None]
-    return np.clip(rows - top[None, :] + 0.5, 0, 1)
+    return tops
 
 
 def grunge(seed: int) -> np.ndarray:
@@ -241,7 +181,6 @@ def main() -> None:
     ap.add_argument("--font", default="Anton")
     ap.add_argument("--font-size", type=int, default=250)
     ap.add_argument("--overlap", type=float, default=0.25, help="share of the caption height behind the head")
-    ap.add_argument("--seg-step", type=int, default=2)
     ap.add_argument("--threads", type=int, default=4)
     args = ap.parse_args()
 
@@ -386,7 +325,7 @@ def main() -> None:
             face[int(round(o0 * FPS)):int(round(o1 * FPS))] = False
 
     # --- speaker masks -> where his head is
-    masks, tops = person_masks(video, n, face, args.seg_step, args.threads)
+    tops = head_tops(video, n, face, args.threads)
     top = float(np.nanmedian(tops)) if np.isfinite(tops).any() else H * 0.3
     print(f"head top at y={top:.0f}")
 
@@ -439,6 +378,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
                             "-b:a", "192k", "-movflags", "+faststart", "-t", f"{total:.3f}", str(out)],
                            stdin=subprocess.PIPE)
     fb = W * H * 3
+    matter = Matter(args.threads)
     for i in range(n):
         p, c = plain.stdout.read(fb), capd.stdout.read(fb)
         if len(p) < fb or len(c) < fb:
@@ -447,12 +387,13 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         c = np.frombuffer(c, np.uint8).reshape(H, W, 3).astype(np.float32)
         delta = (c - p) * tex
         if face[i]:
+            alpha = matter(p.astype(np.uint8))  # every speaker frame, so the matte stays temporally steady
             rows = np.flatnonzero(np.abs(c - p).max(2).max(1) > 2)
             if len(rows):
                 y0, y1 = max(0, rows[0] - 40), min(H, rows[-1] + 41)
-                prob = cv2.resize(masks[i], (W, H), interpolation=cv2.INTER_CUBIC)[y0:y1].astype(np.float32) / 255
-                a = occluder(p[y0:y1].astype(np.uint8), np.clip(prob, 0, 1))
-                delta[y0:y1] *= (1 - a)[:, :, None]
+                delta[y0:y1] *= (1 - solid(alpha)[y0:y1])[:, :, None]
+        else:
+            matter.reset()
         enc.stdin.write(np.clip(p + delta, 0, 255).astype(np.uint8).tobytes())
     enc.stdin.close()
     enc.wait()
