@@ -175,6 +175,33 @@ def refine(guide_rgb: np.ndarray, prob: np.ndarray) -> np.ndarray:
     return np.clip((q - 0.5) * 6 + 0.5, 0, 1)
 
 
+def occluder(guide_rgb: np.ndarray, prob: np.ndarray) -> np.ndarray:
+    """Alpha of what visibly sits in front of the captions: the sharp person cut-out, limited to
+    pixels that actually stand out from the background (so a dark hood fading into a black room
+    doesn't swallow letters), then filled downward per column from the top of the silhouette."""
+    import cv2
+    a = refine(guide_rgb, prob)
+    f = guide_rgb.astype(np.float32)
+    bgpx = f[prob < 0.05]
+    if len(bgpx) > 500:
+        bg = np.median(bgpx, 0)
+        dist = np.sqrt(((f - bg) ** 2).sum(2))
+        vis = np.clip((dist - 10) / 14, 0, 1)
+        a = a * vis
+    m = (a > 0.5).astype(np.uint8)
+    m = cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
+    n, lab, st, _ = cv2.connectedComponentsWithStats(m)
+    if n > 2:
+        big = st[1:, cv2.CC_STAT_AREA].max()
+        m = np.isin(lab, [i for i in range(1, n) if st[i, cv2.CC_STAT_AREA] >= 0.05 * big]).astype(np.uint8)
+    h, w = m.shape
+    has = m.any(0)
+    top = np.where(has, m.argmax(0), h)
+    top = cv2.medianBlur(top.astype(np.float32).reshape(1, -1), 5).ravel()  # de-jag the silhouette
+    rows = np.arange(h, dtype=np.float32)[:, None]
+    return np.clip(rows - top[None, :] + 0.5, 0, 1)
+
+
 def grunge(seed: int) -> np.ndarray:
     """Static rough-print texture for the caption layer: mostly 1, with worn specks and streaks."""
     import cv2
@@ -424,7 +451,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             if len(rows):
                 y0, y1 = max(0, rows[0] - 40), min(H, rows[-1] + 41)
                 prob = cv2.resize(masks[i], (W, H), interpolation=cv2.INTER_CUBIC)[y0:y1].astype(np.float32) / 255
-                a = refine(p[y0:y1].astype(np.uint8), np.clip(prob, 0, 1))
+                a = occluder(p[y0:y1].astype(np.uint8), np.clip(prob, 0, 1))
                 delta[y0:y1] *= (1 - a)[:, :, None]
         enc.stdin.write(np.clip(p + delta, 0, 255).astype(np.uint8).tobytes())
     enc.stdin.close()
