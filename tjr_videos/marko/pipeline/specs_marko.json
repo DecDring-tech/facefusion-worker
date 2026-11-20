@@ -1,0 +1,218 @@
+[
+ {
+  "name": "mk01_belt",
+  "bait": "b_65m",
+  "sound": "S1_ballerszn",
+  "y": 0.64,
+  "cap1": "Where's your championship belt\nMarko? 😂",
+  "cap2": "Middlewieght champ\nlil bro",
+  "sources": [
+   [
+    "belt",
+    2
+   ],
+   [
+    "ring",
+    3,
+    4.6
+   ],
+   [
+    "red",
+    2,
+    14
+   ]
+  ]
+ },
+ {
+  "name": "mk02_supercar",
+  "bait": "b12_bluecar",
+  "sound": "S1_ballerszn",
+  "y": 0.64,
+  "cap1": "Where's your supercar\nMarko? 😂",
+  "cap2": "11-0\nlil bro",
+  "sources": [
+   [
+    "ring",
+    3,
+    4.6
+   ],
+   [
+    "corner",
+    2
+   ],
+   [
+    "red",
+    2,
+    20
+   ]
+  ]
+ },
+ {
+  "name": "mk03_jet",
+  "bait": "b12_jetint",
+  "sound": "S8_calebgordenn",
+  "y": 0.64,
+  "cap1": "Where's your private jet\nMarko? 😂",
+  "cap2": "Wrong weight class\nlil bro",
+  "sources": [
+   [
+    "red",
+    3,
+    12.3
+   ],
+   [
+    "ring",
+    2,
+    14.68
+   ],
+   [
+    "corner",
+    2
+   ]
+  ]
+ },
+ {
+  "name": "mk04_richard",
+  "bait": "b_richard",
+  "sound": "S1_ballerszn",
+  "y": 0.64,
+  "cap1": "Where's your Richard Mille\nMarko? 😂",
+  "cap2": "Undefeted\nlil bro",
+  "sources": [
+   [
+    "ko",
+    3
+   ],
+   [
+    "ring",
+    2,
+    18.07
+   ],
+   [
+    "red",
+    2,
+    15
+   ]
+  ]
+ },
+ {
+  "name": "mk05_mansion",
+  "bait": "b12_mansion",
+  "sound": "S9_northpole",
+  "y": 0.64,
+  "cap1": "Where's your mansion\nMarko? 😂",
+  "cap2": "Different weight class\nlil bro",
+  "sources": [
+   [
+    "warmup",
+    2
+   ],
+   [
+    "corner",
+    3
+   ],
+   [
+    "ring",
+    2,
+    18.07
+   ]
+  ]
+ },
+ {
+  "name": "mk06_lambos",
+  "bait": "b_hottub",
+  "sound": "S3_salman",
+  "y": 0.64,
+  "cap1": "Where's your Lambo collection\nMarko? 😂",
+  "cap2": "Heavyweight champ\nlil bro",
+  "sources": [
+   [
+    "red",
+    3,
+    45.5
+   ],
+   [
+    "ring",
+    3,
+    18.07
+   ]
+  ]
+ },
+ {
+  "name": "mk07_gym",
+  "bait": "b11_gym",
+  "sound": "S5_gsgroup",
+  "y": 0.64,
+  "cap1": "Where's your home gym\nMarko? 😂",
+  "cap2": "Wrong weight class\nlil bro",
+  "sources": [
+   [
+    "warmup",
+    3
+   ],
+   [
+    "ring",
+    3,
+    4.6
+   ]
+  ]
+ },
+ {
+  "name": "mk08_chain",
+  "bait": "b_chain",
+  "sound": "N_partyfunk",
+  "y": 0.64,
+  "cap1": "Where's your $200K chain\nMarko? 😂",
+  "cap2": "12-0\nlil bro",
+  "sources": [
+   [
+    "ko",
+    3
+   ],
+   [
+    "corner",
+    3
+   ]
+  ]
+ },
+ {
+  "name": "mk09_billion",
+  "bait": "b11_money",
+  "sound": "M_lexa",
+  "y": 0.64,
+  "cap1": "Where's your billion dollars\nMarko? 😂",
+  "cap2": "Undefeated\nlil bro",
+  "sources": [
+   [
+    "ring",
+    3,
+    15.0
+   ],
+   [
+    "red",
+    2,
+    63
+   ]
+  ]
+ },
+ {
+  "name": "mk10_lambo",
+  "bait": "b11_lambo",
+  "sound": "S7_useheadset",
+  "y": 0.64,
+  "cap1": "Where's your Lamborghini\nMarko? 😂",
+  "cap2": "Wrong weight class\nlil bro",
+  "sources": [
+   [
+    "red",
+    3,
+    45.5
+   ],
+   [
+    "corner",
+    2
+   ]
+  ],
+  "bait_start": 0.1
+ }
+]
