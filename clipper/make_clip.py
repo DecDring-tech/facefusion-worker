@@ -439,6 +439,9 @@ LOOKS = {
     "clean": "eq=contrast=1.06:saturation=0.9,vignette=angle=PI/5.5",
     # for b-roll that is already graded very dark: open the shadows a touch so the subject reads on a phone
     "lift": "eq=gamma=1.45:brightness=0.04:contrast=1.04:saturation=0.9,vignette=angle=PI/5.5",
+    # heavy black filter for b-roll (no.witnesses look): near-monochrome, crushed blacks, dark vignette
+    "black": ("hue=s=0.18,eq=contrast=1.28:brightness=-0.06:gamma=0.88,"
+              "curves=m='0/0 0.22/0.08 0.55/0.42 1/0.88',vignette=angle=PI/3.6"),
 }
 
 
