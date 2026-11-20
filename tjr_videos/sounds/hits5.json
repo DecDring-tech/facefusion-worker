@@ -1,0 +1,175 @@
+{
+ "S1_ballerszn": {
+  "file": "sounds_dl/S1_ballerszn.mp3",
+  "offset": 0.0,
+  "drop": 2.979,
+  "end": 8.279,
+  "hits": [
+   4.029,
+   4.528,
+   5.538,
+   6.037,
+   7.825
+  ]
+ },
+ "S2_bannu": {
+  "file": "sounds_dl/S2_bannu.mp3",
+  "offset": 5.663,
+  "drop": 8.982,
+  "end": 11.62,
+  "hits": [
+   10.072,
+   11.471,
+   11.831,
+   12.202,
+   12.55,
+   12.916,
+   13.624,
+   13.967
+  ]
+ },
+ "S3_salman": {
+  "file": "sounds_dl/S3_salman.mp3",
+  "offset": 0.0,
+  "drop": 3.663,
+  "end": 10.163,
+  "hits": [
+   4.22,
+   4.754,
+   6.774,
+   7.355,
+   8.284
+  ]
+ },
+ "S4_404oskar": {
+  "file": "sounds_dl/S4_404oskar.mp3",
+  "offset": 0.0,
+  "drop": 6.43,
+  "end": 12.93,
+  "hits": [
+   7.012,
+   8.197,
+   9.572,
+   10.762,
+   11.355,
+   11.952
+  ]
+ },
+ "S5_gsgroup": {
+  "file": "sounds_dl/S5_gsgroup.mp3",
+  "offset": 0.0,
+  "drop": 4.017,
+  "end": 9.417,
+  "hits": [
+   4.748,
+   5.166,
+   6.049,
+   6.908,
+   7.488,
+   8.638
+  ]
+ },
+ "S6_luxuryxsh": {
+  "file": "sounds_dl/S6_luxuryxsh.mp3",
+  "offset": 0.0,
+  "drop": 4.917,
+  "end": 9.317,
+  "hits": [
+   5.567,
+   6.583,
+   7.877,
+   8.324,
+   8.737,
+   9.038
+  ]
+ },
+ "S7_useheadset": {
+  "file": "sounds_dl/S7_useheadset.mp3",
+  "offset": 2.804,
+  "drop": 6.381,
+  "end": 11.381,
+  "hits": [
+   7.123,
+   8.562,
+   9.282,
+   10.728
+  ]
+ },
+ "S8_calebgordenn": {
+  "file": "sounds_dl/S8_calebgordenn.mp3",
+  "offset": 0.0,
+  "drop": 2.746,
+  "end": 8.046,
+  "hits": [
+   3.146,
+   3.791,
+   4.185,
+   4.83,
+   5.236,
+   5.753
+  ]
+ },
+ "S9_northpole": {
+  "file": "sounds_dl/S9_northpole.mp3",
+  "offset": 2.0,
+  "drop": 5.033,
+  "end": 10.033,
+  "hits": [
+   6.542,
+   7.047,
+   7.343,
+   8.046,
+   8.812,
+   9.543
+  ]
+ },
+ "N_sybau": {
+  "file": "snd2/sybau.mp3",
+  "offset": 0.214,
+  "drop": 3.294,
+  "end": 8.184,
+  "hits": []
+ },
+ "N_temporary": {
+  "file": "snd2/temporary.mp3",
+  "offset": 3.886,
+  "drop": 6.966,
+  "end": 11.996,
+  "hits": []
+ },
+ "N_vaivai": {
+  "file": "snd2/vaivai.mp3",
+  "offset": 13.754,
+  "drop": 16.834,
+  "end": 22.378,
+  "hits": []
+ },
+ "N_itizwotitiz": {
+  "file": "snd2/itizwotitiz.mp3",
+  "offset": 11.071,
+  "drop": 14.151,
+  "end": 21.259,
+  "hits": []
+ },
+ "N_partyfunk": {
+  "file": "snd2/partyfunk.mp3",
+  "offset": 2.811,
+  "drop": 5.891,
+  "end": 11.423,
+  "hits": []
+ },
+ "N_zetsu": {
+  "file": "snd2/zetsu.mp3",
+  "offset": 1.204,
+  "drop": 4.284,
+  "end": 10.022,
+  "hits": []
+ },
+ "N_g80kam": {
+  "file": "snd2/g80kam.mp3",
+  "offset": 0.67,
+  "drop": 3.75,
+  "end": 9.216,
+  "hits": []
+ }
+}
