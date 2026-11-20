@@ -1,0 +1,10 @@
+r12_01_supercar.mp4 hits=[7.9, 4.2, 2.1, 4.0, 4.7] offs(ms)=[-28, -6, -42, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.00s
+r12_02_cybertruck.mp4 hits=[7.9, 4.2, 2.1, 4.0, 4.7] offs(ms)=[-28, -6, -42, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.00s
+r12_03_jet.mp4     hits=[7.9, 4.2, 2.1, 4.0, 4.7] offs(ms)=[-28, -6, -42, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.00s
+r12_04_brother.mp4 hits=[7.9, 4.2, 2.1, 4.0, 4.7] offs(ms)=[-28, -6, -42, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.00s
+r12_05_mansion.mp4 hits=[7.9, 4.2, 2.1, 4.0, 4.7] offs(ms)=[-28, -6, -42, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.00s
+r12_06_boat.mp4    hits=[7.9, 4.2, 2.1, 4.0, 4.7] offs(ms)=[-28, -6, -42, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.00s
+r12_07_girlfriend.mp4 hits=[7.9, 4.2, 2.1, 4.0, 4.7] offs(ms)=[-28, -6, -42, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.00s
+r12_08_belt.mp4    hits=[7.9, 4.2, 2.1, 4.0, 4.7] offs(ms)=[-28, -6, -42, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.00s
+r12_09_lambos.mp4  hits=[7.9, 4.2, 2.1, 4.0, 4.7] offs(ms)=[-28, -6, -42, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.00s
+r12_10_richard.mp4 hits=[7.9, 4.2, 2.1, 4.0, 4.7] offs(ms)=[-28, -6, -42, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.00s
