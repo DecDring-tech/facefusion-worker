@@ -244,5 +244,44 @@
  },
  "N_g80kam": {
   "drop": 3.75
+ },
+ "M_lexa": {
+  "drop": 4.521
+ },
+ "M_addicted": {
+  "drop": 3.704
+ },
+ "M_gso2": {
+  "drop": 3.968
+ },
+ "M_ohrwurm": {
+  "drop": 22.457
+ },
+ "M_fastlife": {
+  "drop": 29.669
+ },
+ "M_zahide": {
+  "drop": 25.157
+ },
+ "M_arcadia": {
+  "drop": 4.425
+ },
+ "M_listeria": {
+  "drop": 4.165
+ },
+ "M_bandz": {
+  "drop": 7.484
+ },
+ "M_gso3": {
+  "drop": 2.347
+ },
+ "M_embrace": {
+  "drop": 4.454
+ },
+ "M_reperse": {
+  "drop": 11.162
+ },
+ "M_scooby": {
+  "drop": 5.432
  }
 }

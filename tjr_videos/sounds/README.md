@@ -34,3 +34,28 @@ Reesie, sadnessvibesonly, ssnjoker, TAKA LA DENTRO, tojisenz, Wavy Rioo, "WHY AR
 
 Every cut within one frame of its hit on six of the seven (Zetsu has one cut 42 ms off, about a frame and a third).
 No stray cuts, no shot under 0.9 s.
+
+## 13 matched to your style (closest first)
+
+Picked from 149 sounds made by the same creators as your sounds (404oskar, bannuedits, 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁, gso.group, luxuryxsh,
+USE HEADSET, calebgordenn, prodbyCyn, Salman, RawTJR). Each was scored on how close it sounds to your 9 after the drop
+(bass weight, tone, punch, tempo) and only kept if it has a quiet intro, a drop at least 3× louder, a steady beat and
+5+ seconds after the drop. All 13 are as close to your sounds as your 9 are to each other.
+
+| # | Key | Sound to add (save from the post) | Song | Drop | Shots after drop | Trim start | Test |
+|---|---|---|---|---|---|---|---|
+| 1 | lexa | [original sound - 404oskar — 404oskar](https://www.tiktok.com/@404oskar/video/7678418939537296673) | Lexa — DIZO & Manuellsen | 4.9× | 5 × 1.05 s | 1.44 s | `tests/test_lexa.mp4` |
+| 2 | addicted | [HI MY NAME IS GUCCIMANE — 404oskar](https://www.tiktok.com/@404oskar/video/7616731881031191840) | Addicted — Gucci Mane | 4.1× | 6 × 0.90 s | 0.62 s | `tests/test_addicted.mp4` |
+| 3 | gso2 | [original sound - gso.group — 🃑𝔾𝕊♢.𝔾ℝ♢𝕌ℙ🃑](https://www.tiktok.com/@gso.group/video/7654078785188269343) | no match | 3.0× | 5 × 1.03 s | 0.89 s | `tests/test_gso2.mp4` |
+| 4 | ohrwurm | [OHRWURM REMIX BY 404oskar — 404oskar](https://www.tiktok.com/@404oskar/video/7581532434752212246) | no match | 5.8× | 4 × 1.60 s | 19.38 s | `tests/test_ohrwurm.mp4` |
+| 5 | fastlife | [FAST LIFE REMIX BY 404oskar — 404oskar](https://www.tiktok.com/@404oskar/video/7576744520369409302) | no match | 13.0× | 4 × 1.33 s | 26.59 s | `tests/test_fastlife.mp4` |
+| 6 | zahide | [original sound - 404oskar — 404oskar](https://www.tiktok.com/@404oskar/video/7591910216401308950) | Zahide Disstrack (feat. KLEINER JUNGE) — Marvin Vlogt | 5.9× | 6 × 0.92 s | 22.08 s | `tests/test_zahide.mp4` |
+| 7 | arcadia | [original sound - bannuedits — Bannu](https://www.tiktok.com/@bannuedits/video/7654538362967051542) | Arcadia — Lil Bruhman | 3.5× | 4 × 1.23 s | 1.34 s | `tests/test_arcadia.mp4` |
+| 8 | listeria | [original sound - bannuedits — Bannu](https://www.tiktok.com/@bannuedits/video/7659760273561046294) | listeria (slowed & reverb) — ptasinski & Rj Pasin | 3.4× | 4 × 1.22 s | 1.08 s | `tests/test_listeria.mp4` |
+| 9 | bandz | [original sound - prodbycyn — ❦« 𝘽𝙪𝙯𝙞 »](https://www.tiktok.com/@prodbycyn/video/7433479613084339486) | Bandz A Make Her Dance (feat. Lil Wayne & 2 Chainz) — Juicy J | 3.2× | 6 × 0.92 s | 4.40 s | `tests/test_bandz.mp4` |
+| 10 | gso3 | [original sound - gso.group — 🃑𝔾𝕊♢.𝔾ℝ♢𝕌ℙ🃑](https://www.tiktok.com/@gso.group/video/7694889541928307999) | no match | 13.4× | 4 × 1.37 s | 0.00 s | `tests/test_gso3.mp4` |
+| 11 | embrace | [original sound - bannuedits — Bannu](https://www.tiktok.com/@bannuedits/video/7653411666473913622) | Embrace It (Slowed and Reverb) — LKE DEXY | 3.7× | 4 × 1.25 s | 1.37 s | `tests/test_embrace.mp4` |
+| 12 | reperse | [original sound - bannedat1200 — 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁](https://www.tiktok.com/@bannedat1200/video/7587451513090379030) | Reperse — Damian Deroma | 6.7× | 4 × 1.63 s | 8.08 s | `tests/test_reperse.mp4` |
+| 13 | scooby | [Scooby Doo Pa Pa — DJ Kass](https://www.tiktok.com/@bannedat1200/video/7509615447730310422) | Scooby Doo Pa Pa — Dj Kass | 3.6× | 5 × 0.99 s | 2.35 s | `tests/test_scooby.mp4` |
+
+Rejected after test renders: Theclubrock (Lumarii Remix), Money (Slowed), one 404oskar original — a cut landed on a soft spot.

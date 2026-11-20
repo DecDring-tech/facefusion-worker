@@ -171,5 +171,96 @@
   "drop": 3.75,
   "end": 9.216,
   "hits": []
+ },
+ "M_lexa": {
+  "file": "snd3/404oskar_7678418939537296673.mp3",
+  "offset": 1.441,
+  "drop": 4.521,
+  "end": 9.768,
+  "hits": []
+ },
+ "M_addicted": {
+  "file": "snd3/404oskar_7616731881031191840.mp3",
+  "offset": 0.624,
+  "drop": 3.704,
+  "end": 9.125,
+  "hits": []
+ },
+ "M_gso2": {
+  "file": "snd3/gso.group_7654078785188269343.mp3",
+  "offset": 0.888,
+  "drop": 3.968,
+  "end": 9.115,
+  "hits": []
+ },
+ "M_ohrwurm": {
+  "file": "snd3/404oskar_7581532434752212246.mp3",
+  "offset": 19.377,
+  "drop": 22.457,
+  "end": 28.877,
+  "hits": []
+ },
+ "M_fastlife": {
+  "file": "snd3/404oskar_7576744520369409302.mp3",
+  "offset": 26.589,
+  "drop": 29.669,
+  "end": 34.993,
+  "hits": []
+ },
+ "M_zahide": {
+  "file": "snd3/404oskar_7591910216401308950.mp3",
+  "offset": 22.077,
+  "drop": 25.157,
+  "end": 30.695,
+  "hits": []
+ },
+ "M_arcadia": {
+  "file": "snd3/bannuedits_7654538362967051542.mp3",
+  "offset": 1.345,
+  "drop": 4.425,
+  "end": 9.331,
+  "hits": []
+ },
+ "M_listeria": {
+  "file": "snd3/bannuedits_7659760273561046294.mp3",
+  "offset": 1.085,
+  "drop": 4.165,
+  "end": 9.039,
+  "hits": []
+ },
+ "M_bandz": {
+  "file": "snd3/prodbycyn_7433479613084339486.mp3",
+  "offset": 4.404,
+  "drop": 7.484,
+  "end": 12.992,
+  "hits": []
+ },
+ "M_gso3": {
+  "file": "snd3/gso.group_7694889541928307999.mp3",
+  "offset": 0.0,
+  "drop": 2.347,
+  "end": 7.819,
+  "hits": []
+ },
+ "M_embrace": {
+  "file": "snd3/bannuedits_7653411666473913622.mp3",
+  "offset": 1.374,
+  "drop": 4.454,
+  "end": 9.458,
+  "hits": []
+ },
+ "M_reperse": {
+  "file": "snd3/bannedat1200_7587451513090379030.mp3",
+  "offset": 8.082,
+  "drop": 11.162,
+  "end": 17.666,
+  "hits": []
+ },
+ "M_scooby": {
+  "file": "snd3/bannedat1200_7509615447730310422.mp3",
+  "offset": 2.352,
+  "drop": 5.432,
+  "end": 10.407,
+  "hits": []
  }
 }
