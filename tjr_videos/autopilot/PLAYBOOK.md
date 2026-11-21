@@ -27,9 +27,9 @@ The rules the user has set over 12 rounds. Every one still applies:
   the next recording. No tiny clips, no flash frames, nothing faster than about 0.9 s. TJR: `sources9.json`, never the head-on
   tree reveal. Marko: `sources_marko.json`.
 - **Marko face rule:** Marko must look richer than everyone. Faceless supercar clips (POV at the wheel, Lambo interiors) can
-  be slid in as if they're his, but **never as payoff shot 1, 2 or 3**: the drop shot and the next two must show Marko's
-  face. Every source in `sources_marko2.json` has a `face` flag; check `[s for s in seq[:3]]` are all face sources before
-  rendering, then check a frame sheet (start and end of shots 1–3). Don't use faceless clips where the driver's arms or skin
+  be slid in as if they're his, but **never as payoff shot 1 or 2**: the drop shot and the next one must show Marko's
+  face (shot 3 onward may be faceless; user changed this from 3 to 2 for marko_003). Every source in `sources_marko2.json` has a `face` flag; check the first 2 entries of the expanded source sequence are face sources before
+  rendering, then check a frame sheet (start and end of shots 1–2). Don't use faceless clips where the driver's arms or skin
   give it away.
 - **Payoff captions:** TJR "Wrong tax bracket lil bro" family. Marko "Wrong weight class lil bro" family. Rage-bait variant
   (the 3.5M recipe): Jake Paul opener labelled "Logan Paul" in the post caption, plus a subtly wrong but plausible detail

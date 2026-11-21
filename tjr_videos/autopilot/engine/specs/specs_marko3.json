@@ -1,0 +1,320 @@
+[
+ {
+  "name": "mk3_01_grillz",
+  "bait": "b11_grillz",
+  "sound": "S9_northpole",
+  "y": 0.64,
+  "cap1": "Where's your gold grillz\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "conv",
+    2,
+    1.38
+   ],
+   [
+    "povw",
+    1
+   ],
+   [
+    "fer4f",
+    2
+   ],
+   [
+    "urusr",
+    2
+   ]
+  ],
+  "bait_person": "Jack Doherty",
+  "post_caption": "Jack Doherty's grillz vs Marko's Ferrari 🥱",
+  "rage_bait": false,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk3_02_neymar",
+  "bait": "b11_neymar",
+  "sound": "N_partyfunk",
+  "y": 0.64,
+  "cap1": "Where's your Neymar\nMarko? 😂",
+  "cap2": "Different tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer1f",
+    2
+   ],
+   [
+    "urusb",
+    2
+   ],
+   [
+    "fer2f",
+    2,
+    8.4
+   ]
+  ],
+  "bait_person": "IShowSpeed",
+  "post_caption": "Speed brought Neymar and still got Mogged by Marko 😭",
+  "rage_bait": false,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk3_03_theater",
+  "bait": "b11_theater",
+  "sound": "S1_ballerszn",
+  "y": 0.64,
+  "cap1": "Where's your home theater\nMarko? 😂",
+  "cap2": "Where's your Huracan\nlil bro?",
+  "sources": [
+   [
+    "fer2f",
+    2
+   ],
+   [
+    "ferwheel",
+    1
+   ],
+   [
+    "fer3f",
+    2,
+    2.6
+   ],
+   [
+    "urusr",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's home theater vs Marko's cars 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk3_04_girlfriend",
+  "bait": "b12_whiteparty",
+  "sound": "M_zahide",
+  "y": 0.64,
+  "cap1": "Where's your girlfriend\nMarko? 😂",
+  "cap2": "Not even close\nlil bro",
+  "sources": [
+   [
+    "fer3f",
+    2
+   ],
+   [
+    "urusb",
+    2
+   ],
+   [
+    "conv",
+    2,
+    4.07
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets Mogged in front of his girl 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk3_05_brother",
+  "bait": "b12_brother",
+  "sound": "N_g80kam",
+  "y": 0.64,
+  "cap1": "Where's your brother\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer4f",
+    2
+   ],
+   [
+    "povw",
+    2
+   ],
+   [
+    "fer1f",
+    2,
+    7.3
+   ]
+  ],
+  "bait_person": "Jake & Logan Paul",
+  "post_caption": "The Paul brothers vs Marko 💀",
+  "rage_bait": false,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk3_06_racecar",
+  "bait": "b_gtr",
+  "sound": "S7_useheadset",
+  "y": 0.64,
+  "cap1": "Where's your race car\nMarko? 😂",
+  "cap2": "Where's your Ferrari\nlil bro?",
+  "sources": [
+   [
+    "fer3f",
+    2
+   ],
+   [
+    "urusr",
+    1,
+    11.27
+   ],
+   [
+    "fer1f",
+    2,
+    7.3
+   ]
+  ],
+  "bait_person": "MrBeast",
+  "post_caption": "MrBeast's race car vs Marko's Ferrari 😭",
+  "rage_bait": false,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk3_07_jetski",
+  "bait": "b_jetski",
+  "sound": "S1_ballerszn",
+  "y": 0.64,
+  "cap1": "Where's your jet ski\nMarko? 😂",
+  "cap2": "Different tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer1f",
+    2
+   ],
+   [
+    "ferwheel",
+    1
+   ],
+   [
+    "conv",
+    2,
+    4.07
+   ],
+   [
+    "urusb",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's jet ski vs Marko's Ferrari 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk3_08_lilbaby",
+  "bait": "b_lilbaby",
+  "sound": "M_fastlife",
+  "y": 0.64,
+  "cap1": "Where's your celebrity friends\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer4f",
+    2
+   ],
+   [
+    "urusb",
+    2
+   ]
+  ],
+  "bait_person": "Jack Doherty",
+  "post_caption": "Jack Doherty brought Lil Baby and still got Mogged 😭",
+  "rage_bait": false,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk3_09_hottub",
+  "bait": "b_hillbilly",
+  "sound": "M_reperse",
+  "y": 0.64,
+  "cap1": "Where's your hot tub\nMarko? 😂",
+  "cap2": "Not even close\nlil bro",
+  "sources": [
+   [
+    "fer2f",
+    2
+   ],
+   [
+    "povw",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's hot tub vs Marko's cars 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk3_10_panda",
+  "bait": "b_panda",
+  "sound": "M_ohrwurm",
+  "y": 0.64,
+  "cap1": "Where's your pet panda\nMarko? 😂",
+  "cap2": "Where's your Ferarri\nlil bro?",
+  "sources": [
+   [
+    "fer3f",
+    2
+   ],
+   [
+    "urusr",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's panda vs Marko's Ferrari 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ }
+]

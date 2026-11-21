@@ -1,0 +1,246 @@
+{
+ "series": "marko",
+ "batch": "marko_003",
+ "items": [
+  {
+   "slot": 1,
+   "video": "mk3_01_grillz.mp4",
+   "caption": "Jack Doherty's grillz vs Marko's Ferrari 🥱 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_003",
+    "sound": "S9_northpole",
+    "sound_name": "North Pole (Cynnmixx) – prodbyCyn",
+    "bait": "b11_grillz",
+    "bait_person": "Jack Doherty",
+    "cap1": "Where's your gold grillz Marko? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": false,
+    "switch_s": 3.2,
+    "length_s": 10.23,
+    "shots": 7,
+    "sources": [
+     "conv",
+     "povw",
+     "fer4f",
+     "urusr"
+    ]
+   }
+  },
+  {
+   "slot": 2,
+   "video": "mk3_02_neymar.mp4",
+   "caption": "Speed brought Neymar and still got Mogged by Marko 😭 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_003",
+    "sound": "N_partyfunk",
+    "sound_name": "Party Funk – Young Madz & MC Zudo Boladão",
+    "bait": "b11_neymar",
+    "bait_person": "IShowSpeed",
+    "cap1": "Where's your Neymar Marko? 😂",
+    "cap2": "Different tax bracket lil bro",
+    "rage_bait": false,
+    "switch_s": 3.07,
+    "length_s": 8.63,
+    "shots": 6,
+    "sources": [
+     "fer1f",
+     "urusb",
+     "fer2f"
+    ]
+   }
+  },
+  {
+   "slot": 3,
+   "video": "mk3_03_theater.mp4",
+   "caption": "Logan Paul's home theater vs Marko's cars 💀 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_003",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b11_theater",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your home theater Marko? 😂",
+    "cap2": "Where's your Huracan lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 10.2,
+    "shots": 7,
+    "sources": [
+     "fer2f",
+     "ferwheel",
+     "fer3f",
+     "urusr"
+    ]
+   }
+  },
+  {
+   "slot": 4,
+   "video": "mk3_04_girlfriend.mp4",
+   "caption": "Logan Paul gets Mogged in front of his girl 💀 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_003",
+    "sound": "M_zahide",
+    "sound_name": "original sound - 404oskar — 404oskar (Zahide Disstrack (feat. KLEINER JUNGE) — Marvin Vlogt) https://www.tiktok.com/@404oskar/video/7591910216401308950",
+    "bait": "b12_whiteparty",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your girlfriend Marko? 😂",
+    "cap2": "Not even close lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.63,
+    "shots": 6,
+    "sources": [
+     "fer3f",
+     "urusb",
+     "conv"
+    ]
+   }
+  },
+  {
+   "slot": 5,
+   "video": "mk3_05_brother.mp4",
+   "caption": "The Paul brothers vs Marko 💀 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_003",
+    "sound": "N_g80kam",
+    "sound_name": "original sound – g80.kam",
+    "bait": "b12_brother",
+    "bait_person": "Jake & Logan Paul",
+    "cap1": "Where's your brother Marko? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": false,
+    "switch_s": 3.07,
+    "length_s": 8.57,
+    "shots": 6,
+    "sources": [
+     "fer4f",
+     "povw",
+     "fer1f"
+    ]
+   }
+  },
+  {
+   "slot": 6,
+   "video": "mk3_06_racecar.mp4",
+   "caption": "MrBeast's race car vs Marko's Ferrari 😭 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_003",
+    "sound": "S7_useheadset",
+    "sound_name": "som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 (SANYA TEKK Ultra Slowed)",
+    "bait": "b_gtr",
+    "bait_person": "MrBeast",
+    "cap1": "Where's your race car Marko? 😂",
+    "cap2": "Where's your Ferrari lil bro?",
+    "rage_bait": false,
+    "switch_s": 3.57,
+    "length_s": 10.8,
+    "shots": 5,
+    "sources": [
+     "fer3f",
+     "urusr",
+     "fer1f"
+    ]
+   }
+  },
+  {
+   "slot": 7,
+   "video": "mk3_07_jetski.mp4",
+   "caption": "Logan Paul's jet ski vs Marko's Ferrari 💀 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_003",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b_jetski",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your jet ski Marko? 😂",
+    "cap2": "Different tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 10.2,
+    "shots": 7,
+    "sources": [
+     "fer1f",
+     "ferwheel",
+     "conv",
+     "urusb"
+    ]
+   }
+  },
+  {
+   "slot": 8,
+   "video": "mk3_08_lilbaby.mp4",
+   "caption": "Jack Doherty brought Lil Baby and still got Mogged 😭 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_003",
+    "sound": "M_fastlife",
+    "sound_name": "FAST LIFE REMIX BY 404oskar — 404oskar (no match) https://www.tiktok.com/@404oskar/video/7576744520369409302",
+    "bait": "b_lilbaby",
+    "bait_person": "Jack Doherty",
+    "cap1": "Where's your celebrity friends Marko? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": false,
+    "switch_s": 3.07,
+    "length_s": 8.4,
+    "shots": 4,
+    "sources": [
+     "fer4f",
+     "urusb"
+    ]
+   }
+  },
+  {
+   "slot": 9,
+   "video": "mk3_09_hottub.mp4",
+   "caption": "Logan Paul's hot tub vs Marko's cars 🥱 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_003",
+    "sound": "M_reperse",
+    "sound_name": "original sound - bannedat1200 — 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁 (Reperse — Damian Deroma) https://www.tiktok.com/@bannedat1200/video/7587451513090379030",
+    "bait": "b_hillbilly",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your hot tub Marko? 😂",
+    "cap2": "Not even close lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 9.6,
+    "shots": 4,
+    "sources": [
+     "fer2f",
+     "povw"
+    ]
+   }
+  },
+  {
+   "slot": 10,
+   "video": "mk3_10_panda.mp4",
+   "caption": "Logan Paul's panda vs Marko's Ferrari 💀 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_003",
+    "sound": "M_ohrwurm",
+    "sound_name": "OHRWURM REMIX BY 404oskar — 404oskar (no match) https://www.tiktok.com/@404oskar/video/7581532434752212246",
+    "bait": "b_panda",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your pet panda Marko? 😂",
+    "cap2": "Where's your Ferarri lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 9.5,
+    "shots": 4,
+    "sources": [
+     "fer3f",
+     "urusr"
+    ]
+   }
+  }
+ ]
+}
