@@ -1,0 +1,310 @@
+[
+ {
+  "name": "mk2_01_bugatti",
+  "bait": "b11_bugatti",
+  "sound": "S1_ballerszn",
+  "y": 0.64,
+  "cap1": "Where's your Bugatti\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer2f",
+    3
+   ],
+   [
+    "urusb",
+    2
+   ],
+   [
+    "fer1f",
+    2,
+    7.3
+   ]
+  ],
+  "bait_person": "Jack Doherty",
+  "post_caption": "Jack Doherty gets car Mogged by Marko 💀",
+  "rage_bait": false,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk2_02_cybertruck",
+  "bait": "b12_cybertruck",
+  "sound": "S1_ballerszn",
+  "y": 0.64,
+  "cap1": "Where's your Cybertruck\nMarko? 😂",
+  "cap2": "Where's your Ferari\nlil bro?",
+  "sources": [
+   [
+    "fer3f",
+    3
+   ],
+   [
+    "ferwheel",
+    1
+   ],
+   [
+    "urusr",
+    1
+   ],
+   [
+    "conv",
+    2,
+    4.07
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul thought a Cybertruck was a flex 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk2_03_gwagon",
+  "bait": "b11_gwagon",
+  "sound": "S8_calebgordenn",
+  "y": 0.64,
+  "cap1": "Where's your Mansory G-Wagon\nMarko? 😂",
+  "cap2": "Different tax bracket\nlil bro",
+  "sources": [
+   [
+    "conv",
+    3
+   ],
+   [
+    "povw",
+    2
+   ],
+   [
+    "fer4f",
+    2,
+    7.0
+   ]
+  ],
+  "bait_person": "Brez",
+  "post_caption": "Marko doesn't do G-Wagons 🥱",
+  "rage_bait": false,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk2_04_cullinan",
+  "bait": "b11_cullinan",
+  "sound": "S9_northpole",
+  "y": 0.64,
+  "cap1": "Where's your Cullinan\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer1f",
+    3
+   ],
+   [
+    "urusb",
+    2
+   ],
+   [
+    "fer2f",
+    2,
+    8.4
+   ]
+  ],
+  "bait_person": "Brez",
+  "post_caption": "Brez's Cullinan vs Marko's Ferrari 🥱",
+  "rage_bait": false,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk2_05_mclaren",
+  "bait": "b_mclaren",
+  "sound": "S1_ballerszn",
+  "y": 0.64,
+  "cap1": "Where's your McLaren\nMarko? 😂",
+  "cap2": "Where's your Lamborgini\nlil bro?",
+  "sources": [
+   [
+    "fer4f",
+    3
+   ],
+   [
+    "povw",
+    2
+   ],
+   [
+    "fer3f",
+    2,
+    2.6
+   ]
+  ],
+  "bait_person": "Jack Doherty",
+  "post_caption": "Logan Paul gets brutally car Mogged by Marko",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk2_06_jet",
+  "bait": "b_firstjet",
+  "sound": "M_lexa",
+  "y": 0.64,
+  "cap1": "Where's your private jet\nMarko? 😂",
+  "cap2": "Not even close\nlil bro",
+  "sources": [
+   [
+    "fer2f",
+    3
+   ],
+   [
+    "urusr",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's jet vs Marko's cars 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk2_07_boat",
+  "bait": "b12_boat",
+  "sound": "M_gso2",
+  "y": 0.64,
+  "cap1": "Where's your boat\nMarko? 😂",
+  "cap2": "Different tax bracket\nlil bro",
+  "sources": [
+   [
+    "conv",
+    3
+   ],
+   [
+    "urusb",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's boat vs Marko's cars 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk2_08_watches",
+  "bait": "b_watches",
+  "sound": "N_zetsu",
+  "y": 0.64,
+  "cap1": "Where's your watch collection\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer3f",
+    3
+   ],
+   [
+    "povw",
+    2
+   ]
+  ],
+  "bait_person": "Jack Doherty",
+  "post_caption": "Jack Doherty's watches vs Marko's Ferrari 🥱",
+  "rage_bait": false,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk2_09_house",
+  "bait": "b_mansion",
+  "sound": "M_addicted",
+  "y": 0.64,
+  "cap1": "Where's your $5M house\nMarko? 😂",
+  "cap2": "Not even close\nlil bro",
+  "sources": [
+   [
+    "fer1f",
+    3
+   ],
+   [
+    "ferwheel",
+    1
+   ],
+   [
+    "urusb",
+    2
+   ]
+  ],
+  "bait_person": "Jack Doherty",
+  "post_caption": "Jack Doherty gets Mogged by Marko 😭",
+  "rage_bait": false,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk2_10_rappers",
+  "bait": "b_cash",
+  "sound": "S3_salman",
+  "y": 0.64,
+  "cap1": "Where's your rapper friends\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer4f",
+    3
+   ],
+   [
+    "urusr",
+    2
+   ],
+   [
+    "fer2f",
+    1,
+    8.4
+   ]
+  ],
+  "bait_person": "Adin Ross",
+  "post_caption": "Adin Ross vs Marko 💀",
+  "rage_bait": false,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ }
+]

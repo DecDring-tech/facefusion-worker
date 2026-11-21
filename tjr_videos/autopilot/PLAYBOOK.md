@@ -8,7 +8,7 @@ The user runs the TJR and Marko accounts by saying short commands. This is what 
 | User says | Do |
 |---|---|
 | "make a TJR batch" | Build 10 new TJR videos (below), make `batches/tjr_NNN/manifest.json`, send the videos with their captions, commit. |
-| "make a Marko batch" | Same for Marko, in the TJR style (bait → drop → Marko fight footage, "Wrong weight class lil bro"). |
+| "make a Marko batch" | Same for Marko in the **rich** TJR style (marko_002 and later): bait, then drop, then Marko with his supercars (red Ferrari, yellow Urus, convertible), "Wrong tax bracket lil bro" family. Sources: `sources_marko2.json`. The boxing version (`sources_marko.json`, "Wrong weight class") only when asked. |
 | "make a Marko batch in the latest style" | Marko style 2. **Not defined yet**: it's from a chat Claude can't see. Ask the user for an example post, then add it here. |
 | "post on TJR accounts" / "post on Marko accounts" | `python3 post.py batches/<latest unposted batch> <tjr\|marko>` (dry run), check the mapping, then `--live --stagger 7`. Then `python3 post.py status` after ~10 min. Report what posted where. |
 | "stats" / "how are we doing" | `python3 stats.py`, commit `data/`, summarise `data/report.md`: best and worst posts, what's working, and the 24 h change. |
@@ -26,6 +26,11 @@ The rules the user has set over 12 rounds. Every one still applies:
 - **Payoff, 5–8 s:** cold, long phone recordings walked in order, one cut on every beat, about 3 windows per recording, then
   the next recording. No tiny clips, no flash frames, nothing faster than about 0.9 s. TJR: `sources9.json`, never the head-on
   tree reveal. Marko: `sources_marko.json`.
+- **Marko face rule:** Marko must look richer than everyone. Faceless supercar clips (POV at the wheel, Lambo interiors) can
+  be slid in as if they're his, but **never as payoff shot 1, 2 or 3**: the drop shot and the next two must show Marko's
+  face. Every source in `sources_marko2.json` has a `face` flag; check `[s for s in seq[:3]]` are all face sources before
+  rendering, then check a frame sheet (start and end of shots 1–3). Don't use faceless clips where the driver's arms or skin
+  give it away.
 - **Payoff captions:** TJR "Wrong tax bracket lil bro" family. Marko "Wrong weight class lil bro" family. Rage-bait variant
   (the 3.5M recipe): Jake Paul opener labelled "Logan Paul" in the post caption, plus a subtly wrong but plausible detail
   on screen (wrong car, misspelling, wrong record or weight class). Set `rage_bait: true` on those.

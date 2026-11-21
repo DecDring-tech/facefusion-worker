@@ -1,0 +1,244 @@
+{
+ "series": "marko",
+ "batch": "marko_002",
+ "items": [
+  {
+   "slot": 1,
+   "video": "mk2_01_bugatti.mp4",
+   "caption": "Jack Doherty gets car Mogged by Marko 💀 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_002",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b11_bugatti",
+    "bait_person": "Jack Doherty",
+    "cap1": "Where's your Bugatti Marko? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": false,
+    "switch_s": 3.07,
+    "length_s": 10.2,
+    "shots": 7,
+    "sources": [
+     "fer2f",
+     "urusb",
+     "fer1f"
+    ]
+   }
+  },
+  {
+   "slot": 2,
+   "video": "mk2_02_cybertruck.mp4",
+   "caption": "Logan Paul thought a Cybertruck was a flex 💀 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_002",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b12_cybertruck",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your Cybertruck Marko? 😂",
+    "cap2": "Where's your Ferari lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 10.2,
+    "shots": 7,
+    "sources": [
+     "fer3f",
+     "ferwheel",
+     "urusr",
+     "conv"
+    ]
+   }
+  },
+  {
+   "slot": 3,
+   "video": "mk2_03_gwagon.mp4",
+   "caption": "Marko doesn't do G-Wagons 🥱 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_002",
+    "sound": "S8_calebgordenn",
+    "sound_name": "original sound – calebgordenn® (Keep Knockin)",
+    "bait": "b11_gwagon",
+    "bait_person": "Brez",
+    "cap1": "Where's your Mansory G-Wagon Marko? 😂",
+    "cap2": "Different tax bracket lil bro",
+    "rage_bait": false,
+    "switch_s": 3.03,
+    "length_s": 10.37,
+    "shots": 7,
+    "sources": [
+     "conv",
+     "povw",
+     "fer4f"
+    ]
+   }
+  },
+  {
+   "slot": 4,
+   "video": "mk2_04_cullinan.mp4",
+   "caption": "Brez's Cullinan vs Marko's Ferrari 🥱 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_002",
+    "sound": "S9_northpole",
+    "sound_name": "North Pole (Cynnmixx) – prodbyCyn",
+    "bait": "b11_cullinan",
+    "bait_person": "Brez",
+    "cap1": "Where's your Cullinan Marko? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": false,
+    "switch_s": 3.2,
+    "length_s": 10.23,
+    "shots": 7,
+    "sources": [
+     "fer1f",
+     "urusb",
+     "fer2f"
+    ]
+   }
+  },
+  {
+   "slot": 5,
+   "video": "mk2_05_mclaren.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by Marko #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_002",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b_mclaren",
+    "bait_person": "Jack Doherty",
+    "cap1": "Where's your McLaren Marko? 😂",
+    "cap2": "Where's your Lamborgini lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 10.2,
+    "shots": 7,
+    "sources": [
+     "fer4f",
+     "povw",
+     "fer3f"
+    ]
+   }
+  },
+  {
+   "slot": 6,
+   "video": "mk2_06_jet.mp4",
+   "caption": "Logan Paul's jet vs Marko's cars 😭 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_002",
+    "sound": "M_lexa",
+    "sound_name": "original sound - 404oskar — 404oskar (Lexa — DIZO & Manuellsen) https://www.tiktok.com/@404oskar/video/7678418939537296673",
+    "bait": "b_firstjet",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your private jet Marko? 😂",
+    "cap2": "Not even close lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.33,
+    "shots": 5,
+    "sources": [
+     "fer2f",
+     "urusr"
+    ]
+   }
+  },
+  {
+   "slot": 7,
+   "video": "mk2_07_boat.mp4",
+   "caption": "Logan Paul's boat vs Marko's cars 💀 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_002",
+    "sound": "M_gso2",
+    "sound_name": "original sound - gso.group — 🃑𝔾𝕊♢.𝔾ℝ♢𝕌ℙ🃑 (no match) https://www.tiktok.com/@gso.group/video/7654078785188269343",
+    "bait": "b12_boat",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your boat Marko? 😂",
+    "cap2": "Different tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "conv",
+     "urusb"
+    ]
+   }
+  },
+  {
+   "slot": 8,
+   "video": "mk2_08_watches.mp4",
+   "caption": "Jack Doherty's watches vs Marko's Ferrari 🥱 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_002",
+    "sound": "N_zetsu",
+    "sound_name": "original sound – zet9u.ae (𝙕𝙚𝙩𝙨𝙪)",
+    "bait": "b_watches",
+    "bait_person": "Jack Doherty",
+    "cap1": "Where's your watch collection Marko? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": false,
+    "switch_s": 3.07,
+    "length_s": 8.83,
+    "shots": 5,
+    "sources": [
+     "fer3f",
+     "povw"
+    ]
+   }
+  },
+  {
+   "slot": 9,
+   "video": "mk2_09_house.mp4",
+   "caption": "Jack Doherty gets Mogged by Marko 😭 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_002",
+    "sound": "M_addicted",
+    "sound_name": "HI MY NAME IS GUCCIMANE — 404oskar (Addicted — Gucci Mane) https://www.tiktok.com/@404oskar/video/7616731881031191840",
+    "bait": "b_mansion",
+    "bait_person": "Jack Doherty",
+    "cap1": "Where's your $5M house Marko? 😂",
+    "cap2": "Not even close lil bro",
+    "rage_bait": false,
+    "switch_s": 3.07,
+    "length_s": 8.5,
+    "shots": 6,
+    "sources": [
+     "fer1f",
+     "ferwheel",
+     "urusb"
+    ]
+   }
+  },
+  {
+   "slot": 10,
+   "video": "mk2_10_rappers.mp4",
+   "caption": "Adin Ross vs Marko 💀 #marko #markovituk #ferrari #fyp",
+   "features": {
+    "series": "marko",
+    "batch": "marko_002",
+    "sound": "S3_salman",
+    "sound_name": "الصوت الأصلي – Salman (Don't Like.1 sped up)",
+    "bait": "b_cash",
+    "bait_person": "Adin Ross",
+    "cap1": "Where's your rapper friends Marko? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": false,
+    "switch_s": 3.63,
+    "length_s": 10.43,
+    "shots": 6,
+    "sources": [
+     "fer4f",
+     "urusr",
+     "fer2f"
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,166 @@
+{
+ "fer1f": {
+  "file": "mk_car/fer1.mp4",
+  "face": true,
+  "desc": "@markovituk 7584508556464999702 red Ferrari + yellow Urus, night",
+  "segs": [
+   [
+    0.1,
+    2.2
+   ],
+   [
+    7.3,
+    12.45
+   ]
+  ]
+ },
+ "fer2f": {
+  "file": "mk_car/fer2.mp4",
+  "face": true,
+  "desc": "@markovituk 7584187772475280663 by the Ferrari, then in the Urus",
+  "segs": [
+   [
+    0.05,
+    3.0
+   ],
+   [
+    8.4,
+    11.0
+   ]
+  ]
+ },
+ "fer3f": {
+  "file": "mk_car/fer3.mp4",
+  "face": true,
+  "desc": "@markovituk 7584174853607951638 selfie in the Ferrari",
+  "segs": [
+   [
+    0.8,
+    5.6
+   ],
+   [
+    11.2,
+    12.35
+   ]
+  ]
+ },
+ "fer4f": {
+  "file": "mk_car/fer4.mp4",
+  "face": true,
+  "desc": "@markovituk 7585197264759508246 in the Ferrari, then by both cars",
+  "segs": [
+   [
+    0.05,
+    3.0
+   ],
+   [
+    7.0,
+    10.4
+   ]
+  ]
+ },
+ "conv": {
+  "file": "mk_car/conv.mp4",
+  "face": true,
+  "desc": "@markovituk 7617523276679564566 convertible supercar through London",
+  "segs": [
+   [
+    0.05,
+    1.28
+   ],
+   [
+    1.38,
+    2.85
+   ],
+   [
+    2.95,
+    3.97
+   ],
+   [
+    4.07,
+    5.28
+   ],
+   [
+    5.38,
+    6.7
+   ],
+   [
+    6.8,
+    8.75
+   ]
+  ]
+ },
+ "ferwheel": {
+  "file": "mk_car/fer3.mp4",
+  "face": false,
+  "desc": "@markovituk 7584174853607951638 Ferrari wheel POV",
+  "segs": [
+   [
+    6.3,
+    7.95
+   ]
+  ]
+ },
+ "urusb": {
+  "file": "mk_car/urus_black.mp4",
+  "face": false,
+  "desc": "@soltanauto1 7243856823516663046 matte black Urus Performante",
+  "segs": [
+   [
+    1.65,
+    3.98
+   ],
+   [
+    5.22,
+    6.55
+   ],
+   [
+    6.65,
+    7.72
+   ],
+   [
+    9.68,
+    10.75
+   ]
+  ]
+ },
+ "urusr": {
+  "file": "mk_car/urus_red.mp4",
+  "face": false,
+  "desc": "@autoluxny 7636407105368395021 white Urus, red interior",
+  "segs": [
+   [
+    3.25,
+    4.35
+   ],
+   [
+    4.45,
+    5.73
+   ],
+   [
+    7.6,
+    8.92
+   ],
+   [
+    11.27,
+    14.95
+   ]
+  ]
+ },
+ "povw": {
+  "file": "mk_car/pov_wheel.mp4",
+  "face": false,
+  "desc": "@dkimslim0105 7537921604290940173 POV at the wheel (arm-free stretches only)",
+  "segs": [
+   [
+    4.6,
+    6.6
+   ],
+   [
+    16.75,
+    20.9
+   ]
+  ],
+  "crop": "crop=918:1632:81:0"
+ }
+}
