@@ -1,0 +1,38 @@
+[
+ {
+  "name": "mk_v36_red",
+  "bait": "b_hottub",
+  "sound": "S1_ballerszn",
+  "y": 0.69,
+  "cap1": "What colours your ferari\nMarko? 😂",
+  "cap2": "It's Red.",
+  "sources": [
+   [
+    "fer2f",
+    1,
+    0.05
+   ],
+   [
+    "fer4f",
+    1,
+    0.05
+   ],
+   [
+    "ferwheel",
+    1
+   ],
+   [
+    "fer1f",
+    1,
+    9.0
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by Marko",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko"
+  ],
+  "cap1y": 0.74
+ }
+]
