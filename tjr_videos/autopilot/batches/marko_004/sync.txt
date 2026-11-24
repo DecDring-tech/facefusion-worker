@@ -1,0 +1,10 @@
+mk4_01_stadium.mp4 hits=[17.5, 14.3, 6.7, 11.2] offs(ms)=[24, -17, -5, 5]  stray_visual_cuts=[]  shortest_shot=1.33s
+mk4_02_netflix.mp4 hits=[10.5, 4.8, 4.5, 7.3, 5.9] offs(ms)=[19, 29, 21, 8, -5]  stray_visual_cuts=[]  shortest_shot=1.00s
+mk4_03_entourage.mp4 hits=[3.8, 5.0, 3.1, 4.4, 6.7, 4.4] offs(ms)=[30, 3, -8, 6, -10, 5]  stray_visual_cuts=[]  shortest_shot=0.90s
+mk4_04_mansion.mp4 hits=[6.7, 10.6, 2.2, 3.3] offs(ms)=[24, 6, 13, 11]  stray_visual_cuts=[]  shortest_shot=1.23s
+mk4_05_nails.mp4   hits=[5.6, 9.9, 3.7, 2.5] offs(ms)=[30, 13, 13, -4]  stray_visual_cuts=[]  shortest_shot=1.23s
+mk4_06_ppv.mp4     hits=[6.0, 10.0, 2.6, 2.8] offs(ms)=[30, 4, 10, 6]  stray_visual_cuts=[]  shortest_shot=1.20s
+mk4_07_jet.mp4     hits=[8.8, 2.3, 5.3, 6.3, 4.1] offs(ms)=[4, -6, 5, 11, -5]  stray_visual_cuts=[]  shortest_shot=0.97s
+mk4_08_jetdance.mp4 hits=[7.8, 3.0, 2.6, 3.4] offs(ms)=[10, 18, -21, 1]  stray_visual_cuts=[]  shortest_shot=1.27s
+mk4_09_6x6.mp4     hits=[10.8, 4.3, 7.0, 4.3, 12.0, 6.0] offs(ms)=[22, 5, 7, -14, -17, 3]  stray_visual_cuts=[]  shortest_shot=0.90s
+mk4_10_chains.mp4  hits=[15.8, 3.0, 6.8] offs(ms)=[27, 15, 5]  stray_visual_cuts=[]  shortest_shot=1.77s

@@ -1,0 +1,306 @@
+[
+ {
+  "name": "mk4_01_stadium",
+  "bait": "b14_pitch",
+  "sound": "M_gso3",
+  "y": 0.66,
+  "cap1": "Where's your stadium\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer1f",
+    2
+   ],
+   [
+    "urusr",
+    1,
+    11.27
+   ],
+   [
+    "fer2f",
+    1,
+    8.4
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's stadium vs Marko's Ferrari 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk4_02_netflix",
+  "bait": "b14_stage",
+  "sound": "M_scooby",
+  "y": 0.66,
+  "cap1": "Where's your Netflix fight\nMarko? 😂",
+  "cap2": "12-0 and a Ferrari\nlil bro",
+  "sources": [
+   [
+    "fer2f",
+    2
+   ],
+   [
+    "ferwheel",
+    1
+   ],
+   [
+    "fer4f",
+    2,
+    7.0
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's Netflix fight vs Marko's Ferrari 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk4_03_entourage",
+  "bait": "b14_entourage",
+  "sound": "M_bandz",
+  "y": 0.66,
+  "cap1": "Where's your entourage\nMarko? 😂",
+  "cap2": "Mine's Italian\nlil bro",
+  "sources": [
+   [
+    "fer3f",
+    2
+   ],
+   [
+    "urusr",
+    2
+   ],
+   [
+    "conv",
+    2,
+    4.07
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul brought his whole entourage and still got Mogged 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk4_04_mansion",
+  "bait": "b14_lawn2",
+  "sound": "M_embrace",
+  "y": 0.66,
+  "cap1": "Where's your $20M mansion\nMarko? 😂",
+  "cap2": "Not even close\nlil bro",
+  "sources": [
+   [
+    "fer4f",
+    2
+   ],
+   [
+    "povw",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by Marko",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk4_05_nails",
+  "bait": "b14_nails",
+  "sound": "M_arcadia",
+  "y": 0.66,
+  "cap1": "Who does your nails\nMarko? 😂",
+  "cap2": "Different tax bracket\nlil bro",
+  "sources": [
+   [
+    "conv",
+    2
+   ],
+   [
+    "urusb",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's nails vs Marko's Ferrari 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk4_06_ppv",
+  "bait": "b14_ring",
+  "sound": "M_listeria",
+  "y": 0.66,
+  "cap1": "Where's your PPV money\nMarko? 😂",
+  "cap2": "Parked outside\nlil bro",
+  "sources": [
+   [
+    "fer1f",
+    2,
+    7.3
+   ],
+   [
+    "ferwheel",
+    1
+   ],
+   [
+    "urusr",
+    1,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's PPV money vs Marko's garage 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk4_07_jet",
+  "bait": "b14_jetfriends",
+  "sound": "N_sybau",
+  "y": 0.66,
+  "cap1": "Where's your G650\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer2f",
+    2
+   ],
+   [
+    "povw",
+    2
+   ],
+   [
+    "fer3f",
+    1,
+    11.2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's jet vs Marko's Ferrari 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk4_08_jetdance",
+  "bait": "b14_jetdance",
+  "sound": "N_temporary",
+  "y": 0.66,
+  "cap1": "What colours your jet\nMarko? 😂",
+  "cap2": "It's Red.",
+  "sources": [
+   [
+    "fer4f",
+    2
+   ],
+   [
+    "urusr",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by Marko 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "mk4_09_6x6",
+  "bait": "b14_snowtruck",
+  "sound": "N_vaivai",
+  "y": 0.66,
+  "cap1": "Where's your 6x6\nMarko? 😂",
+  "cap2": "Not even close\nlil bro",
+  "sources": [
+   [
+    "conv",
+    2,
+    1.38
+   ],
+   [
+    "fer1f",
+    2
+   ],
+   [
+    "urusb",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's 6x6 vs Marko's Ferrari 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ],
+  "bait_start": 0.2
+ },
+ {
+  "name": "mk4_10_chains",
+  "bait": "b14_chains",
+  "sound": "N_itizwotitiz",
+  "y": 0.66,
+  "cap1": "Where's your chains\nMarko? 😂",
+  "cap2": "Where's your Ferari\nlil bro?",
+  "sources": [
+   [
+    "fer3f",
+    2
+   ],
+   [
+    "urusr",
+    1,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's chains vs Marko's Ferrari 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#ferrari",
+   "#fyp"
+  ]
+ }
+]

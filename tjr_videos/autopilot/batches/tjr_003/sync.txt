@@ -1,0 +1,10 @@
+t14_01_island.mp4  hits=[6.9, 4.4, 5.0, 5.0, 8.1, 4.3] offs(ms)=[27, 8, -2, -12, 19, 0]  stray_visual_cuts=[]  shortest_shot=0.90s
+t14_02_vipbox.mp4  hits=[3.7, 2.5, 3.4, 4.2, 5.2] offs(ms)=[-13, -42, 1, -7, -13]  stray_visual_cuts=[]  shortest_shot=1.10s
+t14_03_tyson.mp4   hits=[12.1, 3.8, 8.2, 11.2, 13.5, 3.5] offs(ms)=[33, 0, 14, -8, 0, 15]  stray_visual_cuts=[]  shortest_shot=0.90s
+t14_04_security.mp4 hits=[7.2, 5.7, 8.5, 3.6, 2.0] offs(ms)=[27, 3, -13, -10, -6]  stray_visual_cuts=[]  shortest_shot=1.00s
+t14_05_dock.mp4    hits=[7.8, 6.8, 2.6, 11.3, 7.9, 6.1] offs(ms)=[7, -3, -6, -10, 15, 5]  stray_visual_cuts=[]  shortest_shot=0.87s
+t14_06_alps.mp4    hits=[9.6, 2.9, 5.3, 5.7, 10.6] offs(ms)=[-13, -6, -10, -12, -5]  stray_visual_cuts=[]  shortest_shot=1.00s
+t14_07_jutta.mp4   hits=[8.0, 2.6, 8.2] offs(ms)=[19, -18, -13]  stray_visual_cuts=[]  shortest_shot=1.60s
+t14_08_weighin.mp4 hits=[14.8, 3.2, 11.4, 2.3] offs(ms)=[19, 13, 5, 5]  stray_visual_cuts=[]  shortest_shot=1.30s
+t14_09_goldjet.mp4 hits=[11.5, 3.8, 8.0, 7.9, 4.9, 8.3] offs(ms)=[24, -2, 1, 9, -1, -11]  stray_visual_cuts=[]  shortest_shot=0.90s
+t14_10_whitesuit.mp4 hits=[12.4, 5.2, 9.5] offs(ms)=[22, 22, 12]  stray_visual_cuts=[]  shortest_shot=1.63s

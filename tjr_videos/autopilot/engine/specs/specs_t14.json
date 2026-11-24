@@ -1,0 +1,280 @@
+[
+ {
+  "name": "t14_01_island",
+  "bait": "b14_island",
+  "sound": "N_partyfunk",
+  "y": 0.66,
+  "cap1": "Where's your private island\nTJR? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "night",
+    3
+   ],
+   [
+    "gas",
+    2
+   ],
+   [
+    "night",
+    1,
+    20.65
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's private island vs TJR's car 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#koenigsegg",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "t14_02_vipbox",
+  "bait": "b14_vipbox",
+  "sound": "N_zetsu",
+  "y": 0.66,
+  "cap1": "Where's your VIP box\nTJR? 😂",
+  "cap2": "Different tax bracket\nlil bro",
+  "sources": [
+   [
+    "gas",
+    2
+   ],
+   [
+    "night",
+    3,
+    13.1
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets car Mogged in his own VIP box 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#koenigsegg",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "t14_03_tyson",
+  "bait": "b14_tyson",
+  "sound": "N_g80kam",
+  "y": 0.66,
+  "cap1": "Where's your Mike Tyson\nTJR? 😂",
+  "cap2": "Mine hits harder\nlil bro",
+  "sources": [
+   [
+    "night",
+    4
+   ],
+   [
+    "gas",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul brought Mike Tyson and still got Mogged 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#koenigsegg",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "t14_04_security",
+  "bait": "b14_security",
+  "sound": "M_lexa",
+  "y": 0.66,
+  "cap1": "Where's your security\nTJR? 😂",
+  "cap2": "Nobody's catching me\nlil bro",
+  "sources": [
+   [
+    "gas",
+    1,
+    7.68
+   ],
+   [
+    "night",
+    4
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's security couldn't save him 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#koenigsegg",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "t14_05_dock",
+  "bait": "b14_dock",
+  "sound": "M_addicted",
+  "y": 0.66,
+  "cap1": "Where's your speed boat\nTJR? 😂",
+  "cap2": "Not even close\nlil bro",
+  "sources": [
+   [
+    "night",
+    3
+   ],
+   [
+    "gas",
+    2
+   ],
+   [
+    "night",
+    1,
+    20.65
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by TJR",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#koenigsegg",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "t14_06_alps",
+  "bait": "b14_alps",
+  "sound": "M_gso2",
+  "y": 0.66,
+  "cap1": "Where's your ski chalet\nTJR? 😂",
+  "cap2": "It's Red.",
+  "sources": [
+   [
+    "night",
+    3
+   ],
+   [
+    "gas",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's ski trip vs TJR's car 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#koenigsegg",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "t14_07_jutta",
+  "bait": "b14_jutta",
+  "sound": "M_ohrwurm",
+  "y": 0.66,
+  "cap1": "Where's your Olympic champion\nTJR? 😂",
+  "cap2": "Mine's Swedish\nlil bro",
+  "sources": [
+   [
+    "night",
+    2,
+    13.1
+   ],
+   [
+    "gas",
+    1,
+    7.68
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's girl vs TJR's car 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#koenigsegg",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "t14_08_weighin",
+  "bait": "b14_weighin",
+  "sound": "M_fastlife",
+  "y": 0.66,
+  "cap1": "What do you weigh in at\nTJR? 😂",
+  "cap2": "1.6 tonnes\nlil bro",
+  "sources": [
+   [
+    "gas",
+    1,
+    7.68
+   ],
+   [
+    "night",
+    3,
+    13.1
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul weighs less than TJR's car 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#koenigsegg",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "t14_09_goldjet",
+  "bait": "b14_goldjet",
+  "sound": "M_zahide",
+  "y": 0.66,
+  "cap1": "What colours your Gulfstrem\nTJR? 😂",
+  "cap2": "It's Red.",
+  "sources": [
+   [
+    "night",
+    4
+   ],
+   [
+    "gas",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by TJR 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#koenigsegg",
+   "#fyp"
+  ]
+ },
+ {
+  "name": "t14_10_whitesuit",
+  "bait": "b14_whitesuit",
+  "sound": "M_reperse",
+  "y": 0.66,
+  "cap1": "What colours your Lamborgini\nTJR? 😂",
+  "cap2": "Mine's a Koenigseg\nlil bro",
+  "sources": [
+   [
+    "gas",
+    1,
+    7.68
+   ],
+   [
+    "night",
+    2,
+    13.1
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul thought a red car was a flex 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#koenigsegg",
+   "#fyp"
+  ]
+ }
+]

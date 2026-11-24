@@ -1,0 +1,238 @@
+{
+ "series": "tjr",
+ "batch": "tjr_003",
+ "items": [
+  {
+   "slot": 1,
+   "video": "t14_01_island.mp4",
+   "caption": "Logan Paul's private island vs TJR's car 💀 #tjr #koenigsegg #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_003",
+    "sound": "N_partyfunk",
+    "sound_name": "Party Funk – Young Madz & MC Zudo Boladão",
+    "bait": "b14_island",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your private island TJR? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.63,
+    "shots": 6,
+    "sources": [
+     "night",
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 2,
+   "video": "t14_02_vipbox.mp4",
+   "caption": "Logan Paul gets car Mogged in his own VIP box 😭 #tjr #koenigsegg #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_003",
+    "sound": "N_zetsu",
+    "sound_name": "original sound – zet9u.ae (𝙕𝙚𝙩𝙨𝙪)",
+    "bait": "b14_vipbox",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your VIP box TJR? 😂",
+    "cap2": "Different tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.83,
+    "shots": 5,
+    "sources": [
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 3,
+   "video": "t14_03_tyson.mp4",
+   "caption": "Logan Paul brought Mike Tyson and still got Mogged 💀 #tjr #koenigsegg #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_003",
+    "sound": "N_g80kam",
+    "sound_name": "original sound – g80.kam",
+    "bait": "b14_tyson",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your Mike Tyson TJR? 😂",
+    "cap2": "Mine hits harder lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.57,
+    "shots": 6,
+    "sources": [
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 4,
+   "video": "t14_04_security.mp4",
+   "caption": "Logan Paul's security couldn't save him 😭 #tjr #koenigsegg #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_003",
+    "sound": "M_lexa",
+    "sound_name": "original sound - 404oskar — 404oskar (Lexa — DIZO & Manuellsen) https://www.tiktok.com/@404oskar/video/7678418939537296673",
+    "bait": "b14_security",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your security TJR? 😂",
+    "cap2": "Nobody's catching me lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.33,
+    "shots": 5,
+    "sources": [
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 5,
+   "video": "t14_05_dock.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR #tjr #koenigsegg #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_003",
+    "sound": "M_addicted",
+    "sound_name": "HI MY NAME IS GUCCIMANE — 404oskar (Addicted — Gucci Mane) https://www.tiktok.com/@404oskar/video/7616731881031191840",
+    "bait": "b14_dock",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your speed boat TJR? 😂",
+    "cap2": "Not even close lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.5,
+    "shots": 6,
+    "sources": [
+     "night",
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 6,
+   "video": "t14_06_alps.mp4",
+   "caption": "Logan Paul's ski trip vs TJR's car 🥱 #tjr #koenigsegg #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_003",
+    "sound": "M_gso2",
+    "sound_name": "original sound - gso.group — 🃑𝔾𝕊♢.𝔾ℝ♢𝕌ℙ🃑 (no match) https://www.tiktok.com/@gso.group/video/7654078785188269343",
+    "bait": "b14_alps",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your ski chalet TJR? 😂",
+    "cap2": "It's Red.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 7,
+   "video": "t14_07_jutta.mp4",
+   "caption": "Logan Paul's girl vs TJR's car 💀 #tjr #koenigsegg #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_003",
+    "sound": "M_ohrwurm",
+    "sound_name": "OHRWURM REMIX BY 404oskar — 404oskar (no match) https://www.tiktok.com/@404oskar/video/7581532434752212246",
+    "bait": "b14_jutta",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your Olympic champion TJR? 😂",
+    "cap2": "Mine's Swedish lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 7.9,
+    "shots": 3,
+    "sources": [
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 8,
+   "video": "t14_08_weighin.mp4",
+   "caption": "Logan Paul weighs less than TJR's car 😭 #tjr #koenigsegg #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_003",
+    "sound": "M_fastlife",
+    "sound_name": "FAST LIFE REMIX BY 404oskar — 404oskar (no match) https://www.tiktok.com/@404oskar/video/7576744520369409302",
+    "bait": "b14_weighin",
+    "bait_person": "Jake Paul",
+    "cap1": "What do you weigh in at TJR? 😂",
+    "cap2": "1.6 tonnes lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.4,
+    "shots": 4,
+    "sources": [
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 9,
+   "video": "t14_09_goldjet.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR 🥱 #tjr #koenigsegg #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_003",
+    "sound": "M_zahide",
+    "sound_name": "original sound - 404oskar — 404oskar (Zahide Disstrack (feat. KLEINER JUNGE) — Marvin Vlogt) https://www.tiktok.com/@404oskar/video/7591910216401308950",
+    "bait": "b14_goldjet",
+    "bait_person": "Jake Paul",
+    "cap1": "What colours your Gulfstrem TJR? 😂",
+    "cap2": "It's Red.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.63,
+    "shots": 6,
+    "sources": [
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 10,
+   "video": "t14_10_whitesuit.mp4",
+   "caption": "Logan Paul thought a red car was a flex 💀 #tjr #koenigsegg #fyp",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_003",
+    "sound": "M_reperse",
+    "sound_name": "original sound - bannedat1200 — 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁 (Reperse — Damian Deroma) https://www.tiktok.com/@bannedat1200/video/7587451513090379030",
+    "bait": "b14_whitesuit",
+    "bait_person": "Jake Paul",
+    "cap1": "What colours your Lamborgini TJR? 😂",
+    "cap2": "Mine's a Koenigseg lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 7.97,
+    "shots": 3,
+    "sources": [
+     "gas",
+     "night"
+    ]
+   }
+  }
+ ]
+}
