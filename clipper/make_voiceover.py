@@ -283,6 +283,10 @@ def main() -> None:
     ap.add_argument("--snip-gain", type=float, default=2.2, help="cutaway sound level (x reference level)")
     ap.add_argument("--hit-gain", type=float, default=2.6)
     ap.add_argument("--hit-at", type=float, default=0.5, help="when the opening sound plays (s)")
+    ap.add_argument("--gap-lo", type=float, default=3.9, help="min talk time between car clips (s)")
+    ap.add_argument("--gap-hi", type=float, default=5.2, help="max talk time between car clips (s)")
+    ap.add_argument("--end-on-broll", action="store_true", help="finish the video on a car clip")
+    ap.add_argument("--end-hold", type=float, default=0.5, help="car clip time after the last word (s)")
     ap.add_argument("--music-db", type=float, default=-99.0, help="music loop under the voice, dB vs voice")
     ap.add_argument("--lufs", type=float, default=-11.0)
     ap.add_argument("--remix", help="only rebuild the audio of this finished video (uses its plan + voice)")
@@ -356,8 +360,14 @@ def main() -> None:
 
     ref_windows = [tuple(map(float, c.split(":"))) for c in args.ref_cuts.split(",")]
     d = round((ref_windows[0][1] - ref_windows[0][0]) * FPS) / FPS
-    cuts = [round(c * FPS) / FPS for c in cut_times(words, total, args.first_cut, d, 3.9, 5.2, 1.5, rng)]
-    print("flick to b-roll at", cuts)
+    if args.end_on_broll:  # the car clip runs a beat past his last word and the video ends on it
+        total = round((total + args.end_hold) * FPS) / FPS
+    cuts = [round(c * FPS) / FPS for c in cut_times(words, total, args.first_cut, d, args.gap_lo, args.gap_hi,
+                                                     1.5, rng)]
+    last = round((total - d) * FPS) / FPS
+    if args.end_on_broll:
+        cuts = [c for c in cuts if c + d + 2.0 <= last]
+    print("flick to b-roll at", cuts + ([last] if args.end_on_broll else []))
 
     segs = []  # (kind, out_start, out_end, snippet index)
     t = 0.0
@@ -365,7 +375,11 @@ def main() -> None:
         segs.append(("talk", t, c, -1))
         segs.append(("cut", c, c + d, i % len(ref_windows)))
         t = c + d
-    segs.append(("talk", t, total, -1))
+    if args.end_on_broll:
+        segs.append(("talk", t, last, -1))
+        segs.append(("cut", last, total, len(cuts) % len(ref_windows)))
+    else:
+        segs.append(("talk", t, total, -1))
     snippets = [read_audio(args.ref, a, (b - a) + args.tail) for a, b in ref_windows]
     audio = build_audio(args, voice, segs, total, ref_windows, tmp)
 
