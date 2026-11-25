@@ -1,0 +1,300 @@
+[
+ {
+  "name": "mk6_01_chain",
+  "bait": "b15_mirror",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your iced out chain\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer1f",
+    2,
+    7.3
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's chain vs Marko's Ferrari 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk6_02_paparazzi",
+  "bait": "b15_paparazzi",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your paparazzi\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer2f",
+    2,
+    8.4
+   ],
+   [
+    "urusb",
+    1
+   ],
+   [
+    "urusr",
+    1,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's paparazzi vs Marko's Ferrari 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk6_03_girls",
+  "bait": "b15_girls",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your girls\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer4f",
+    2,
+    7.0
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's girls vs Marko's Ferrari 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk6_04_missus",
+  "bait": "b15_missus",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your missus\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer3f",
+    2
+   ],
+   [
+    "povw",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's missus vs Marko's Ferrari 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk6_05_arena",
+  "bait": "b15_arena",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your sold out arena\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer1f",
+    2,
+    7.3
+   ],
+   [
+    "urusb",
+    1
+   ],
+   [
+    "urusr",
+    1,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's arena vs Marko's Ferrari 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk6_06_beard",
+  "bait": "b15_selfie",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your beard\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer2f",
+    2,
+    8.4
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by Marko",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk6_07_medal",
+  "bait": "b15_medal",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your gold medal\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer4f",
+    2,
+    7.0
+   ],
+   [
+    "povw",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's girl vs Marko's Ferrari 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk6_08_mansion",
+  "bait": "b15_mansion",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your mansion\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer3f",
+    2
+   ],
+   [
+    "urusb",
+    1
+   ],
+   [
+    "urusr",
+    1,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's mansion vs Marko's Ferrari 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk6_09_hq",
+  "bait": "b13_hq",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your HQ\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer1f",
+    2,
+    7.3
+   ],
+   [
+    "povw",
+    2
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets car Mogged outside his own HQ 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ],
+  "bait_start": 0.15
+ },
+ {
+  "name": "mk6_10_ferari",
+  "bait": "b13_yellowcar",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your Ferari\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer2f",
+    2,
+    8.4
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by Marko",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ }
+]

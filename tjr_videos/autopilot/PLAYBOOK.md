@@ -78,3 +78,10 @@ extract with ffmpeg first (librosa can't read mp4). New sounds: `scripts/registe
   invented punchlines ("Mine's Swedish", "1.6 tonnes", "Who does your nails" were disliked). Post captions follow
   "Logan Paul gets brutally car Mogged by …", "Next time Logan 🥱", "We're not the same Logan", with hashtags
   `#tjr #mogged #loganpaul #jakepaul`.
+
+## Proven winner (Nov 2026): marko_005 #10 "chains", 31K views in 10 h, 9.3 s average watch, 44.5% full watches
+
+The formula: a Jake close-up selfie showing something he's wearing or holding; "Where's your <that thing> Marko? 😂";
+"Wrong tax bracket lil bro"; USE HEADSET sound (S7, 4 × 1.45 s shots, 9.37 s total); Marko by the Ferrari and Urus, then the
+white Urus. marko_006 is 10 copies of it. When a video takes off, copy its sound, shot pattern and caption style exactly and
+only change the opener.

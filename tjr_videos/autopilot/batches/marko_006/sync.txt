@@ -1,0 +1,10 @@
+mk6_01_chain.mp4   hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk6_02_paparazzi.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk6_03_girls.mp4   hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk6_04_missus.mp4  hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk6_05_arena.mp4   hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk6_06_beard.mp4   hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk6_07_medal.mp4   hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk6_08_mansion.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk6_09_hq.mp4      hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk6_10_ferari.mp4  hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
