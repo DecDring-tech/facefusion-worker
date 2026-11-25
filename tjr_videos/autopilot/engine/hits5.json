@@ -262,5 +262,12 @@
   "drop": 5.432,
   "end": 10.407,
   "hits": []
+ },
+ "A_flexx": {
+  "file": "snd4/flexx.mp3",
+  "offset": 0.0,
+  "drop": 3.01,
+  "end": 8.505,
+  "hits": []
  }
 }

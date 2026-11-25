@@ -1,0 +1,236 @@
+{
+ "series": "tjr",
+ "batch": "tjr_004",
+ "items": [
+  {
+   "slot": 1,
+   "video": "t15_01_island.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_004",
+    "sound": "S9_northpole",
+    "sound_name": "North Pole (Cynnmixx) – prodbyCyn",
+    "bait": "b14_island",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your mansion TJR? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 3.2,
+    "length_s": 8.23,
+    "shots": 5,
+    "sources": [
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 2,
+   "video": "t15_02_vipbox.mp4",
+   "caption": "We're not the same Logan 🥱 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_004",
+    "sound": "S5_gsgroup",
+    "sound_name": "original sound – 🃑𝔾𝕊♢.𝔾ℝ♢𝕌ℙ🃑 (Walk – DJ Collo)",
+    "bait": "b14_vipbox",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your VIP box TJR? 😂",
+    "cap2": "Different tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 4.0,
+    "length_s": 9.73,
+    "shots": 5,
+    "sources": [
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 3,
+   "video": "t15_03_tyson.mp4",
+   "caption": "Logan Paul brought Mike Tyson and still got Mogged 😭 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_004",
+    "sound": "S2_bannu",
+    "sound_name": "original sound – Bannu (Stanley Earl – ASN JAYBOOG)",
+    "bait": "b14_tyson",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your Mike Tyson TJR? 😂",
+    "cap2": "It's red lil bro",
+    "rage_bait": true,
+    "switch_s": 3.3,
+    "length_s": 8.67,
+    "shots": 4,
+    "sources": [
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 4,
+   "video": "t15_04_security.mp4",
+   "caption": "Next time Logan 🥱 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_004",
+    "sound": "S8_calebgordenn",
+    "sound_name": "original sound – calebgordenn® (Keep Knockin)",
+    "bait": "b14_security",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your bodyguards TJR? 😂",
+    "cap2": "Not even close lil bro",
+    "rage_bait": true,
+    "switch_s": 3.03,
+    "length_s": 8.27,
+    "shots": 5,
+    "sources": [
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 5,
+   "video": "t15_05_dock.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR 😭 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_004",
+    "sound": "S4_404oskar",
+    "sound_name": "original sound – 404oskar",
+    "bait": "b14_dock",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your yacht TJR? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 3.4,
+    "length_s": 8.17,
+    "shots": 3,
+    "sources": [
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 6,
+   "video": "t15_06_alps.mp4",
+   "caption": "Logan Paul's ski trip vs TJR's car 🥱 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_004",
+    "sound": "S7_useheadset",
+    "sound_name": "som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 (SANYA TEKK Ultra Slowed)",
+    "bait": "b14_alps",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your ski trip TJR? 😂",
+    "cap2": "It's red lil bro",
+    "rage_bait": true,
+    "switch_s": 3.57,
+    "length_s": 9.37,
+    "shots": 4,
+    "sources": [
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 7,
+   "video": "t15_07_jutta.mp4",
+   "caption": "Logan Paul's girl gets car Mogged by TJR 💀 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_004",
+    "sound": "A_flexx",
+    "sound_name": "original sound – flexx (flexx.vfx) — the sound on your \"It's red lil bro\" post 7692440483733474562",
+    "bait": "b14_jutta",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your gold medal TJR? 😂",
+    "cap2": "Where's your Ferrari lil bro?",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.57,
+    "shots": 5,
+    "sources": [
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 8,
+   "video": "t15_08_weighin.mp4",
+   "caption": "Logan Paul gets car Mogged before his fight 😭 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_004",
+    "sound": "S3_salman",
+    "sound_name": "الصوت الأصلي – Salman (Don't Like.1 sped up)",
+    "bait": "b14_weighin",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your title fight TJR? 😂",
+    "cap2": "Different tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 3.63,
+    "length_s": 9.3,
+    "shots": 5,
+    "sources": [
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 9,
+   "video": "t15_09_goldjet.mp4",
+   "caption": "Logan Paul's jet vs TJR's car 🥱 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_004",
+    "sound": "S6_luxuryxsh",
+    "sound_name": "origineel geluid – 𝐥𝐮𝐱𝐮𝐫𝐲𝐱𝐬𝐡",
+    "bait": "b14_goldjet",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your private jet TJR? 😂",
+    "cap2": "It's red lil bro",
+    "rage_bait": true,
+    "switch_s": 3.4,
+    "length_s": 8.4,
+    "shots": 3,
+    "sources": [
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 10,
+   "video": "t15_10_whitesuit.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_004",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b14_whitesuit",
+    "bait_person": "Jake Paul",
+    "cap1": "What colours your Ferari TJR? 😂",
+    "cap2": "It's red lil bro",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 5,
+    "sources": [
+     "gas",
+     "night"
+    ]
+   }
+  }
+ ]
+}

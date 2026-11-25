@@ -66,3 +66,15 @@ extract with ffmpeg first (librosa can't read mp4). New sounds: `scripts/registe
 - **Shares and saves per view:** relatability. Compare which openers and payoff lines get shared.
 - Groups in "What's working" need 2+ posts each. Say when a sample is too small to trust.
 - Then change one or two things per batch (sound, opener person, payoff line, length) so the next stats run shows what moved.
+
+## Sounds and captions (user feedback, batch tjr_004 / marko_005)
+
+- **Sounds:** use the sounds from the user's own @tjrv001 posts: S1–S9 plus `A_flexx`. Those are the sounds the user likes. The
+  extra library sounds (M_/N_) were disliked in tjr_003/marko_004; only use them if the user asks. Before each batch,
+  re-list @tjrv001's posts for any new sound they've started using (tikwm per post gives `music_info`).
+- **Captions:** keep them simple and close to the user's best posts. Caption 1 is "Where's your <thing you can see in the
+  clip> TJR/Marko? 😂", or the 3.6M line "What colours your Ferari …? 😂". Caption 2 is one of "Wrong tax bracket lil bro",
+  "Different tax bracket lil bro", "Not even close lil bro", "It's red lil bro" or "Where's your Ferrari lil bro?". No
+  invented punchlines ("Mine's Swedish", "1.6 tonnes", "Who does your nails" were disliked). Post captions follow
+  "Logan Paul gets brutally car Mogged by …", "Next time Logan 🥱", "We're not the same Logan", with hashtags
+  `#tjr #mogged #loganpaul #jakepaul`.
