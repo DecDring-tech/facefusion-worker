@@ -1,0 +1,10 @@
+mk9_01_diamonds.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk9_02_watch.mp4   hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk9_03_diamondchain.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk9_04_richardmille.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk9_05_mansion.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk9_06_shades.mp4  hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk9_07_yellowferrari.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk9_08_driver.mp4  hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk9_09_supercar.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk9_10_gym.mp4     hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
