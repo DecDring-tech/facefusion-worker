@@ -1,0 +1,40 @@
+[
+ {
+  "name": "t16_03_price",
+  "bait": "b16_jet",
+  "sound": "S1_ballerszn",
+  "y": 0.66,
+  "cap1": "How much was your Lambo\nTJR? 😂",
+  "cap2": "6 Million.",
+  "sources": [
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "night",
+    1,
+    15.75
+   ],
+   [
+    "night",
+    1,
+    18.6
+   ],
+   [
+    "nightend",
+    1
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by TJR 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#mogged",
+   "#loganpaul",
+   "#jakepaul"
+  ]
+ }
+]

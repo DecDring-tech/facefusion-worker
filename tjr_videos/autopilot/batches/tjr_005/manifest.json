@@ -64,16 +64,16 @@
     "bait": "b16_jet",
     "bait_person": "Jake Paul",
     "cap1": "How much was your Lambo TJR? 😂",
-    "cap2": "3 Million.",
+    "cap2": "6 Million.",
     "rage_bait": true,
     "switch_s": 3.07,
     "length_s": 8.2,
     "shots": 4,
     "sources": [
      "night",
-     "gas",
      "night",
-     "night"
+     "night",
+     "nightend"
     ]
    }
   },
