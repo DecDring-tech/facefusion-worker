@@ -85,3 +85,15 @@ The formula: a Jake close-up selfie showing something he's wearing or holding; "
 "Wrong tax bracket lil bro"; USE HEADSET sound (S7, 4 × 1.45 s shots, 9.37 s total); Marko by the Ferrari and Urus, then the
 white Urus. marko_006 is 10 copies of it. When a video takes off, copy its sound, shot pattern and caption style exactly and
 only change the opener.
+
+## Opener rules from the chains hit (apply to every Marko and TJR batch)
+
+Compared with the two flops on @markovclipping (jet ski, 2.7K; championship belt, 2.8K):
+1. Frame 1 is a face close-up looking into the lens and filling the frame, selfie style. No wide shots, action shots or
+   small faces. It's also the cover image.
+2. The flex item is on or right next to that face in frame 1 (chain, watch, glasses, girl, medal), and caption 1 names it,
+   so the joke reads in under a second.
+3. Caption 1 is five words or fewer plus "Marko? 😂". Caption 2 is "Wrong tax bracket lil bro".
+4. Payoff: Marko's face on shots 1 and 2, at night by the Ferrari and Urus, so the day/night contrast hits on the drop.
+5. Long, slow shots (USE HEADSET, 4 × 1.45 s, 9.4 s) so the whole video is easy to finish and it loops.
+6. Post caption labels Jake as Logan, for the comments.
