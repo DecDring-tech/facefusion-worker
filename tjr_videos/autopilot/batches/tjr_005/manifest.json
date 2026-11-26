@@ -1,0 +1,256 @@
+{
+ "series": "tjr",
+ "batch": "tjr_005",
+ "items": [
+  {
+   "slot": 1,
+   "video": "t16_01_ferari.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_005",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b16_tattoos",
+    "bait_person": "Jake Paul",
+    "cap1": "What colours your ferari TJR? 😂",
+    "cap2": "It's Red.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 4,
+    "sources": [
+     "night",
+     "night",
+     "night",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 2,
+   "video": "t16_02_cars.mp4",
+   "caption": "Logan Paul's whole garage vs TJR's one car 🥱 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_005",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b13_yellowcar",
+    "bait_person": "Jake Paul",
+    "cap1": "How many cars you got TJR? 😂",
+    "cap2": "Just one.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 4,
+    "sources": [
+     "night",
+     "night",
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 3,
+   "video": "t16_03_price.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR 😭 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_005",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b16_jet",
+    "bait_person": "Jake Paul",
+    "cap1": "How much was your Lambo TJR? 😂",
+    "cap2": "3 Million.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 4,
+    "sources": [
+     "night",
+     "gas",
+     "night",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 4,
+   "video": "t16_04_whos.mp4",
+   "caption": "Next time Logan 🥱 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_005",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b14_snowtruck",
+    "bait_person": "Jake Paul",
+    "cap1": "Whos car is that TJR? 😂",
+    "cap2": "Mine.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 4,
+    "sources": [
+     "night",
+     "night",
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 5,
+   "video": "t16_05_rental.mp4",
+   "caption": "Logan Paul thought it was a rental 💀 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_005",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b16_goldchain",
+    "bait_person": "Jake Paul",
+    "cap1": "Is that a rental TJR? 😂",
+    "cap2": "Paid cash.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 4,
+    "sources": [
+     "night",
+     "night",
+     "night",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 6,
+   "video": "t16_06_race.mp4",
+   "caption": "Jake Paul gets brutally car Mogged by TJR #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_005",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b16_classic",
+    "bait_person": "Logan Paul",
+    "cap1": "Wanna race TJR? 😂",
+    "cap2": "You'd lose.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 4,
+    "sources": [
+     "night",
+     "night",
+     "night",
+     "gas"
+    ]
+   }
+  },
+  {
+   "slot": 7,
+   "video": "t16_07_afford.mp4",
+   "caption": "We're not the same Logan 🥱 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_005",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b15_mirror",
+    "bait_person": "Jake Paul",
+    "cap1": "Can you afford that TJR? 😂",
+    "cap2": "Twice.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 4,
+    "sources": [
+     "night",
+     "gas",
+     "night",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 8,
+   "video": "t16_08_work.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR 💀 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_005",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b16_brand",
+    "bait_person": "Jake Paul",
+    "cap1": "What do you do for work TJR? 😂",
+    "cap2": "I don't.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 4,
+    "sources": [
+     "night",
+     "night",
+     "gas",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 9,
+   "video": "t16_09_sold.mp4",
+   "caption": "Next time Logan 😭 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_005",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b14_chains",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your Lambo TJR? 😂",
+    "cap2": "Sold it.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 4,
+    "sources": [
+     "night",
+     "night",
+     "night",
+     "night"
+    ]
+   }
+  },
+  {
+   "slot": 10,
+   "video": "t16_10_fast.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by TJR 🥱 #tjr #mogged #loganpaul #jakepaul",
+   "features": {
+    "series": "tjr",
+    "batch": "tjr_005",
+    "sound": "S1_ballerszn",
+    "sound_name": "original sound – 𝐵𝐴𝐿𝐿𝐸𝑅𝑆𝑍𝑁",
+    "bait": "b15_paparazzi",
+    "bait_person": "Jake Paul",
+    "cap1": "How fast is your Bugati TJR? 😂",
+    "cap2": "Faster than yours.",
+    "rage_bait": true,
+    "switch_s": 3.07,
+    "length_s": 8.2,
+    "shots": 4,
+    "sources": [
+     "night",
+     "night",
+     "night",
+     "gas"
+    ]
+   }
+  }
+ ]
+}

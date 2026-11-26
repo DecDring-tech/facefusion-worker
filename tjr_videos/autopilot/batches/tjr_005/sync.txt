@@ -1,0 +1,10 @@
+t16_01_ferari.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t16_02_cars.mp4    hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t16_03_price.mp4   hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t16_04_whos.mp4    hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t16_05_rental.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t16_06_race.mp4    hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t16_07_afford.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t16_08_work.mp4    hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t16_09_sold.mp4    hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t16_10_fast.mp4    hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
