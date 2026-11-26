@@ -1,5 +1,7 @@
 # Autopilot playbook (for Claude)
 
+**Read `HITS.md` first. Every batch is based on the hits listed there.**
+
 The user runs the TJR and Marko accounts by saying short commands. This is what each one means. Work from
 `tjr_videos/autopilot/` on branch `claude/tjr-video-series-6y4umc`. Commit and push after every batch, post and stats run.
 
