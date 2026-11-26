@@ -1,0 +1,10 @@
+mk11_01_pendant.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk11_02_jewellery.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk11_03_goldwatch.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk11_04_cubanlink.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk11_05_chains.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk11_06_drip.mp4   hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk11_07_diamondchain.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk11_08_privatejet.mp4 hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk11_09_suit.mp4   hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk11_10_ice.mp4    hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s

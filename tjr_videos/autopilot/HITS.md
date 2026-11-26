@@ -36,3 +36,10 @@ Every post on @jakepaul (about 620) has been screened. The Jake openers that mat
 another bought flex in shot, no burned-in text) are all used now; `batches/marko_next10/` holds the ten closest unposted
 videos in posting order. More hit-grade Marko videos need new Jake footage from the user (selfie close-ups with a
 chain/watch, 4 s+, no text on screen). Do not substitute another creator.
+
+## Priority rule (user, 27 Nov 2026)
+
+What makes a video go viral comes first and overrules any earlier production rule. For start clips this means it is fine to
+zoom into a wider Jake shot so his face and jewellery fill the frame, slow a short clip to reach the opener length, or crop
+burned-in text off. Each new video needs a new start clip; TJR/Marko payoff clips can repeat with small variations.
+Never resend a start clip the user has already been sent. Keep replies short.
