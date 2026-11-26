@@ -97,3 +97,12 @@ Compared with the two flops on @markovclipping (jet ski, 2.7K; championship belt
 4. Payoff: Marko's face on shots 1 and 2, at night by the Ferrari and Urus, so the day/night contrast hits on the drop.
 5. Long, slow shots (USE HEADSET, 4 × 1.45 s, 9.4 s) so the whole video is easy to finish and it loops.
 6. Post caption labels Jake as Logan, for the comments.
+
+## Second Marko hit (27 Nov 2026): marko_007 #2 "gold chain", 12.3K and climbing ~8K/hour
+
+Scoreboard on @markovclipping at that point: chains 61.2K, gold chain 12.3K (rising), belt 3.8K, jet ski 3.3K,
+"Where's your Ferrari" (tattoos opener) 740 (too new to judge).
+Both hits share: Jake's face filling the frame and looking into the lens, a chain on his neck named in caption 1,
+USE HEADSET sound, "Wrong tax bracket lil bro". Their Marko shots differ (fer1f lead vs fer2f lead), so the payoff order
+is not what matters. Not yet separated: is it the chain, or any face-to-lens close-up? Jewellery close-ups (chains,
+watch, rings, grillz, earrings) are the safest next openers; non-jewellery face-to-lens openers are the test.
