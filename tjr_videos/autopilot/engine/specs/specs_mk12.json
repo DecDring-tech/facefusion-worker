@@ -1,0 +1,118 @@
+[
+ {
+  "name": "mk12_01_court",
+  "bait": "b22_court",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your indoor court\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer1f",
+    2,
+    7.3
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's indoor court vs Marko's Ferrari 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk12_02_art",
+  "bait": "b22_greytee",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your art collection\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer2f",
+    2,
+    8.4
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's art vs Marko's Ferrari 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk12_03_contenthouse",
+  "bait": "b22_bluecap",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your content house\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer4f",
+    2,
+    7.0
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's content house vs Marko's Ferrari 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk12_04_designerfit",
+  "bait": "b22_pink",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "Where's your designer fit\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer1f",
+    2,
+    7.3
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by Marko",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ }
+]

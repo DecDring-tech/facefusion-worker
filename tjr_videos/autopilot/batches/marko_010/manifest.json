@@ -1,0 +1,98 @@
+{
+ "series": "marko",
+ "batch": "marko_010",
+ "items": [
+  {
+   "slot": 1,
+   "video": "mk12_01_court.mp4",
+   "caption": "Logan Paul's indoor court vs Marko's Ferrari 🥱 #marko #markovituk #mogged #loganpaul",
+   "features": {
+    "series": "marko",
+    "batch": "marko_010",
+    "sound": "S7_useheadset",
+    "sound_name": "som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 (SANYA TEKK Ultra Slowed)",
+    "bait": "b22_court",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your indoor court Marko? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 3.57,
+    "length_s": 9.37,
+    "shots": 4,
+    "sources": [
+     "fer1f",
+     "urusr"
+    ]
+   }
+  },
+  {
+   "slot": 2,
+   "video": "mk12_02_art.mp4",
+   "caption": "Logan Paul's art vs Marko's Ferrari 😭 #marko #markovituk #mogged #loganpaul",
+   "features": {
+    "series": "marko",
+    "batch": "marko_010",
+    "sound": "S7_useheadset",
+    "sound_name": "som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 (SANYA TEKK Ultra Slowed)",
+    "bait": "b22_greytee",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your art collection Marko? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 3.57,
+    "length_s": 9.37,
+    "shots": 4,
+    "sources": [
+     "fer2f",
+     "urusr"
+    ]
+   }
+  },
+  {
+   "slot": 3,
+   "video": "mk12_03_contenthouse.mp4",
+   "caption": "Logan Paul's content house vs Marko's Ferrari 💀 #marko #markovituk #mogged #loganpaul",
+   "features": {
+    "series": "marko",
+    "batch": "marko_010",
+    "sound": "S7_useheadset",
+    "sound_name": "som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 (SANYA TEKK Ultra Slowed)",
+    "bait": "b22_bluecap",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your content house Marko? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 3.57,
+    "length_s": 9.37,
+    "shots": 4,
+    "sources": [
+     "fer4f",
+     "urusr"
+    ]
+   }
+  },
+  {
+   "slot": 4,
+   "video": "mk12_04_designerfit.mp4",
+   "caption": "Logan Paul gets brutally car Mogged by Marko #marko #markovituk #mogged #loganpaul",
+   "features": {
+    "series": "marko",
+    "batch": "marko_010",
+    "sound": "S7_useheadset",
+    "sound_name": "som original – 𝑼𝑺𝑬 𝑯𝑬𝑨𝑫𝑺𝑬𝑻 (SANYA TEKK Ultra Slowed)",
+    "bait": "b22_pink",
+    "bait_person": "Jake Paul",
+    "cap1": "Where's your designer fit Marko? 😂",
+    "cap2": "Wrong tax bracket lil bro",
+    "rage_bait": true,
+    "switch_s": 3.57,
+    "length_s": 9.37,
+    "shots": 4,
+    "sources": [
+     "fer1f",
+     "urusr"
+    ]
+   }
+  }
+ ]
+}
