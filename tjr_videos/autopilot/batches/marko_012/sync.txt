@@ -1,0 +1,9 @@
+mk14_01_house.mp4  hits=[24.6, 4.6, 5.3, 5.6] offs(ms)=[19, 3, 10, -15]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk14_02_shades.mp4 hits=[24.6, 4.6, 5.3, 5.6] offs(ms)=[19, 3, 10, -15]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk14_03_jacket.mp4 hits=[24.6, 4.6, 5.3, 5.6] offs(ms)=[19, 3, 10, -15]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk14_04_month.mp4  hits=[24.6, 4.6, 5.3, 5.6] offs(ms)=[19, 3, 10, -15]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk14_05_paid.mp4   hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk14_06_richer.mp4 hits=[24.6, 4.6, 5.3, 5.6] offs(ms)=[19, 3, 10, -15]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk14_07_zeros.mp4  hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk14_08_rich.mp4   hits=[25.1, 5.1, 5.3, 5.5] offs(ms)=[18, 5, 9, -12]  stray_visual_cuts=[]  shortest_shot=1.43s
+mk14_09_night.mp4  hits=[24.6, 4.6, 5.3, 5.6] offs(ms)=[19, 3, 10, -15]  stray_visual_cuts=[]  shortest_shot=1.43s

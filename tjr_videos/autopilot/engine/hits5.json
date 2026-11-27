@@ -269,5 +269,17 @@
   "drop": 3.01,
   "end": 8.505,
   "hits": []
+ },
+ "S7_short": {
+  "file": "sounds_dl/S7_useheadset.mp3",
+  "offset": 2.804,
+  "drop": 6.381,
+  "end": 11.381,
+  "hits": [
+   7.123,
+   8.562,
+   9.282,
+   10.728
+  ]
  }
 }

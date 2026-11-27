@@ -49,3 +49,11 @@ Never resend a start clip the user has already been sent. Keep replies short.
 Marko's answer must actually answer Jake's question, short and cold. "How much you make a year?" → "More than you."
 "How much tax you pay?" → "More than you make." Use "Wrong tax bracket lil bro" only when the question is "Where's your
 <thing money buys>".
+
+## Face-on rule and how to find the clips (user, 28 Nov 2026)
+
+Scoreboard on @markovclipping: chains 76.9K, gold chain 50.8K, belt 5.1K, jet ski 3.9K, Ferrari (side-on) 1.7K,
+art collection 464, bank (dim, face small) 97. The start clip must be face-on to the lens with the face filling the
+screen, at normal speed, not zoomed. Measured with `engine/scripts/facescan.py` (YuNet): the hits score 0.44 and 0.63 face
+width / frame width in the first frames; the flops 0.18–0.30. Only build from stretches scoring 0.40+ at the start and
+0.30+ throughout. If the face-on stretch is under 3.6 s, use `S7_short` (same sound, opener 3.08 s) instead of slowing it.

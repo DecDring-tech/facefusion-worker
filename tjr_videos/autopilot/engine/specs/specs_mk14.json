@@ -1,0 +1,263 @@
+[
+ {
+  "name": "mk14_01_house",
+  "bait": "b24_beige",
+  "sound": "S7_short",
+  "y": 0.66,
+  "cap1": "How much is your house\nMarko? 😂",
+  "cap2": "More then yours",
+  "sources": [
+   [
+    "fer1f",
+    2,
+    7.3
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by Marko",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk14_02_shades",
+  "bait": "b24_aviators",
+  "sound": "S7_short",
+  "y": 0.66,
+  "cap1": "Where's your shades\nMarko? 😂",
+  "cap2": "Wrong tax bracket\nlil bro",
+  "sources": [
+   [
+    "fer2f",
+    2,
+    8.4
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's shades vs Marko's Ferrari 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk14_03_jacket",
+  "bait": "b24_jacket",
+  "sound": "S7_short",
+  "y": 0.66,
+  "cap1": "How much was your jacket\nMarko? 😂",
+  "cap2": "More then yours",
+  "sources": [
+   [
+    "fer4f",
+    2,
+    7.0
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's jacket vs Marko's Ferrari 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk14_04_month",
+  "bait": "b24_korea",
+  "sound": "S7_short",
+  "y": 0.66,
+  "cap1": "How much you make a month\nMarko? 😂",
+  "cap2": "More then you",
+  "sources": [
+   [
+    "fer1f",
+    2,
+    7.3
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Next time Logan 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk14_05_paid",
+  "bait": "b24_towel",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "How much you get paid\nMarko? 😂",
+  "cap2": "More then you",
+  "sources": [
+   [
+    "fer2f",
+    2,
+    8.4
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul asked the wrong guy 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk14_06_richer",
+  "bait": "b24_point",
+  "sound": "S7_short",
+  "y": 0.66,
+  "cap1": "Who's richer\nMarko? 😂",
+  "cap2": "Me.",
+  "sources": [
+   [
+    "fer4f",
+    2,
+    7.0
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "We're not the same Logan 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk14_07_zeros",
+  "bait": "b24_weighin",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "How many zeros you got\nMarko? 😂",
+  "cap2": "More then you",
+  "sources": [
+   [
+    "fer1f",
+    2,
+    7.3
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by Marko 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk14_08_rich",
+  "bait": "b24_greywall",
+  "sound": "S7_useheadset",
+  "y": 0.66,
+  "cap1": "You even rich\nMarko? 😂",
+  "cap2": "Richer then you",
+  "sources": [
+   [
+    "fer2f",
+    2,
+    8.4
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by Marko 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ },
+ {
+  "name": "mk14_09_night",
+  "bait": "b24_buckethat",
+  "sound": "S7_short",
+  "y": 0.66,
+  "cap1": "How much you spend a night\nMarko? 😂",
+  "cap2": "More then you make",
+  "sources": [
+   [
+    "fer4f",
+    2,
+    7.0
+   ],
+   [
+    "urusr",
+    2,
+    11.27
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Next time Logan 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#marko",
+   "#markovituk",
+   "#mogged",
+   "#loganpaul"
+  ]
+ }
+]
