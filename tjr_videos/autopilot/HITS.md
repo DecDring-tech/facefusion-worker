@@ -22,6 +22,10 @@ Misses for contrast: championship belt 3.8K (wide shot, belt is won not bought),
 |---|---|---|---|---|
 | Logan Paul gets brutally car Mogged by TJR | 3.6M | Jake in his pool, yellow Lambos behind | What colours your ferari TJR? 😂 → It's Red. | BALLERSZN (S1), drop 3.08 s, 8.2 s, shot 2 double length |
 
+| Ferari, Jake in the car with his girl | tjr_006/t17_01_ferari: 14.8K at 8 h (7.6 s avg watch on 8.2 s, 33.7% full, 11 followers) | Jake selfie in a car, shades on, girl next to him | What colours your Ferari TJR? 😂 → It's Red. | BALLERSZN (S1), same cut pattern, TJR arms crossed on the drop |
+
+Both TJR hits share the exact line "What colours your Ferari TJR? 😂" → "It's Red.", BALLERSZN, ~8.2 s, Jake in daylight, Jake labelled Logan. No TJR video with a different question has hit yet. tjr_007 is 10 more with that exact line and sound and a new Jake start clip each.
+
 What made it: Jake labelled "Logan" in the post caption, "ferari" misspelt and the wrong car, a two-word cold answer,
 8 s loop.
 

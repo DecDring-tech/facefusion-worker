@@ -1,0 +1,10 @@
+t18_01_ferari.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t18_02_ferari.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t18_03_ferari.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t18_04_ferari.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t18_05_ferari.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t18_06_ferari.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t18_07_ferari.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t18_08_ferari.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t18_09_ferari.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
+t18_10_ferari.mp4  hits=[7.9, 4.2, 4.0, 4.7] offs(ms)=[-28, -6, 3, -6]  stray_visual_cuts=[]  shortest_shot=1.03s
