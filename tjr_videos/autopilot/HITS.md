@@ -43,3 +43,9 @@ What makes a video go viral comes first and overrules any earlier production rul
 zoom into a wider Jake shot so his face and jewellery fill the frame, slow a short clip to reach the opener length, or crop
 burned-in text off. Each new video needs a new start clip; TJR/Marko payoff clips can repeat with small variations.
 Never resend a start clip the user has already been sent. Keep replies short.
+
+## Answer rule (user, 28 Nov 2026)
+
+Marko's answer must actually answer Jake's question, short and cold. "How much you make a year?" → "More than you."
+"How much tax you pay?" → "More than you make." Use "Wrong tax bracket lil bro" only when the question is "Where's your
+<thing money buys>".
