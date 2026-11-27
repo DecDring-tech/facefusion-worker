@@ -1,0 +1,390 @@
+[
+ {
+  "name": "t17_01_ferari",
+  "bait": "b18_shades",
+  "sound": "S1_ballerszn",
+  "y": 0.66,
+  "cap1": "What colours your Ferari\nTJR? 😂",
+  "cap2": "It's Red.",
+  "sources": [
+   [
+    "night",
+    1,
+    18.6
+   ],
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "night",
+    1,
+    15.75
+   ],
+   [
+    "night",
+    1,
+    23.4
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by TJR",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#mogged",
+   "#loganpaul",
+   "#jakepaul"
+  ]
+ },
+ {
+  "name": "t17_02_isthat",
+  "bait": "b18_driver",
+  "sound": "S1_ballerszn",
+  "y": 0.66,
+  "cap1": "Is that a Ferari\nTJR? 😂",
+  "cap2": "It's a Koenigsegg.",
+  "sources": [
+   [
+    "night",
+    1,
+    18.6
+   ],
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "night",
+    1,
+    15.75
+   ],
+   [
+    "nightend",
+    1
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul thought it was a Ferrari 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#mogged",
+   "#loganpaul",
+   "#jakepaul"
+  ]
+ },
+ {
+  "name": "t17_03_horsepower",
+  "bait": "b18_rm",
+  "sound": "S1_ballerszn",
+  "y": 0.66,
+  "cap1": "How much horsepower\nTJR? 😂",
+  "cap2": "1,500.",
+  "sources": [
+   [
+    "night",
+    1,
+    23.4
+   ],
+   [
+    "night",
+    1,
+    15.75
+   ],
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "gas",
+    1,
+    7.68
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by TJR 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#mogged",
+   "#loganpaul",
+   "#jakepaul"
+  ]
+ },
+ {
+  "name": "t17_04_topspeed",
+  "bait": "b18_watch",
+  "sound": "S1_ballerszn",
+  "y": 0.66,
+  "cap1": "Whats your top speed\nTJR? 😂",
+  "cap2": "250.",
+  "sources": [
+   [
+    "night",
+    1,
+    18.6
+   ],
+   [
+    "gas",
+    1,
+    7.68
+   ],
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "night",
+    1,
+    15.75
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Next time Logan 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#mogged",
+   "#loganpaul",
+   "#jakepaul"
+  ]
+ },
+ {
+  "name": "t17_05_lambo",
+  "bait": "b18_house",
+  "sound": "S1_ballerszn",
+  "y": 0.66,
+  "cap1": "What colours your Lambo\nTJR? 😂",
+  "cap2": "It's Red.",
+  "sources": [
+   [
+    "night",
+    1,
+    23.4
+   ],
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "gas",
+    1,
+    6.25
+   ],
+   [
+    "night",
+    1,
+    18.6
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by TJR 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#mogged",
+   "#loganpaul",
+   "#jakepaul"
+  ]
+ },
+ {
+  "name": "t17_06_faster",
+  "bait": "b21_jetbape",
+  "sound": "S1_ballerszn",
+  "y": 0.66,
+  "cap1": "Whos faster\nTJR? 😂",
+  "cap2": "Me.",
+  "sources": [
+   [
+    "night",
+    1,
+    18.6
+   ],
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "night",
+    1,
+    15.75
+   ],
+   [
+    "night",
+    1,
+    23.4
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul's jet vs TJR's car 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#mogged",
+   "#loganpaul",
+   "#jakepaul"
+  ]
+ },
+ {
+  "name": "t17_07_dads",
+  "bait": "b18_diamonds",
+  "sound": "S1_ballerszn",
+  "y": 0.66,
+  "cap1": "Is that your dads car\nTJR? 😂",
+  "cap2": "It's mine.",
+  "sources": [
+   [
+    "night",
+    1,
+    18.6
+   ],
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "night",
+    1,
+    15.75
+   ],
+   [
+    "nightend",
+    1
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "We're not the same Logan 🥱",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#mogged",
+   "#loganpaul",
+   "#jakepaul"
+  ]
+ },
+ {
+  "name": "t17_08_driveit",
+  "bait": "b22_court",
+  "sound": "S1_ballerszn",
+  "y": 0.66,
+  "cap1": "Can I drive it\nTJR? 😂",
+  "cap2": "No.",
+  "sources": [
+   [
+    "night",
+    1,
+    23.4
+   ],
+   [
+    "night",
+    1,
+    15.75
+   ],
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "gas",
+    1,
+    7.68
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Next time Logan 😭",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#mogged",
+   "#loganpaul",
+   "#jakepaul"
+  ]
+ },
+ {
+  "name": "t17_09_fast",
+  "bait": "b15_mansion",
+  "sound": "S1_ballerszn",
+  "y": 0.66,
+  "cap1": "Is it fast\nTJR? 😂",
+  "cap2": "Very.",
+  "sources": [
+   [
+    "night",
+    1,
+    18.6
+   ],
+   [
+    "gas",
+    1,
+    7.68
+   ],
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "night",
+    1,
+    15.75
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by TJR 💀",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#mogged",
+   "#loganpaul",
+   "#jakepaul"
+  ]
+ },
+ {
+  "name": "t17_10_bugati",
+  "bait": "b15_girls",
+  "sound": "S1_ballerszn",
+  "y": 0.66,
+  "cap1": "What colours your Bugati\nTJR? 😂",
+  "cap2": "It's Red.",
+  "sources": [
+   [
+    "night",
+    1,
+    23.4
+   ],
+   [
+    "night",
+    1,
+    13.1
+   ],
+   [
+    "gas",
+    1,
+    6.25
+   ],
+   [
+    "night",
+    1,
+    18.6
+   ]
+  ],
+  "bait_person": "Jake Paul",
+  "post_caption": "Logan Paul gets brutally car Mogged by TJR",
+  "rage_bait": true,
+  "hashtags": [
+   "#tjr",
+   "#mogged",
+   "#loganpaul",
+   "#jakepaul"
+  ]
+ }
+]
